@@ -1,8 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:pycare/models/bottombar.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
-
-// import '../screens/about.dart';
+import 'package:flutter/material.dart';
+import 'package:pycare/components/bottombar.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -61,45 +59,47 @@ class _MainPageState extends State<MainPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   BottomBar(
-                      onPressed: () {
-                        setState(() {
-                          bottomIcons = BottomIcons.Home;
-                        });
-                      },
-                      bottomIcons:
-                          bottomIcons == BottomIcons.Home ? true : false,
-                      icons: EvaIcons.home,
-                      text: "Home"),
+                    onPressed: () {
+                      setState(() {
+                        bottomIcons = BottomIcons.Home;
+                      });
+                    },
+                    bottomIcons: bottomIcons == BottomIcons.Home ? true : false,
+                    icons: EvaIcons.home,
+                    text: "Home",
+                  ),
                   BottomBar(
-                      onPressed: () {
-                        setState(() {
-                          bottomIcons = BottomIcons.Hospital;
-                        });
-                      },
-                      bottomIcons:
-                          bottomIcons == BottomIcons.Hospital ? true : false,
-                      icons: Icons.local_hospital_outlined,
-                      text: "Hospitals"),
+                    onPressed: () {
+                      setState(() {
+                        bottomIcons = BottomIcons.Hospital;
+                      });
+                    },
+                    bottomIcons:
+                        bottomIcons == BottomIcons.Hospital ? true : false,
+                    icons: Icons.local_hospital_outlined,
+                    text: "Hospitals",
+                  ),
                   BottomBar(
-                      onPressed: () {
-                        setState(() {
-                          bottomIcons = BottomIcons.About;
-                        });
-                      },
-                      bottomIcons:
-                          bottomIcons == BottomIcons.About ? true : false,
-                      icons: Icons.developer_board,
-                      text: "About"),
+                    onPressed: () {
+                      setState(() {
+                        bottomIcons = BottomIcons.About;
+                      });
+                    },
+                    bottomIcons:
+                        bottomIcons == BottomIcons.About ? true : false,
+                    icons: Icons.developer_board,
+                    text: "About",
+                  ),
                   BottomBar(
-                      onPressed: () {
-                        setState(() {
-                          bottomIcons = BottomIcons.Maps;
-                        });
-                      },
-                      bottomIcons:
-                          bottomIcons == BottomIcons.Maps ? true : false,
-                      icons: Icons.map_sharp,
-                      text: "Maps"),
+                    onPressed: () {
+                      setState(() {
+                        bottomIcons = BottomIcons.Maps;
+                      });
+                    },
+                    bottomIcons: bottomIcons == BottomIcons.Maps ? true : false,
+                    icons: Icons.map_sharp,
+                    text: "Maps",
+                  ),
                 ],
               ),
             ),
