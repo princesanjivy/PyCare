@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pycare/models/bottombar.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 
-// import '../screens/about.dart';
+import '../screens/about.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -50,7 +50,7 @@ class _MainPageState extends State<MainPage> {
               : Container(),
           bottomIcons == BottomIcons.About
               ? Center(
-                  child: Text("About US page"),
+                  child: About(),
                 )
               : Container(),
           Align(
@@ -87,9 +87,9 @@ class _MainPageState extends State<MainPage> {
                         });
                       },
                       bottomIcons:
-                          bottomIcons == BottomIcons.About ? true : false,
-                      icons: Icons.developer_board,
-                      text: "About"),
+                          bottomIcons == BottomIcons.Maps ? true : false,
+                      icons: Icons.map_rounded,
+                      text: "Maps"),
                   BottomBar(
                       onPressed: () {
                         setState(() {
@@ -97,9 +97,9 @@ class _MainPageState extends State<MainPage> {
                         });
                       },
                       bottomIcons:
-                          bottomIcons == BottomIcons.Maps ? true : false,
-                      icons: Icons.map_sharp,
-                      text: "Maps"),
+                          bottomIcons == BottomIcons.About ? true : false,
+                      icons: Icons.developer_mode,
+                      text: "About"),
                 ],
               ),
             ),
