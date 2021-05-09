@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-import 'components/navbar.dart';
+import 'package:pycare/components/navbar.dart';
 
 void main() {
   runApp(MyApp());
