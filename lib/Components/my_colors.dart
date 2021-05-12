@@ -9,3 +9,5 @@ final Color yellow = Color(0xFFf6ED11);
 final Color red = Color(0xFFFA3C24);
 final Color borderBlue = Color(0xFF9DC6FF);
 final Color numberRed = Color(0xFFD61F1F);
+final Color grad1 = Color(0xABB4FF);
+final Color grad2 = Color(0x77acf1);
