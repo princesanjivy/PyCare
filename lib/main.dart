@@ -6,6 +6,10 @@ import 'package:pycare/screens/home.dart';
 
 import 'Components/my_colors.dart';
 import 'Components/my_colors.dart';
+import 'Components/my_colors.dart';
+import 'Components/my_colors.dart';
+import 'Components/my_colors.dart';
+import 'screens/hospitals_list.dart';
 
 void main() {
   runApp(MyApp());
@@ -35,9 +39,7 @@ class _BarState extends State<Bar> {
 
   List _Screens = [
     HomeScreen(),
-    Container(
-      color: Colors.red,
-    ),
+    Hospitals(),
     Container(
       color: Colors.green,
     ),
@@ -89,7 +91,7 @@ class _BarState extends State<Bar> {
                   color: Colors.white,
                 ),
               ),
-              activeColor: Colors.blue.shade800,
+              activeColor: Colors.indigo.shade900,
               inactiveColor: Colors.white,
             ),
             BottomNavyBarItem(
@@ -103,7 +105,7 @@ class _BarState extends State<Bar> {
                   color: Colors.white,
                 ),
               ),
-              activeColor: Colors.blue.shade800,
+              activeColor: Colors.indigo.shade900,
               inactiveColor: Colors.white,
             ),
             BottomNavyBarItem(
@@ -117,7 +119,7 @@ class _BarState extends State<Bar> {
                   color: Colors.white,
                 ),
               ),
-              activeColor: appBarCol,
+              activeColor: Colors.indigo.shade900,
               inactiveColor: Colors.white,
             ),
           ],

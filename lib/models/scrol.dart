@@ -10,7 +10,7 @@ class horz extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         children: [
           deck(
-            image_location: 'images/illustration.png',
+            image_location: 'images/prec.png',
             image_caption: 'Prevention is better \nthan cure.',
           ),
           deck(
@@ -30,7 +30,7 @@ class horz extends StatelessWidget {
             image_caption: 'Use Gloves when \n required.',
           ),
           deck(
-            image_location: 'images/dsc_logo.png',
+            image_location: 'images/vaccinated.png',
             image_caption: 'Get Vaccinated..',
           ),
         ],
@@ -67,6 +67,7 @@ class deck extends StatelessWidget {
                     image_location,
                     height: 250.0,
                     width: 180.0,
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),

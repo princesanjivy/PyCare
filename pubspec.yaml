@@ -14,11 +14,11 @@ dependencies:
   bottom_navy_bar: ^6.0.0
   cached_network_image: ^3.0.0
   cupertino_icons: ^1.0.2
-  # flutter_svg: ^0.19.2+1
   font_awesome_flutter: ^9.0.0
   google_fonts: ^2.0.0
   image: ^3.0.2
   pie_chart: ^4.0.1
+  url_launcher: ^6.0.3
 
 dev_dependencies:
   flutter_test:
@@ -39,3 +39,5 @@ flutter:
     - images/sanitize_hand.png
     - images/hand.png
     - images/wash_hand.png
+    - images/vaccinated.png
+    - images/prec.png
