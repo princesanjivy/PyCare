@@ -11,3 +11,4 @@ final Color borderBlue = Color(0xFF9DC6FF);
 final Color numberRed = Color(0xFFD61F1F);
 final Color grad1 = Color(0xffABB4FF);
 final Color grad2 = Color(0xff77acf1);
+final Color shittyPink = Color(0xffff79cd);
