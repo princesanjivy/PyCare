@@ -3,6 +3,7 @@ import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pycare/screens/about.dart';
 import 'package:pycare/screens/home.dart';
+import 'package:pycare/screens/maps.dart';
 
 import 'Components/my_colors.dart';
 import 'Components/my_colors.dart';
@@ -40,9 +41,7 @@ class _BarState extends State<Bar> {
   List _Screens = [
     HomeScreen(),
     Hospitals(),
-    Container(
-      color: Colors.green,
-    ),
+    HomeMap(),
     About(),
   ];
   @override
