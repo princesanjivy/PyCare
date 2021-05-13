@@ -14,6 +14,7 @@ import '../Components/my_colors.dart';
 import '../Components/my_colors.dart';
 import '../Components/my_colors.dart';
 import '../Components/my_colors.dart';
+import '../Components/my_colors.dart';
 // import 'package:pycare/models/scroll.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -68,6 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: bgColor,
       appBar: MyAppBar(
         title: 'PYCARE',
       ),
