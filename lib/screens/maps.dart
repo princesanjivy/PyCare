@@ -164,7 +164,7 @@ class _HomeMapState extends State<HomeMap> {
                             });
                       },
                       icon: Icon(
-                        Icons.pin_drop,
+                        Icons.place,
                         color: red,
                         size: 45,
                       )),
@@ -297,7 +297,7 @@ class _HomeMapState extends State<HomeMap> {
                             });
                       },
                       icon: Icon(
-                        Icons.pin_drop,
+                        Icons.place,
                         color: shittyPink,
                         size: 45,
                       )),
@@ -430,7 +430,7 @@ class _HomeMapState extends State<HomeMap> {
                             });
                       },
                       icon: Icon(
-                        Icons.pin_drop,
+                        Icons.place,
                         color: lightBlue,
                         size: 45,
                       )),
@@ -563,7 +563,7 @@ class _HomeMapState extends State<HomeMap> {
                             });
                       },
                       icon: Icon(
-                        Icons.pin_drop,
+                        Icons.place,
                         color: grad1,
                         size: 45,
                       )),
@@ -696,7 +696,7 @@ class _HomeMapState extends State<HomeMap> {
                             });
                       },
                       icon: Icon(
-                        Icons.pin_drop,
+                        Icons.place,
                         color: bgColor,
                         size: 45,
                       )),
@@ -829,7 +829,7 @@ class _HomeMapState extends State<HomeMap> {
                             });
                       },
                       icon: Icon(
-                        Icons.pin_drop,
+                        Icons.place,
                         color: red,
                         size: 45,
                       )),
@@ -962,7 +962,7 @@ class _HomeMapState extends State<HomeMap> {
                             });
                       },
                       icon: Icon(
-                        Icons.pin_drop,
+                        Icons.place,
                         color: darkBlue,
                         size: 45,
                       )),
@@ -1095,7 +1095,7 @@ class _HomeMapState extends State<HomeMap> {
                             });
                       },
                       icon: Icon(
-                        Icons.pin_drop,
+                        Icons.place,
                         color: green,
                         size: 45,
                       )),
@@ -1228,7 +1228,7 @@ class _HomeMapState extends State<HomeMap> {
                             });
                       },
                       icon: Icon(
-                        Icons.pin_drop,
+                        Icons.place,
                         color: Colors.pink,
                         size: 45,
                       )),
@@ -1365,7 +1365,7 @@ class _HomeMapState extends State<HomeMap> {
                             });
                       },
                       icon: Icon(
-                        Icons.pin_drop,
+                        Icons.place,
                         color: Colors.cyan,
                         size: 45,
                       )),
@@ -1498,7 +1498,7 @@ class _HomeMapState extends State<HomeMap> {
                             });
                       },
                       icon: Icon(
-                        Icons.pin_drop,
+                        Icons.place,
                         color: Colors.brown,
                         size: 45,
                       )),
@@ -1631,7 +1631,7 @@ class _HomeMapState extends State<HomeMap> {
                             });
                       },
                       icon: Icon(
-                        Icons.pin_drop,
+                        Icons.place,
                         color: Colors.black,
                         size: 45,
                       )),
@@ -1764,7 +1764,7 @@ class _HomeMapState extends State<HomeMap> {
                             });
                       },
                       icon: Icon(
-                        Icons.pin_drop,
+                        Icons.place,
                         color: Colors.blueGrey,
                         size: 45,
                       )),
@@ -1897,7 +1897,7 @@ class _HomeMapState extends State<HomeMap> {
                             });
                       },
                       icon: Icon(
-                        Icons.pin_drop,
+                        Icons.place,
                         color: Colors.orange,
                         size: 45,
                       )),
@@ -2030,7 +2030,7 @@ class _HomeMapState extends State<HomeMap> {
                             });
                       },
                       icon: Icon(
-                        Icons.pin_drop,
+                        Icons.place,
                         color: Colors.purple,
                         size: 45,
                       )),

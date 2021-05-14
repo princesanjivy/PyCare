@@ -4,7 +4,7 @@ import 'package:pie_chart/pie_chart.dart';
 import 'package:pycare/components/hcard.dart';
 import 'package:pycare/components/my_appbar.dart';
 import 'package:pycare/components/my_colors.dart';
-import 'package:pycare/models/scrol.dart';
+import 'package:pycare/components/precautions_scroll.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -63,241 +63,188 @@ class _HomeScreenState extends State<HomeScreen> {
         title: 'PYCARE',
       ),
       body: SingleChildScrollView(
-        child: Container(
-          color: Color(0xffe4fbff),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(8.0, 8.0, 0.0, 8.0),
-                child: Text(
-                  "PUDUCHERRY",
-                  style: GoogleFonts.poppins(
-                    fontSize: 30.0,
-                    color: Colors.black,
-                    fontWeight: FontWeight.w600,
-                  ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: EdgeInsets.only(top: 16, left: 16),
+              child: Text(
+                "PUDUCHERRY",
+                style: GoogleFonts.poppins(
+                  fontSize: 28,
+                  color: Colors.black,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
-              Divider(
-                thickness: 0.7,
-                color: Colors.indigo,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  "COVID-19 TRACKER",
-                  style: GoogleFonts.poppins(
-                    color: Colors.indigo,
-                    fontSize: 15.0,
-                    fontWeight: FontWeight.normal,
-                  ),
+            ),
+            Divider(
+              thickness: 0.7,
+              color: Colors.indigo,
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 16, bottom: 4, top: 4),
+              child: Text(
+                "COVID-19 TRACKER",
+                style: GoogleFonts.poppins(
+                  color: Colors.indigo,
+                  fontSize: 16,
+                  fontWeight: FontWeight.normal,
                 ),
               ),
-
-              // CHART HERE
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  height: 250.0,
-                  child: PieChart(dataMap: cMap),
-                ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 16, bottom: 4, top: 4),
+              child: Container(
+                height: 250.0,
+                child: PieChart(dataMap: cMap),
               ),
-              // CHART ENDS HERE
-
-              // THE MID SCREEN
-              Wrap(
-                runSpacing: 10,
-                spacing: 10,
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 16, bottom: 8, top: 8, right: 16),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      left: 8.0,
-                      top: 5.0,
-                    ),
-                    child: Container(
-                      // height: 100.0,
-                      // width: 250.0,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8.0),
-                        color: lightBlue,
-                      ),
-                      child: HCard(
-                        eNum: 68373,
-                        cCol: lightBlue,
-                        title: "Total Cases",
-                        percentage: 0,
-                      ),
-                    ),
+                  HCard(
+                    count: 68373,
+                    color: lightBlue,
+                    title: "Total Reported",
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 5.0, right: 8.0),
-                    child: Container(
-                      // height: 100.0,
-                      // width: 250.0,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8.0),
-                        color: green,
-                      ),
-                      child: HCard(
-                        eNum: 54375,
-                        cCol: Colors.lightGreen,
-                        title: "Cured",
-                        percentage: 19,
-                        // percentage: 79.53f+"%",
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      left: 8.0,
-                      top: 5.0,
-                    ),
-                    child: Container(
-                      // height: 100.0,
-                      // width: 250.0,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8.0),
-                        color: yellow,
-                      ),
-                      child: HCard(
-                        eNum: 13078,
-                        cCol: Colors.yellow,
-                        title: "Active",
-                        percentage: 80,
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 5.0, right: 8.0),
-                    child: Container(
-                      // height: 100.0,
-                      // width: 250.0,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8.0),
-                        color: red,
-                      ),
-                      child: HCard(
-                        eNum: 920,
-                        cCol: Colors.red,
-                        title: "Dead",
-                        percentage: 1,
-                        // percentage: 79.53f+"%",
-                      ),
-                    ),
-                  ),
-                  // THE MID SCREEN ENDS HERE
-
-                  Container(
-                    height: 250.0,
-                    width: double.infinity,
-                    color: Colors.white12,
-                    // SVG HERE
-
-                    // child: SvgPicture.network(
-                    //   'https://raw.githubusercontent.com/ayushved78/images/master/illustration.svg',
-                    //   semanticsLabel: 'Illustration',
-                    //   cacheColorFilter: false,
-                    // ),
-
-                    child: Image.asset(
-                      'images/illustration.png',
-                      fit: BoxFit.cover,
-                      scale: 1,
-                    ),
-                  ),
-
-                  Divider(
-                    thickness: 0.8,
-                    color: Colors.indigo,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      left: 8.0,
-                      bottom: 8.0,
-                    ),
-                    child: Container(
-                      color: Color(0xf4f9f9),
-                      child: Text(
-                        'PRECAUTIONS',
-                        style: GoogleFonts.poppins(
-                          fontSize: 30.0,
-                          color: Colors.black,
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 10.0,
-                  ),
-                  //STACK UP AHEAD
-                  Stack(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(
-                          left: 20.0,
-                          right: 20.0,
-                          top: 8.0,
-                          bottom: 20.0,
-                        ),
-                        child: Container(
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10.0),
-                            gradient: LinearGradient(
-                              colors: [
-                                grad1,
-                                grad2,
-                              ],
-                              begin: Alignment.centerLeft,
-                              end: Alignment.centerRight,
-                            ),
-                          ),
-                          height: 300.0,
-                          width: 400.0,
-                        ),
-                      ),
-                      horz(),
-                    ],
+                  HCard(
+                    count: 54375,
+                    color: green,
+                    title: "Cured",
+                    percentage: 79,
                   ),
                 ],
               ),
-            ],
-          ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 16, bottom: 8, top: 8, right: 16),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  HCard(
+                    count: 68373,
+                    color: yellow,
+                    title: "Active",
+                    percentage: 5,
+                  ),
+                  HCard(
+                    count: 54375,
+                    color: red,
+                    title: "Death",
+                    percentage: 79,
+                  ),
+                ],
+              ),
+            ),
+
+            Container(
+              height: 250.0,
+              width: double.infinity,
+              color: Colors.white12,
+              // SVG HERE
+
+              // child: SvgPicture.network(
+              //   'https://raw.githubusercontent.com/ayushved78/images/master/illustration.svg',
+              //   semanticsLabel: 'Illustration',
+              //   cacheColorFilter: false,
+              // ),
+
+              child: Image.asset(
+                'images/illustration.png',
+                fit: BoxFit.cover,
+                scale: 1,
+              ),
+            ),
+
+            Divider(
+              thickness: 0.8,
+              color: Colors.indigo,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 8.0,
+                bottom: 8.0,
+              ),
+              child: Container(
+                color: Color(0xf4f9f9),
+                child: Text(
+                  'PRECAUTIONS',
+                  style: GoogleFonts.poppins(
+                    fontSize: 28,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            //STACK UP AHEAD
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 20.0,
+                right: 20.0,
+                top: 8.0,
+                bottom: 20.0,
+              ),
+              child: Container(
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
+                  gradient: LinearGradient(
+                    colors: [
+                      grad1,
+                      grad2,
+                    ],
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                  ),
+                ),
+                height: 300,
+                width: MediaQuery.of(context).size.width,
+                child: PrecautionScroll(),
+              ),
+            ),
+          ],
         ),
       ),
     );
   }
 }
 
-class cItem extends StatelessWidget {
-  final int eNum;
-  final String title;
-  final int percentage;
-  final Color color;
-  cItem({this.eNum, this.title, this.percentage, this.color});
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(15),
-      child: Text(title),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-      ),
-    );
-  }
-}
-
-class gridStat {
-  final int eNum;
-  final String title;
-  final int percentage;
-  final Color color;
-
-  gridStat({
-    @required this.eNum,
-    @required this.title,
-    this.percentage,
-    this.color = Colors.green,
-  });
-}
+// class cItem extends StatelessWidget {
+//   final int eNum;
+//   final String title;
+//   final int percentage;
+//   final Color color;
+//   cItem({this.eNum, this.title, this.percentage, this.color});
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       padding: const EdgeInsets.all(15),
+//       child: Text(title),
+//       decoration: BoxDecoration(
+//         borderRadius: BorderRadius.circular(10),
+//       ),
+//     );
+//   }
+// }
+//
+// class gridStat {
+//   final int eNum;
+//   final String title;
+//   final int percentage;
+//   final Color color;
+//
+//   gridStat({
+//     @required this.eNum,
+//     @required this.title,
+//     this.percentage,
+//     this.color = Colors.green,
+//   });
+// }

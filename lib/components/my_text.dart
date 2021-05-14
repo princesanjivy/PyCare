@@ -13,7 +13,7 @@ class MyText extends StatelessWidget {
   Widget build(BuildContext context) {
     FontWeight finalWeight = FontWeight.normal;
     if (this.fontWeight == 'BOLD') {
-      finalWeight = FontWeight.bold;
+      finalWeight = FontWeight.w600;
     }
     return Text(
       text,

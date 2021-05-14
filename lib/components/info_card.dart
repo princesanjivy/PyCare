@@ -30,22 +30,19 @@ class InfoCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       color: Colors.transparent,
+      elevation: 4,
       //margin: EdgeInsets.all(10),
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(18),
-        side: BorderSide(
-          color: borderBlue,
-          width: 1,
-        ),
+        borderRadius: BorderRadius.circular(16),
       ),
       child: Container(
         //height: 900,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(18),
+          borderRadius: BorderRadius.circular(16),
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [darkBlue, bgColor],
+            colors: [darkBlue, grad2],
           ),
         ),
         child: Column(
@@ -62,8 +59,8 @@ class InfoCard extends StatelessWidget {
               "$name",
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
                   //height: 2,
                   color: Colors.white,
                 ),
@@ -80,10 +77,8 @@ class InfoCard extends StatelessWidget {
                 ),
               ),
             ),
-            Wrap(
-              alignment: WrapAlignment.center,
-              //spacing: 5.0,
-              //runSpacing: 3.0,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 if (mailLink != null)
                   IconButton(
