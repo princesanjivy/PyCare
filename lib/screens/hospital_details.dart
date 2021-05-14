@@ -282,7 +282,7 @@ class _HospitalDetailsState extends State<HospitalDetails> {
                                         ),
                                         child: Center(
                                           child: Icon(
-                                            Icons.map,
+                                            Icons.near_me_rounded,
                                             color: Colors.white,
                                           ),
                                         ),
@@ -318,50 +318,37 @@ class _HospitalDetailsState extends State<HospitalDetails> {
                         itemBuilder: (context, index) {
                           return Column(
                             children: [
-                              Container(
-                                decoration: BoxDecoration(
-                                  color: bgColor,
-                                  borderRadius: BorderRadius.circular(9),
-                                ),
-                                child: Material(
-                                  color: Colors.transparent,
-                                  child: InkWell(
-                                    borderRadius: BorderRadius.circular(9),
-                                    onTap: () {
-                                      _launchURL(
-                                          'tel:' + widget.contactNos[index]);
-                                    }, //Redirect to Dialer
+                              InkWell(
+                                borderRadius: BorderRadius.circular(9),
+                                onTap: () {
+                                  _launchURL('tel:' + widget.contactNos[index]);
+                                }, //Redirect to Dialer
 
-                                    splashColor: green,
-                                    radius: 300,
-                                    child: Container(
-                                      height: 40,
-                                      decoration: BoxDecoration(
-                                        border: Border.all(
-                                          color: Color(0xFF9DC6FF),
-                                        ),
-                                        borderRadius: BorderRadius.circular(9),
-                                      ),
-                                      child: Center(
-                                        child: Padding(
-                                          padding: const EdgeInsets.only(
-                                              left: 10.0,
-                                              top: 10.0,
-                                              bottom: 10.0),
-                                          child: Row(
-                                            children: [
-                                              MyText(
-                                                text: widget.contactNos[index],
-                                                color: Colors.black,
-                                              ),
-                                              SizedBox(width: width * 0.55),
-                                              Icon(
-                                                Icons.call,
-                                                color: green,
-                                              )
-                                            ],
+                                radius: 300,
+                                child: Container(
+                                  height: 40,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Color(0xFF9DC6FF),
+                                    ),
+                                    borderRadius: BorderRadius.circular(9),
+                                  ),
+                                  child: Center(
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                          left: 10.0, top: 10.0, bottom: 10.0),
+                                      child: Row(
+                                        children: [
+                                          MyText(
+                                            text: widget.contactNos[index],
+                                            color: Colors.black,
                                           ),
-                                        ),
+                                          SizedBox(width: width * 0.55),
+                                          Icon(
+                                            Icons.call,
+                                            color: green,
+                                          )
+                                        ],
                                       ),
                                     ),
                                   ),
