@@ -49,10 +49,19 @@ class InfoCard extends StatelessWidget {
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.all(10.0),
-              child: CircleAvatar(
-                radius: 35,
-                backgroundColor: Colors.grey[350],
-                backgroundImage: CachedNetworkImageProvider('$imgLink'),
+              child: CachedNetworkImage(
+                imageUrl: '$imgLink',
+                imageBuilder: (context, imageProvider) => Container(
+                  width: 85.0,
+                  height: 85.0,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                        image: imageProvider, fit: BoxFit.cover),
+                  ),
+                ),
+                placeholder: (context, url) => CircularProgressIndicator(),
+                errorWidget: (context, url, error) => Icon(Icons.error),
               ),
             ),
             Text(
@@ -70,7 +79,7 @@ class InfoCard extends StatelessWidget {
               "$role",
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
-                  fontSize: 10,
+                  fontSize: 12,
                   fontStyle: FontStyle.italic,
                   height: 1,
                   color: Colors.white,
