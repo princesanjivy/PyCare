@@ -1,21 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:pycare/Components/my_colors.dart';
-import 'package:pycare/Components/my_text.dart';
+import 'package:pycare/components/my_colors.dart';
 
-class mcon extends StatelessWidget {
-  // final int icb;
-  final int ocb;
-  final int vnb;
-  final int ocy;
+class MapComponent extends StatelessWidget {
+  final int oxygenBedCount;
+  final int ventilatorBedCount;
+  final int isolationBedCount;
 
-  mcon({
-    this.ocb,
-    this.vnb,
-    this.ocy,
+  MapComponent({
+    this.oxygenBedCount,
+    this.ventilatorBedCount,
+    this.isolationBedCount,
   });
-  // ignore: empty_constructor_bodies
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -57,7 +54,7 @@ class mcon extends StatelessWidget {
                                     bottom: 5.0,
                                   ),
                                   child: Text(
-                                    ocb.toString(),
+                                    oxygenBedCount.toString(),
                                     textAlign: TextAlign.center,
                                     style: GoogleFonts.poppins(
                                       fontSize: 26,
@@ -68,7 +65,7 @@ class mcon extends StatelessWidget {
                                 Padding(
                                   padding: const EdgeInsets.only(bottom: 9.0),
                                   child: Text(
-                                    'Oxygen \nBeds',
+                                    'Oxygen Beds',
                                     textAlign: TextAlign.center,
                                     maxLines: 3,
                                     style: GoogleFonts.poppins(
@@ -100,7 +97,7 @@ class mcon extends StatelessWidget {
                                     bottom: 5.0,
                                   ),
                                   child: Text(
-                                    vnb.toString(),
+                                    ventilatorBedCount.toString(),
                                     textAlign: TextAlign.center,
                                     style: GoogleFonts.poppins(
                                       fontSize: 26,
@@ -148,7 +145,7 @@ class mcon extends StatelessWidget {
                                     bottom: 5.0,
                                   ),
                                   child: Text(
-                                    ocy.toString(),
+                                    isolationBedCount.toString(),
                                     style: GoogleFonts.poppins(
                                       fontSize: 26,
                                       fontWeight: FontWeight.bold,
@@ -158,7 +155,7 @@ class mcon extends StatelessWidget {
                                 Padding(
                                   padding: const EdgeInsets.only(bottom: 9.0),
                                   child: Text(
-                                    'Oxygen Cylinder',
+                                    'Isolation Beds',
                                     textAlign: TextAlign.center,
                                     maxLines: 3,
                                     style: GoogleFonts.poppins(
@@ -200,7 +197,7 @@ class mcon extends StatelessWidget {
               //                 Padding(
               //                   padding: const EdgeInsets.only(top: 15.0),
               //                   child: MyText(
-              //                     text: vnb.toString(),
+              //                     text: ventilatorBedCount.toString(),
               //                     size: 26,
               //                     fontWeight: 'BOLD',
               //                   ),
@@ -235,7 +232,7 @@ class mcon extends StatelessWidget {
               //                 Padding(
               //                   padding: const EdgeInsets.only(top: 15.0),
               //                   child: MyText(
-              //                     text: ocy.toString(),
+              //                     text: isolationBedCount.toString(),
               //                     size: 26,
               //                     fontWeight: 'BOLD',
               //                   ),

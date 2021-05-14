@@ -3,10 +3,9 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:latlong/latlong.dart';
-import 'package:pycare/Components/my_appbar.dart';
-import 'package:pycare/Components/my_colors.dart';
-import 'package:pycare/Components/my_text.dart';
-import 'package:pycare/models/mapmodel.dart';
+import 'package:pycare/components/map.dart';
+import 'package:pycare/components/my_appbar.dart';
+import 'package:pycare/components/my_colors.dart';
 
 class HomeMap extends StatefulWidget {
   @override
@@ -128,11 +127,10 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        mcon(
-                                          // icb: 12,
-                                          ocb: 8,
-                                          vnb: 4,
-                                          ocy: 33,
+                                        MapComponent(
+                                          oxygenBedCount: 8,
+                                          ventilatorBedCount: 4,
+                                          isolationBedCount: 33,
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -166,7 +164,7 @@ class _HomeMapState extends State<HomeMap> {
                             });
                       },
                       icon: Icon(
-                        Icons.pin_drop,
+                        Icons.place,
                         color: red,
                         size: 45,
                       )),
@@ -261,11 +259,11 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        mcon(
+                                        MapComponent(
                                           // icb: 12,
-                                          ocb: 8,
-                                          vnb: 4,
-                                          ocy: 33,
+                                          oxygenBedCount: 8,
+                                          ventilatorBedCount: 4,
+                                          isolationBedCount: 33,
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -299,7 +297,7 @@ class _HomeMapState extends State<HomeMap> {
                             });
                       },
                       icon: Icon(
-                        Icons.pin_drop,
+                        Icons.place,
                         color: shittyPink,
                         size: 45,
                       )),
@@ -394,11 +392,11 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        mcon(
+                                        MapComponent(
                                           // icb: 12,
-                                          ocb: 8,
-                                          vnb: 4,
-                                          ocy: 33,
+                                          oxygenBedCount: 8,
+                                          ventilatorBedCount: 4,
+                                          isolationBedCount: 33,
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -432,7 +430,7 @@ class _HomeMapState extends State<HomeMap> {
                             });
                       },
                       icon: Icon(
-                        Icons.pin_drop,
+                        Icons.place,
                         color: lightBlue,
                         size: 45,
                       )),
@@ -527,11 +525,11 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        mcon(
+                                        MapComponent(
                                           // icb: 12,
-                                          ocb: 8,
-                                          vnb: 4,
-                                          ocy: 33,
+                                          oxygenBedCount: 8,
+                                          ventilatorBedCount: 4,
+                                          isolationBedCount: 33,
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -565,7 +563,7 @@ class _HomeMapState extends State<HomeMap> {
                             });
                       },
                       icon: Icon(
-                        Icons.pin_drop,
+                        Icons.place,
                         color: grad1,
                         size: 45,
                       )),
@@ -660,11 +658,11 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        mcon(
+                                        MapComponent(
                                           // icb: 12,
-                                          ocb: 8,
-                                          vnb: 4,
-                                          ocy: 33,
+                                          oxygenBedCount: 8,
+                                          ventilatorBedCount: 4,
+                                          isolationBedCount: 33,
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -698,7 +696,7 @@ class _HomeMapState extends State<HomeMap> {
                             });
                       },
                       icon: Icon(
-                        Icons.pin_drop,
+                        Icons.place,
                         color: bgColor,
                         size: 45,
                       )),
@@ -793,11 +791,11 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        mcon(
+                                        MapComponent(
                                           // icb: 12,
-                                          ocb: 8,
-                                          vnb: 4,
-                                          ocy: 33,
+                                          oxygenBedCount: 8,
+                                          ventilatorBedCount: 4,
+                                          isolationBedCount: 33,
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -831,7 +829,7 @@ class _HomeMapState extends State<HomeMap> {
                             });
                       },
                       icon: Icon(
-                        Icons.pin_drop,
+                        Icons.place,
                         color: red,
                         size: 45,
                       )),
@@ -926,11 +924,11 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        mcon(
+                                        MapComponent(
                                           // icb: 12,
-                                          ocb: 8,
-                                          vnb: 4,
-                                          ocy: 33,
+                                          oxygenBedCount: 8,
+                                          ventilatorBedCount: 4,
+                                          isolationBedCount: 33,
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -964,7 +962,7 @@ class _HomeMapState extends State<HomeMap> {
                             });
                       },
                       icon: Icon(
-                        Icons.pin_drop,
+                        Icons.place,
                         color: darkBlue,
                         size: 45,
                       )),
@@ -1059,11 +1057,11 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        mcon(
+                                        MapComponent(
                                           // icb: 12,
-                                          ocb: 8,
-                                          vnb: 4,
-                                          ocy: 33,
+                                          oxygenBedCount: 8,
+                                          ventilatorBedCount: 4,
+                                          isolationBedCount: 33,
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -1097,7 +1095,7 @@ class _HomeMapState extends State<HomeMap> {
                             });
                       },
                       icon: Icon(
-                        Icons.pin_drop,
+                        Icons.place,
                         color: green,
                         size: 45,
                       )),
@@ -1192,11 +1190,11 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        mcon(
+                                        MapComponent(
                                           // icb: 12,
-                                          ocb: 8,
-                                          vnb: 4,
-                                          ocy: 33,
+                                          oxygenBedCount: 8,
+                                          ventilatorBedCount: 4,
+                                          isolationBedCount: 33,
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -1230,7 +1228,7 @@ class _HomeMapState extends State<HomeMap> {
                             });
                       },
                       icon: Icon(
-                        Icons.pin_drop,
+                        Icons.place,
                         color: Colors.pink,
                         size: 45,
                       )),
@@ -1329,11 +1327,11 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        mcon(
+                                        MapComponent(
                                           // icb: 12,
-                                          ocb: 8,
-                                          vnb: 4,
-                                          ocy: 33,
+                                          oxygenBedCount: 8,
+                                          ventilatorBedCount: 4,
+                                          isolationBedCount: 33,
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -1367,7 +1365,7 @@ class _HomeMapState extends State<HomeMap> {
                             });
                       },
                       icon: Icon(
-                        Icons.pin_drop,
+                        Icons.place,
                         color: Colors.cyan,
                         size: 45,
                       )),
@@ -1462,11 +1460,11 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        mcon(
+                                        MapComponent(
                                           // icb: 12,
-                                          ocb: 8,
-                                          vnb: 4,
-                                          ocy: 33,
+                                          oxygenBedCount: 8,
+                                          ventilatorBedCount: 4,
+                                          isolationBedCount: 33,
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -1500,7 +1498,7 @@ class _HomeMapState extends State<HomeMap> {
                             });
                       },
                       icon: Icon(
-                        Icons.pin_drop,
+                        Icons.place,
                         color: Colors.brown,
                         size: 45,
                       )),
@@ -1595,11 +1593,11 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        mcon(
+                                        MapComponent(
                                           // icb: 12,
-                                          ocb: 8,
-                                          vnb: 4,
-                                          ocy: 33,
+                                          oxygenBedCount: 8,
+                                          ventilatorBedCount: 4,
+                                          isolationBedCount: 33,
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -1633,7 +1631,7 @@ class _HomeMapState extends State<HomeMap> {
                             });
                       },
                       icon: Icon(
-                        Icons.pin_drop,
+                        Icons.place,
                         color: Colors.black,
                         size: 45,
                       )),
@@ -1728,11 +1726,11 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        mcon(
+                                        MapComponent(
                                           // icb: 12,
-                                          ocb: 8,
-                                          vnb: 4,
-                                          ocy: 33,
+                                          oxygenBedCount: 8,
+                                          ventilatorBedCount: 4,
+                                          isolationBedCount: 33,
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -1766,7 +1764,7 @@ class _HomeMapState extends State<HomeMap> {
                             });
                       },
                       icon: Icon(
-                        Icons.pin_drop,
+                        Icons.place,
                         color: Colors.blueGrey,
                         size: 45,
                       )),
@@ -1861,11 +1859,11 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        mcon(
+                                        MapComponent(
                                           // icb: 12,
-                                          ocb: 8,
-                                          vnb: 4,
-                                          ocy: 33,
+                                          oxygenBedCount: 8,
+                                          ventilatorBedCount: 4,
+                                          isolationBedCount: 33,
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -1899,7 +1897,7 @@ class _HomeMapState extends State<HomeMap> {
                             });
                       },
                       icon: Icon(
-                        Icons.pin_drop,
+                        Icons.place,
                         color: Colors.orange,
                         size: 45,
                       )),
@@ -1994,11 +1992,11 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        mcon(
+                                        MapComponent(
                                           // icb: 12,
-                                          ocb: 8,
-                                          vnb: 4,
-                                          ocy: 33,
+                                          oxygenBedCount: 8,
+                                          ventilatorBedCount: 4,
+                                          isolationBedCount: 33,
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -2032,7 +2030,7 @@ class _HomeMapState extends State<HomeMap> {
                             });
                       },
                       icon: Icon(
-                        Icons.pin_drop,
+                        Icons.place,
                         color: Colors.purple,
                         size: 45,
                       )),

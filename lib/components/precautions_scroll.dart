@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class horz extends StatelessWidget {
+class PrecautionScroll extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -9,29 +9,29 @@ class horz extends StatelessWidget {
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: [
-          deck(
-            image_location: 'images/prec.png',
-            image_caption: 'Prevention is better \nthan cure.',
+          // Deck(
+          //   imageLocation: 'images/prec.png',
+          //   imageCaption: 'Prevention is better \nthan cure',
+          // ),
+          Deck(
+            imageLocation: 'images/mask.png',
+            imageCaption: 'Don\'t forget to wear \nyour Mask',
           ),
-          deck(
-            image_location: 'images/mask.png',
-            image_caption: 'Don\'t forget to wear \n your Mask.',
+          Deck(
+            imageLocation: 'images/sanitize_hand.png',
+            imageCaption: 'Ensure you sanitize \nyour hands regularly',
           ),
-          deck(
-            image_location: 'images/sanitize_hand.png',
-            image_caption: 'Ensure you sanitize \n your hands regularly.',
+          Deck(
+            imageLocation: 'images/wash_hand.png',
+            imageCaption: 'Wash your hands \nregularly',
           ),
-          deck(
-            image_location: 'images/wash_hand.png',
-            image_caption: 'Wash your hands \n regularly',
+          Deck(
+            imageLocation: 'images/hand.png',
+            imageCaption: 'Use Gloves when \nrequired',
           ),
-          deck(
-            image_location: 'images/hand.png',
-            image_caption: 'Use Gloves when \n required.',
-          ),
-          deck(
-            image_location: 'images/vaccinated.png',
-            image_caption: 'Get Vaccinated..',
+          Deck(
+            imageLocation: 'images/vaccinated.png',
+            imageCaption: 'Get \nVaccinated',
           ),
         ],
       ),
@@ -39,18 +39,23 @@ class horz extends StatelessWidget {
   }
 }
 
-class deck extends StatelessWidget {
-  final String image_location;
-  final String image_caption;
-  deck({this.image_location, this.image_caption});
+class Deck extends StatelessWidget {
+  final String imageLocation;
+  final String imageCaption;
+
+  Deck({
+    this.imageLocation,
+    this.imageCaption,
+  });
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(
-        top: 50.0,
-        bottom: 50.0,
-        left: 10.0,
-        right: 10.0,
+        top: 32,
+        bottom: 32,
+        left: 16,
+        right: 16,
       ),
       child: Container(
         decoration: BoxDecoration(
@@ -64,10 +69,10 @@ class deck extends StatelessWidget {
                 width: 150.0,
                 child: ListTile(
                   title: Image.asset(
-                    image_location,
+                    imageLocation,
                     height: 250.0,
                     width: 180.0,
-                    fit: BoxFit.cover,
+                    // fit: BoxFit.cover,
                   ),
                 ),
               ),
@@ -77,7 +82,7 @@ class deck extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Text(
-                  image_caption,
+                  imageCaption,
                   style:
                       GoogleFonts.poppins(fontSize: 16.0, color: Colors.black),
                 ),
