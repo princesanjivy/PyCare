@@ -235,8 +235,9 @@ class _HospitalsState extends State<Hospitals> {
                       ),
                     ),
                     onSelected: (popItem) {
+                      print(popItem);
                       setState(() {
-                        selectedPopItem = popItem;
+                        selectedFilterPopItem = popItem;
                       });
                     },
                     color: bgColor,
@@ -261,6 +262,7 @@ class _HospitalsState extends State<Hospitals> {
                                       return item.containsValue('govt');
                                     }).toList();
                                   });
+                                  Navigator.pop(context);
                                 }, //Show Hospitals Under Govt. Category.
                                 title: MyText(
                                   text: 'Govt',
@@ -276,6 +278,7 @@ class _HospitalsState extends State<Hospitals> {
                                       return item.containsValue('private');
                                     }).toList();
                                   });
+                                  Navigator.pop(context);
                                 }, //Show private Hospitals.
                                 title: MyText(
                                   text: 'Private',
@@ -292,6 +295,7 @@ class _HospitalsState extends State<Hospitals> {
                                           .containsValue('nursing homes');
                                     }).toList();
                                   });
+                                  Navigator.pop(context);
                                 }, //Show Nursing homes.
                                 title: MyText(
                                   text: 'Nursing Homes',
@@ -307,6 +311,7 @@ class _HospitalsState extends State<Hospitals> {
                             setState(() {
                               hospitals = tempHospitals;
                             });
+                            Navigator.pop(context);
                           }, //Show all
                           title: MyText(
                             text: 'All',
@@ -322,6 +327,7 @@ class _HospitalsState extends State<Hospitals> {
                     width: 8,
                   ),
                   PopupMenuButton(
+                    initialValue: selectedPopItem,
                     child: Container(
                       width: width / 3,
                       height: 36.35,
@@ -351,7 +357,7 @@ class _HospitalsState extends State<Hospitals> {
                     ),
                     onSelected: (popItem) {
                       setState(() {
-                        selectedFilterPopItem = popItem;
+                        selectedPopItem = popItem;
                       });
                     },
                     color: bgColor,
@@ -359,11 +365,7 @@ class _HospitalsState extends State<Hospitals> {
                       PopupMenuItem(
                         child: ListTile(
                           onTap: () {
-                            setState(() {
-                              hospitals.sort((a, b) {
-                                return a['name'].compareTo(b['name']);
-                              });
-                            });
+                            Navigator.pop(context);
                           }, //Sort Logic (Ascending)
                           title: MyText(
                             text: 'Alphabets(A-Z)',
@@ -376,11 +378,7 @@ class _HospitalsState extends State<Hospitals> {
                       PopupMenuItem(
                         child: ListTile(
                           onTap: () {
-                            setState(() {
-                              hospitals.sort((b, a) {
-                                return a['name'].compareTo(b['name']);
-                              });
-                            });
+                            Navigator.pop(context);
                           }, //Sort Logic (Descending)
                           title: Text(
                             'Alphabets(Z-A)',
@@ -394,11 +392,7 @@ class _HospitalsState extends State<Hospitals> {
                       PopupMenuItem(
                         child: ListTile(
                           onTap: () {
-                            setState(() {
-                              hospitals.sort((b, a) {
-                                return a['vacancy'].compareTo(b['vacancy']);
-                              });
-                            });
+                            Navigator.pop(context);
                           }, //Sort Logic (Vacant Beds)
                           title: MyText(
                             text: 'No. Of Vacant Beds',
@@ -454,76 +448,81 @@ class _HospitalsState extends State<Hospitals> {
                               ),
                             );
                           }, //Hospitals Specific Details Component Call
-                          child: Stack(
-                            children: [
-                              Container(
-                                width: double.infinity,
-                                height: 80,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  border: Border.all(color: borderBlue),
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsets.only(left: 16, top: 10),
-                                  child: Column(
-                                    children: [
-                                      Row(
-                                        children: [
-                                          Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              MyText(
-                                                text: hospitals[index]['name'],
-                                                size: 16,
-                                                color: Colors.black,
-                                                fontWeight: 'BOLD',
-                                              ),
-                                              SizedBox(
-                                                height: 16,
-                                              ),
-                                              Row(
-                                                children: [
-                                                  MyText(
-                                                    text: 'Vacancy Of Beds : ',
-                                                    color: darkBlue,
-                                                    fontWeight: 'BOLD',
-                                                  ),
-                                                  MyText(
-                                                    text: hospitals[index]
-                                                        ['vacancy'],
-                                                    color: numberRed,
-                                                    fontWeight: 'BOLD',
-                                                  ),
-                                                ],
-                                              )
-                                            ],
+                          child: Container(
+                            width: double.infinity,
+                            height: 80,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(color: borderBlue),
+                            ),
+                            child: SafeArea(
+                              child: Padding(
+                                padding: EdgeInsets.only(
+                                    left: 16, top: 10, right: 16),
+                                child: Stack(
+                                  children: [
+                                    Column(
+                                      children: [
+                                        Row(
+                                          children: [
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                MyText(
+                                                  text: hospitals[index]
+                                                      ['name'],
+                                                  size: 16,
+                                                  color: Colors.black,
+                                                  fontWeight: 'BOLD',
+                                                ),
+                                                SizedBox(
+                                                  height: 16,
+                                                ),
+                                                Row(
+                                                  children: [
+                                                    MyText(
+                                                      text:
+                                                          'Vacancy Of Beds : ',
+                                                      color: darkBlue,
+                                                      fontWeight: 'BOLD',
+                                                    ),
+                                                    MyText(
+                                                      text: hospitals[index]
+                                                          ['vacancy'],
+                                                      color: numberRed,
+                                                      fontWeight: 'BOLD',
+                                                    ),
+                                                  ],
+                                                )
+                                              ],
+                                            ),
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                    Align(
+                                      alignment: Alignment.centerRight,
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          color: darkBlue,
+                                          borderRadius:
+                                              BorderRadius.circular(30),
+                                        ),
+                                        height: 30,
+                                        width: 30,
+                                        child: Center(
+                                          child: Icon(
+                                            Icons.arrow_right_alt_rounded,
+                                            color: Colors.white,
                                           ),
-                                        ],
-                                      )
-                                    ],
-                                  ),
+                                        ),
+                                      ),
+                                    )
+                                  ],
                                 ),
                               ),
-                              Positioned(
-                                top: 15,
-                                left: 260,
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    color: darkBlue,
-                                    borderRadius: BorderRadius.circular(30),
-                                  ),
-                                  height: 30,
-                                  width: 30,
-                                  child: Center(
-                                    child: Icon(
-                                      Icons.arrow_right_alt_rounded,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ),
-                              )
-                            ],
+                            ),
                           ),
                         ),
                       ),
