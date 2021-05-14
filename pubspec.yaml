@@ -11,26 +11,35 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  google_fonts: ^2.0.0
+  bottom_navy_bar: ^6.0.0
   cached_network_image: ^3.0.0
-  url_launcher: ^6.0.3
-  font_awesome_flutter: ^9.0.0
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-  eva_icons_flutter: ^3.0.0
+  font_awesome_flutter: ^9.0.0
+  google_fonts: ^2.0.0
+  image: ^3.0.2
+  pie_chart: ^4.0.1
+  url_launcher: ^6.0.3
+  flutter_map: ^0.12.0
+  latlong: ^0.6.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
 flutter:
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/
-  #   - images/a_dot_ham.jpeg
+    - images/illustration.svg
+    - images/dsc_logo.png
+    - images/mask.svg
+    - images/sanitize_hand.svg
+    - images/hand.svg
+    - images/wash_hand.svg
+    - images/illustration.png
+    - images/mask.png
+    - images/sanitize_hand.png
+    - images/hand.png
+    - images/wash_hand.png
+    - images/vaccinated.png
+    - images/prec.png
