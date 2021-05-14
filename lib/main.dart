@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pycare/screens/hospitals_list.dart';
-import 'package:pycare/screens/aboutus.dart';
+import 'package:pycare/screens/about.dart';
 
 void main() => runApp(
       MaterialApp(
