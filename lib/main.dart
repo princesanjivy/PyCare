@@ -1,15 +1,11 @@
-import 'package:flutter/material.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
+import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:pycare/screens/about.dart';
+import 'package:pycare/screens/about_us.dart';
 import 'package:pycare/screens/home.dart';
 import 'package:pycare/screens/maps.dart';
 
-import 'Components/my_colors.dart';
-import 'Components/my_colors.dart';
-import 'Components/my_colors.dart';
-import 'Components/my_colors.dart';
-import 'Components/my_colors.dart';
+import 'components/my_colors.dart';
 import 'screens/hospitals_list.dart';
 
 void main() {
@@ -36,18 +32,16 @@ class Bar extends StatefulWidget {
 class _BarState extends State<Bar> {
   int _currentIndex = 0;
 
-//CHANGE THE CONTAINER TO YOUR SCREEN!!!
-
-  List _Screens = [
+  List _screens = [
     HomeScreen(),
     Hospitals(),
     HomeMap(),
-    About(),
+    AboutUs(),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _Screens[_currentIndex],
+      body: _screens[_currentIndex],
       bottomNavigationBar: ClipRRect(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(15.0),

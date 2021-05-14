@@ -1,26 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class hcard extends StatelessWidget {
+class HCard extends StatelessWidget {
   final int eNum;
   final Color cCol;
   final String title;
-  final int perc;
-  final Function pr;
-  hcard({
+  final int percentage;
+  final Function onPressed;
+
+  HCard({
     Key key,
     this.eNum,
     this.cCol,
     this.title,
-    this.perc,
-    this.pr,
+    this.percentage,
+    this.onPressed,
   }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
         return GestureDetector(
-          onTap: pr,
+          onTap: onPressed,
           child: Container(
             width: constraints.maxWidth / 2 - 10,
             decoration: BoxDecoration(
@@ -71,7 +73,7 @@ class hcard extends StatelessWidget {
                         width: 30.0,
                       ),
                       Text(
-                        "$perc %",
+                        "$percentage %",
                         textAlign: TextAlign.end,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pycare/Components/my_colors.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:pycare/Components/my_appbar.dart';
-import 'package:pycare/Components/my_text.dart';
+import 'package:pycare/components/my_appbar.dart';
+import 'package:pycare/components/my_colors.dart';
+import 'package:pycare/components/my_text.dart';
 import 'package:pycare/screens/hospital_details.dart';
 
 class Hospitals extends StatefulWidget {

@@ -3,10 +3,9 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:latlong/latlong.dart';
-import 'package:pycare/Components/my_appbar.dart';
-import 'package:pycare/Components/my_colors.dart';
-import 'package:pycare/Components/my_text.dart';
-import 'package:pycare/models/mapmodel.dart';
+import 'package:pycare/components/map.dart';
+import 'package:pycare/components/my_appbar.dart';
+import 'package:pycare/components/my_colors.dart';
 
 class HomeMap extends StatefulWidget {
   @override
@@ -128,11 +127,10 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        mcon(
-                                          // icb: 12,
-                                          ocb: 8,
-                                          vnb: 4,
-                                          ocy: 33,
+                                        MapComponent(
+                                          oxygenBedCount: 8,
+                                          ventilatorBedCount: 4,
+                                          isolationBedCount: 33,
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -261,11 +259,11 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        mcon(
+                                        MapComponent(
                                           // icb: 12,
-                                          ocb: 8,
-                                          vnb: 4,
-                                          ocy: 33,
+                                          oxygenBedCount: 8,
+                                          ventilatorBedCount: 4,
+                                          isolationBedCount: 33,
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -394,11 +392,11 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        mcon(
+                                        MapComponent(
                                           // icb: 12,
-                                          ocb: 8,
-                                          vnb: 4,
-                                          ocy: 33,
+                                          oxygenBedCount: 8,
+                                          ventilatorBedCount: 4,
+                                          isolationBedCount: 33,
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -527,11 +525,11 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        mcon(
+                                        MapComponent(
                                           // icb: 12,
-                                          ocb: 8,
-                                          vnb: 4,
-                                          ocy: 33,
+                                          oxygenBedCount: 8,
+                                          ventilatorBedCount: 4,
+                                          isolationBedCount: 33,
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -660,11 +658,11 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        mcon(
+                                        MapComponent(
                                           // icb: 12,
-                                          ocb: 8,
-                                          vnb: 4,
-                                          ocy: 33,
+                                          oxygenBedCount: 8,
+                                          ventilatorBedCount: 4,
+                                          isolationBedCount: 33,
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -793,11 +791,11 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        mcon(
+                                        MapComponent(
                                           // icb: 12,
-                                          ocb: 8,
-                                          vnb: 4,
-                                          ocy: 33,
+                                          oxygenBedCount: 8,
+                                          ventilatorBedCount: 4,
+                                          isolationBedCount: 33,
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -926,11 +924,11 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        mcon(
+                                        MapComponent(
                                           // icb: 12,
-                                          ocb: 8,
-                                          vnb: 4,
-                                          ocy: 33,
+                                          oxygenBedCount: 8,
+                                          ventilatorBedCount: 4,
+                                          isolationBedCount: 33,
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -1059,11 +1057,11 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        mcon(
+                                        MapComponent(
                                           // icb: 12,
-                                          ocb: 8,
-                                          vnb: 4,
-                                          ocy: 33,
+                                          oxygenBedCount: 8,
+                                          ventilatorBedCount: 4,
+                                          isolationBedCount: 33,
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -1192,11 +1190,11 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        mcon(
+                                        MapComponent(
                                           // icb: 12,
-                                          ocb: 8,
-                                          vnb: 4,
-                                          ocy: 33,
+                                          oxygenBedCount: 8,
+                                          ventilatorBedCount: 4,
+                                          isolationBedCount: 33,
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -1329,11 +1327,11 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        mcon(
+                                        MapComponent(
                                           // icb: 12,
-                                          ocb: 8,
-                                          vnb: 4,
-                                          ocy: 33,
+                                          oxygenBedCount: 8,
+                                          ventilatorBedCount: 4,
+                                          isolationBedCount: 33,
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -1462,11 +1460,11 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        mcon(
+                                        MapComponent(
                                           // icb: 12,
-                                          ocb: 8,
-                                          vnb: 4,
-                                          ocy: 33,
+                                          oxygenBedCount: 8,
+                                          ventilatorBedCount: 4,
+                                          isolationBedCount: 33,
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -1595,11 +1593,11 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        mcon(
+                                        MapComponent(
                                           // icb: 12,
-                                          ocb: 8,
-                                          vnb: 4,
-                                          ocy: 33,
+                                          oxygenBedCount: 8,
+                                          ventilatorBedCount: 4,
+                                          isolationBedCount: 33,
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -1728,11 +1726,11 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        mcon(
+                                        MapComponent(
                                           // icb: 12,
-                                          ocb: 8,
-                                          vnb: 4,
-                                          ocy: 33,
+                                          oxygenBedCount: 8,
+                                          ventilatorBedCount: 4,
+                                          isolationBedCount: 33,
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -1861,11 +1859,11 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        mcon(
+                                        MapComponent(
                                           // icb: 12,
-                                          ocb: 8,
-                                          vnb: 4,
-                                          ocy: 33,
+                                          oxygenBedCount: 8,
+                                          ventilatorBedCount: 4,
+                                          isolationBedCount: 33,
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -1994,11 +1992,11 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        mcon(
+                                        MapComponent(
                                           // icb: 12,
-                                          ocb: 8,
-                                          vnb: 4,
-                                          ocy: 33,
+                                          oxygenBedCount: 8,
+                                          ventilatorBedCount: 4,
+                                          isolationBedCount: 33,
                                         ),
                                         // BUTTON UP
                                         Container(

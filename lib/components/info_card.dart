@@ -1,21 +1,20 @@
-import 'package:first_app/my_colors.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:cached_network_image/cached_network_image.dart';
+import 'package:pycare/components/my_colors.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-// ignore: must_be_immutable
 class InfoCard extends StatelessWidget {
-  String name;
-  String role;
-  String imgLink;
-  String mailLink;
-  String instaLink;
-  String linkedInLink;
-  String portfolioLink;
-  String githubLink;
-  String fbLink;
+  final String name;
+  final String role;
+  final String imgLink;
+  final String mailLink;
+  final String instaLink;
+  final String linkedInLink;
+  final String portfolioLink;
+  final String githubLink;
+  final String fbLink;
 
   InfoCard(this.name, this.role, this.imgLink, this.mailLink, this.instaLink,
       this.linkedInLink, this.portfolioLink, this.githubLink, this.fbLink);

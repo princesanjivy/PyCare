@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'info_card.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'my_colors.dart';
-import 'my_appbar.dart';
+import 'package:pycare/components/info_card.dart';
+import 'package:pycare/components/my_appbar.dart';
+import 'package:pycare/components/my_colors.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-// ignore: must_be_immutable
 class AboutUs extends StatelessWidget {
-  List<InfoCard> details = [
+  final List<InfoCard> details = [
     InfoCard(
         "Dr. Selvaradjou Ka",
         "Head",

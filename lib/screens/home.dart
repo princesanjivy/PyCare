@@ -1,21 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pie_chart/pie_chart.dart';
-import 'package:pycare/models/hcard.dart';
+import 'package:pycare/components/hcard.dart';
+import 'package:pycare/components/my_appbar.dart';
+import 'package:pycare/components/my_colors.dart';
 import 'package:pycare/models/scrol.dart';
-
-import '../Components/my_appbar.dart';
-import '../Components/my_colors.dart';
-import '../Components/my_colors.dart';
-import '../Components/my_colors.dart';
-import '../Components/my_colors.dart';
-import '../Components/my_colors.dart';
-import '../Components/my_colors.dart';
-import '../Components/my_colors.dart';
-import '../Components/my_colors.dart';
-import '../Components/my_colors.dart';
-import '../Components/my_colors.dart';
-// import 'package:pycare/models/scroll.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -133,11 +122,11 @@ class _HomeScreenState extends State<HomeScreen> {
                         borderRadius: BorderRadius.circular(8.0),
                         color: lightBlue,
                       ),
-                      child: hcard(
+                      child: HCard(
                         eNum: 68373,
                         cCol: lightBlue,
                         title: "Total Cases",
-                        perc: 0,
+                        percentage: 0,
                       ),
                     ),
                   ),
@@ -150,12 +139,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         borderRadius: BorderRadius.circular(8.0),
                         color: green,
                       ),
-                      child: hcard(
+                      child: HCard(
                         eNum: 54375,
                         cCol: Colors.lightGreen,
                         title: "Cured",
-                        perc: 19,
-                        // perc: 79.53f+"%",
+                        percentage: 19,
+                        // percentage: 79.53f+"%",
                       ),
                     ),
                   ),
@@ -171,11 +160,11 @@ class _HomeScreenState extends State<HomeScreen> {
                         borderRadius: BorderRadius.circular(8.0),
                         color: yellow,
                       ),
-                      child: hcard(
+                      child: HCard(
                         eNum: 13078,
                         cCol: Colors.yellow,
                         title: "Active",
-                        perc: 80,
+                        percentage: 80,
                       ),
                     ),
                   ),
@@ -188,12 +177,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         borderRadius: BorderRadius.circular(8.0),
                         color: red,
                       ),
-                      child: hcard(
+                      child: HCard(
                         eNum: 920,
                         cCol: Colors.red,
                         title: "Dead",
-                        perc: 1,
-                        // perc: 79.53f+"%",
+                        percentage: 1,
+                        // percentage: 79.53f+"%",
                       ),
                     ),
                   ),
@@ -284,9 +273,9 @@ class _HomeScreenState extends State<HomeScreen> {
 class cItem extends StatelessWidget {
   final int eNum;
   final String title;
-  final int perc;
+  final int percentage;
   final Color color;
-  cItem({this.eNum, this.title, this.perc, this.color});
+  cItem({this.eNum, this.title, this.percentage, this.color});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -302,13 +291,13 @@ class cItem extends StatelessWidget {
 class gridStat {
   final int eNum;
   final String title;
-  final int perc;
+  final int percentage;
   final Color color;
 
   gridStat({
     @required this.eNum,
     @required this.title,
-    this.perc,
+    this.percentage,
     this.color = Colors.green,
   });
 }
