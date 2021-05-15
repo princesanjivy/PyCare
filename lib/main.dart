@@ -5,6 +5,7 @@ import 'package:pycare/screens/about_us.dart';
 import 'package:pycare/screens/home.dart';
 import 'package:pycare/screens/map_trial.dart';
 import 'package:pycare/screens/maps.dart';
+import 'package:pycare/screens/vaccination.dart';
 
 import 'components/my_colors.dart';
 import 'screens/hospitals_list.dart';
@@ -36,6 +37,7 @@ class _BarState extends State<Bar> {
   List _screens = [
     HomeScreen(),
     Hospitals(),
+    VaccineDrive(),
     HomeMap(),
     AboutUs(),
   ];
@@ -81,6 +83,20 @@ class _BarState extends State<Bar> {
               ),
               title: Text(
                 " HOSPITAL",
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+              activeColor: Colors.indigo.shade900,
+              inactiveColor: Colors.white,
+            ),
+            BottomNavyBarItem(
+              icon: FaIcon(
+                FontAwesomeIcons.syringe,
+                color: Colors.white,
+              ),
+              title: Text(
+                " VACCINE",
                 style: TextStyle(
                   color: Colors.white,
                 ),
