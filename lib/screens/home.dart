@@ -177,6 +177,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   style: GoogleFonts.poppins(
                     fontSize: 28,
                     color: Colors.black,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
               ),

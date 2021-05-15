@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pycare/screens/about_us.dart';
 import 'package:pycare/screens/home.dart';
+import 'package:pycare/screens/map_trial.dart';
 import 'package:pycare/screens/maps.dart';
 
 import 'components/my_colors.dart';

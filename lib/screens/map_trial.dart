@@ -4,195 +4,18 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:latlong/latlong.dart';
 import 'package:pycare/components/map.dart';
+import 'package:pycare/components/map_trial.dart';
 import 'package:pycare/components/my_appbar.dart';
 import 'package:pycare/components/my_colors.dart';
 
-import '../components/my_text.dart';
-import 'hospital_details.dart';
-import 'hospital_details.dart';
+import '../components/my_colors.dart';
 
-class HomeMap extends StatefulWidget {
+class HomeMapTrial extends StatefulWidget {
   @override
-  _HomeMapState createState() => _HomeMapState();
+  _HomeMapTrialState createState() => _HomeMapTrialState();
 }
 
-class _HomeMapState extends State<HomeMap> {
-  var tempHospitals = [];
-  var hospitals = [];
-
-  @override
-  void initState() {
-    hospitals = [
-      {
-        'name': 'Jipmer',
-        'vacancy': '20',
-        'TOI': 'govt',
-        'imgLink':
-            'https://images.shiksha.com/mediadata/images/1663197407phpCQxnSz.jpeg',
-        'fullName':
-            'Jawaharlal Institute of Postgraduate Medical Education and Research,Government of India',
-        'instituteType': 'Government',
-        'noOfOxygenBeds': '8',
-        'noOfVentilatorBeds': '4',
-        'noOfOxygenCylinders': '33',
-        'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
-        'phNos': ['9943165383', '8999889896']
-      },
-      {
-        'name': 'Pims',
-        'vacancy': '12',
-        'TOI': 'private',
-        'imgLink':
-            'https://images.unsplash.com/photo-1696541223130-5d31a73fb6c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80',
-        'fullName': 'Pondicherry Institute of Medical Sciences',
-        'instituteType': 'Government',
-        'noOfOxygenBeds': '8',
-        'noOfVentilatorBeds': '4',
-        'noOfOxygenCylinders': '33',
-        'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
-        'phNos': ['9943165383', '8999889898']
-      },
-      {
-        'name': 'East Coast Hospitals',
-        'vacancy': '18',
-        'TOI': 'private',
-        'imgLink':
-            'https://images.unsplash.com/photo-1696541223130-5d31a73fb6c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80',
-        'fullName':
-            'Jawaharlal Institute of Postgraduate Medical Education and Research,Government of India',
-        'instituteType': 'Government',
-        'noOfOxygenBeds': '8',
-        'noOfVentilatorBeds': '4',
-        'noOfOxygenCylinders': '33',
-        'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
-        'phNos': ['9943165383', '8999889898']
-      },
-      {
-        'name': 'Padmavathy',
-        'vacancy': '17',
-        'TOI': 'private',
-        'imgLink':
-            'https://images.unsplash.com/photo-1696541223130-5d31a73fb6c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80',
-        'fullName':
-            'Jawaharlal Institute of Postgraduate Medical Education and Research,Government of India',
-        'instituteType': 'Government',
-        'noOfOxygenBeds': '8',
-        'noOfVentilatorBeds': '4',
-        'noOfOxygenCylinders': '33',
-        'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
-        'phNos': ['9943165383', '8999889898']
-      },
-      {
-        'name': 'Cluny',
-        'vacancy': '21',
-        'TOI': 'private',
-        'imgLink':
-            'https://images.unsplash.com/photo-1696541223130-5d31a73fb6c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80',
-        'fullName':
-            'Jawaharlal Institute of Postgraduate Medical Education and Research,Government of India',
-        'instituteType': 'Government',
-        'noOfOxygenBeds': '8',
-        'noOfVentilatorBeds': '4',
-        'noOfOxygenCylinders': '33',
-        'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
-        'phNos': ['9943165383', '8999889898']
-      },
-      {
-        'name': 'GH',
-        'vacancy': '16',
-        'TOI': 'govt',
-        'imgLink':
-            'https://images.unsplash.com/photo-1696541223130-5d31a73fb6c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80',
-        'fullName':
-            'Jawaharlal Institute of Postgraduate Medical Education and Research,Government of India',
-        'instituteType': 'Government',
-        'noOfOxygenBeds': '8',
-        'noOfVentilatorBeds': '4',
-        'noOfOxygenCylinders': '33',
-        'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
-        'phNos': ['9943165383', '8999889898']
-      },
-      {
-        'name': 'Hospital Name',
-        'vacancy': '16',
-        'TOI': 'private',
-        'imgLink':
-            'https://images.unsplash.com/photo-1696541223130-5d31a73fb6c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80',
-        'fullName':
-            'Jawaharlal Institute of Postgraduate Medical Education and Research,Government of India',
-        'instituteType': 'Government',
-        'noOfOxygenBeds': '8',
-        'noOfVentilatorBeds': '4',
-        'noOfOxygenCylinders': '33',
-        'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
-        'phNos': ['9943165383', '8999889898']
-      },
-      {
-        'name': 'Hospital Name',
-        'vacancy': '16',
-        'TOI': 'private',
-        'imgLink':
-            'https://images.unsplash.com/photo-1696541223130-5d31a73fb6c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80',
-        'fullName':
-            'Jawaharlal Institute of Postgraduate Medical Education and Research,Government of India',
-        'instituteType': 'Government',
-        'noOfOxygenBeds': '8',
-        'noOfVentilatorBeds': '4',
-        'noOfOxygenCylinders': '33',
-        'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
-        'phNos': ['9943165383', '8999889898']
-      },
-      {
-        'name': 'Hospital Name',
-        'vacancy': '16',
-        'TOI': 'private',
-        'imgLink':
-            'https://images.unsplash.com/photo-1696541223130-5d31a73fb6c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80',
-        'fullName':
-            'Jawaharlal Institute of Postgraduate Medical Education and Research,Government of India',
-        'instituteType': 'Government',
-        'noOfOxygenBeds': '8',
-        'noOfVentilatorBeds': '4',
-        'noOfOxygenCylinders': '33',
-        'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
-        'phNos': ['9943165383', '8999889898']
-      },
-      {
-        'name': 'Hospital Name',
-        'vacancy': '16',
-        'TOI': 'private',
-        'imgLink':
-            'https://images.unsplash.com/photo-1696541223130-5d31a73fb6c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80',
-        'fullName':
-            'Jawaharlal Institute of Postgraduate Medical Education and Research,Government of India',
-        'instituteType': 'Government',
-        'noOfOxygenBeds': '8',
-        'noOfVentilatorBeds': '4',
-        'noOfOxygenCylinders': '33',
-        'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
-        'phNos': ['9943165383', '8999889898']
-      },
-      {
-        'name': 'Hospital Name',
-        'vacancy': '16',
-        'TOI': 'private',
-        'imgLink':
-            'https://images.unsplash.com/photo-1696541223130-5d31a73fb6c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80',
-        'fullName':
-            'Jawaharlal Institute of Postgraduate Medical Education and Research,Government of India',
-        'instituteType': 'Government',
-        'noOfOxygenBeds': '8',
-        'noOfVentilatorBeds': '4',
-        'noOfOxygenCylinders': '33',
-        'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
-        'phNos': ['9943165383', '8999889898']
-      }
-    ];
-
-    tempHospitals = hospitals;
-    super.initState();
-  }
-
+class _HomeMapTrialState extends State<HomeMapTrial> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -307,12 +130,38 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        Center(
-                                          child: MapComponent(
-                                            oxygenBedCount: 8,
-                                            ventilatorBedCount: 4,
-                                            isolationBedCount: 33,
-                                          ),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
+                                              child: MComp(
+                                                count: 12,
+                                                color: yellow,
+                                                type: 'Oxygen Bed',
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
+                                              child: MComp(
+                                                count: 12,
+                                                color: green,
+                                                type: 'Ventilator Bed',
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
+                                              child: MComp(
+                                                count: 12,
+                                                color: lightBlue,
+                                                type: 'Oxygen Cylinders',
+                                              ),
+                                            ),
+                                          ],
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -335,33 +184,7 @@ class _HomeMapState extends State<HomeMap> {
                                                     BorderRadius.circular(10)),
                                             borderSide: BorderSide(
                                                 color: darkBlue, width: 2),
-                                            onPressed: () {
-                                              Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      HospitalDetails(
-                                                    // imgLink: hospitals[2]
-                                                    //     ['imgLink'],
-                                                    hospitalName: hospitals[2]
-                                                        ['fullName'],
-                                                    instituteType: hospitals[2]
-                                                        ['instituteType'],
-                                                    oxygenBeds: hospitals[1]
-                                                        ['noOfOxygenBeds'],
-                                                    ventilatorBeds: hospitals[2]
-                                                        ['noOfVentilatorBeds'],
-                                                    oxygenCylinders: hospitals[
-                                                            2]
-                                                        ['noOfOxygenCylinders'],
-                                                    address: hospitals[2]
-                                                        ['address'],
-                                                    contactNos: hospitals[2]
-                                                        ['phNos'],
-                                                  ),
-                                                ),
-                                              );
-                                            },
+                                            onPressed: () {},
                                           ),
                                         ),
                                       ],
@@ -467,11 +290,26 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        MapComponent(
-                                          // icb: 12,
-                                          oxygenBedCount: 8,
-                                          ventilatorBedCount: 4,
-                                          isolationBedCount: 33,
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                          ],
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -494,33 +332,7 @@ class _HomeMapState extends State<HomeMap> {
                                                     BorderRadius.circular(10)),
                                             borderSide: BorderSide(
                                                 color: darkBlue, width: 2),
-                                            onPressed: () {
-                                              Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      HospitalDetails(
-                                                    // imgLink: hospitals[2]
-                                                    //     ['imgLink'],
-                                                    hospitalName: hospitals[2]
-                                                        ['fullName'],
-                                                    instituteType: hospitals[2]
-                                                        ['instituteType'],
-                                                    oxygenBeds: hospitals[1]
-                                                        ['noOfOxygenBeds'],
-                                                    ventilatorBeds: hospitals[2]
-                                                        ['noOfVentilatorBeds'],
-                                                    oxygenCylinders: hospitals[
-                                                            2]
-                                                        ['noOfOxygenCylinders'],
-                                                    address: hospitals[2]
-                                                        ['address'],
-                                                    contactNos: hospitals[2]
-                                                        ['phNos'],
-                                                  ),
-                                                ),
-                                              );
-                                            },
+                                            onPressed: () {},
                                           ),
                                         ),
                                       ],
@@ -626,11 +438,26 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        MapComponent(
-                                          // icb: 12,
-                                          oxygenBedCount: 8,
-                                          ventilatorBedCount: 4,
-                                          isolationBedCount: 33,
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                          ],
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -653,33 +480,7 @@ class _HomeMapState extends State<HomeMap> {
                                                     BorderRadius.circular(10)),
                                             borderSide: BorderSide(
                                                 color: darkBlue, width: 2),
-                                            onPressed: () {
-                                              Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      HospitalDetails(
-                                                    // imgLink: hospitals[2]
-                                                    //     ['imgLink'],
-                                                    hospitalName: hospitals[2]
-                                                        ['fullName'],
-                                                    instituteType: hospitals[2]
-                                                        ['instituteType'],
-                                                    oxygenBeds: hospitals[1]
-                                                        ['noOfOxygenBeds'],
-                                                    ventilatorBeds: hospitals[2]
-                                                        ['noOfVentilatorBeds'],
-                                                    oxygenCylinders: hospitals[
-                                                            2]
-                                                        ['noOfOxygenCylinders'],
-                                                    address: hospitals[2]
-                                                        ['address'],
-                                                    contactNos: hospitals[2]
-                                                        ['phNos'],
-                                                  ),
-                                                ),
-                                              );
-                                            },
+                                            onPressed: () {},
                                           ),
                                         ),
                                       ],
@@ -785,11 +586,26 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        MapComponent(
-                                          // icb: 12,
-                                          oxygenBedCount: 8,
-                                          ventilatorBedCount: 4,
-                                          isolationBedCount: 33,
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                          ],
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -812,33 +628,7 @@ class _HomeMapState extends State<HomeMap> {
                                                     BorderRadius.circular(10)),
                                             borderSide: BorderSide(
                                                 color: darkBlue, width: 2),
-                                            onPressed: () {
-                                              Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      HospitalDetails(
-                                                    // imgLink: hospitals[2]
-                                                    //     ['imgLink'],
-                                                    hospitalName: hospitals[2]
-                                                        ['fullName'],
-                                                    instituteType: hospitals[2]
-                                                        ['instituteType'],
-                                                    oxygenBeds: hospitals[1]
-                                                        ['noOfOxygenBeds'],
-                                                    ventilatorBeds: hospitals[2]
-                                                        ['noOfVentilatorBeds'],
-                                                    oxygenCylinders: hospitals[
-                                                            2]
-                                                        ['noOfOxygenCylinders'],
-                                                    address: hospitals[2]
-                                                        ['address'],
-                                                    contactNos: hospitals[2]
-                                                        ['phNos'],
-                                                  ),
-                                                ),
-                                              );
-                                            },
+                                            onPressed: () {},
                                           ),
                                         ),
                                       ],
@@ -944,11 +734,26 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        MapComponent(
-                                          // icb: 12,
-                                          oxygenBedCount: 8,
-                                          ventilatorBedCount: 4,
-                                          isolationBedCount: 33,
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                          ],
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -971,33 +776,7 @@ class _HomeMapState extends State<HomeMap> {
                                                     BorderRadius.circular(10)),
                                             borderSide: BorderSide(
                                                 color: darkBlue, width: 2),
-                                            onPressed: () {
-                                              Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      HospitalDetails(
-                                                    // imgLink: hospitals[2]
-                                                    //     ['imgLink'],
-                                                    hospitalName: hospitals[2]
-                                                        ['fullName'],
-                                                    instituteType: hospitals[2]
-                                                        ['instituteType'],
-                                                    oxygenBeds: hospitals[1]
-                                                        ['noOfOxygenBeds'],
-                                                    ventilatorBeds: hospitals[2]
-                                                        ['noOfVentilatorBeds'],
-                                                    oxygenCylinders: hospitals[
-                                                            2]
-                                                        ['noOfOxygenCylinders'],
-                                                    address: hospitals[2]
-                                                        ['address'],
-                                                    contactNos: hospitals[2]
-                                                        ['phNos'],
-                                                  ),
-                                                ),
-                                              );
-                                            },
+                                            onPressed: () {},
                                           ),
                                         ),
                                       ],
@@ -1103,11 +882,26 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        MapComponent(
-                                          // icb: 12,
-                                          oxygenBedCount: 8,
-                                          ventilatorBedCount: 4,
-                                          isolationBedCount: 33,
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                          ],
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -1130,33 +924,7 @@ class _HomeMapState extends State<HomeMap> {
                                                     BorderRadius.circular(10)),
                                             borderSide: BorderSide(
                                                 color: darkBlue, width: 2),
-                                            onPressed: () {
-                                              Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      HospitalDetails(
-                                                    // imgLink: hospitals[2]
-                                                    //     ['imgLink'],
-                                                    hospitalName: hospitals[2]
-                                                        ['fullName'],
-                                                    instituteType: hospitals[2]
-                                                        ['instituteType'],
-                                                    oxygenBeds: hospitals[1]
-                                                        ['noOfOxygenBeds'],
-                                                    ventilatorBeds: hospitals[2]
-                                                        ['noOfVentilatorBeds'],
-                                                    oxygenCylinders: hospitals[
-                                                            2]
-                                                        ['noOfOxygenCylinders'],
-                                                    address: hospitals[2]
-                                                        ['address'],
-                                                    contactNos: hospitals[2]
-                                                        ['phNos'],
-                                                  ),
-                                                ),
-                                              );
-                                            },
+                                            onPressed: () {},
                                           ),
                                         ),
                                       ],
@@ -1262,11 +1030,26 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        MapComponent(
-                                          // icb: 12,
-                                          oxygenBedCount: 8,
-                                          ventilatorBedCount: 4,
-                                          isolationBedCount: 33,
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                          ],
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -1289,33 +1072,7 @@ class _HomeMapState extends State<HomeMap> {
                                                     BorderRadius.circular(10)),
                                             borderSide: BorderSide(
                                                 color: darkBlue, width: 2),
-                                            onPressed: () {
-                                              Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      HospitalDetails(
-                                                    // imgLink: hospitals[2]
-                                                    //     ['imgLink'],
-                                                    hospitalName: hospitals[2]
-                                                        ['fullName'],
-                                                    instituteType: hospitals[2]
-                                                        ['instituteType'],
-                                                    oxygenBeds: hospitals[1]
-                                                        ['noOfOxygenBeds'],
-                                                    ventilatorBeds: hospitals[2]
-                                                        ['noOfVentilatorBeds'],
-                                                    oxygenCylinders: hospitals[
-                                                            2]
-                                                        ['noOfOxygenCylinders'],
-                                                    address: hospitals[2]
-                                                        ['address'],
-                                                    contactNos: hospitals[2]
-                                                        ['phNos'],
-                                                  ),
-                                                ),
-                                              );
-                                            },
+                                            onPressed: () {},
                                           ),
                                         ),
                                       ],
@@ -1421,11 +1178,26 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        MapComponent(
-                                          // icb: 12,
-                                          oxygenBedCount: 8,
-                                          ventilatorBedCount: 4,
-                                          isolationBedCount: 33,
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                          ],
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -1448,33 +1220,7 @@ class _HomeMapState extends State<HomeMap> {
                                                     BorderRadius.circular(10)),
                                             borderSide: BorderSide(
                                                 color: darkBlue, width: 2),
-                                            onPressed: () {
-                                              Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      HospitalDetails(
-                                                    // imgLink: hospitals[2]
-                                                    //     ['imgLink'],
-                                                    hospitalName: hospitals[2]
-                                                        ['fullName'],
-                                                    instituteType: hospitals[2]
-                                                        ['instituteType'],
-                                                    oxygenBeds: hospitals[1]
-                                                        ['noOfOxygenBeds'],
-                                                    ventilatorBeds: hospitals[2]
-                                                        ['noOfVentilatorBeds'],
-                                                    oxygenCylinders: hospitals[
-                                                            2]
-                                                        ['noOfOxygenCylinders'],
-                                                    address: hospitals[2]
-                                                        ['address'],
-                                                    contactNos: hospitals[2]
-                                                        ['phNos'],
-                                                  ),
-                                                ),
-                                              );
-                                            },
+                                            onPressed: () {},
                                           ),
                                         ),
                                       ],
@@ -1580,11 +1326,26 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        MapComponent(
-                                          // icb: 12,
-                                          oxygenBedCount: 8,
-                                          ventilatorBedCount: 4,
-                                          isolationBedCount: 33,
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                          ],
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -1607,33 +1368,7 @@ class _HomeMapState extends State<HomeMap> {
                                                     BorderRadius.circular(10)),
                                             borderSide: BorderSide(
                                                 color: darkBlue, width: 2),
-                                            onPressed: () {
-                                              Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      HospitalDetails(
-                                                    // imgLink: hospitals[2]
-                                                    //     ['imgLink'],
-                                                    hospitalName: hospitals[2]
-                                                        ['fullName'],
-                                                    instituteType: hospitals[2]
-                                                        ['instituteType'],
-                                                    oxygenBeds: hospitals[1]
-                                                        ['noOfOxygenBeds'],
-                                                    ventilatorBeds: hospitals[2]
-                                                        ['noOfVentilatorBeds'],
-                                                    oxygenCylinders: hospitals[
-                                                            2]
-                                                        ['noOfOxygenCylinders'],
-                                                    address: hospitals[2]
-                                                        ['address'],
-                                                    contactNos: hospitals[2]
-                                                        ['phNos'],
-                                                  ),
-                                                ),
-                                              );
-                                            },
+                                            onPressed: () {},
                                           ),
                                         ),
                                       ],
@@ -1743,11 +1478,26 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        MapComponent(
-                                          // icb: 12,
-                                          oxygenBedCount: 8,
-                                          ventilatorBedCount: 4,
-                                          isolationBedCount: 33,
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                          ],
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -1770,33 +1520,7 @@ class _HomeMapState extends State<HomeMap> {
                                                     BorderRadius.circular(10)),
                                             borderSide: BorderSide(
                                                 color: darkBlue, width: 2),
-                                            onPressed: () {
-                                              Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      HospitalDetails(
-                                                    // imgLink: hospitals[2]
-                                                    //     ['imgLink'],
-                                                    hospitalName: hospitals[2]
-                                                        ['fullName'],
-                                                    instituteType: hospitals[2]
-                                                        ['instituteType'],
-                                                    oxygenBeds: hospitals[1]
-                                                        ['noOfOxygenBeds'],
-                                                    ventilatorBeds: hospitals[2]
-                                                        ['noOfVentilatorBeds'],
-                                                    oxygenCylinders: hospitals[
-                                                            2]
-                                                        ['noOfOxygenCylinders'],
-                                                    address: hospitals[2]
-                                                        ['address'],
-                                                    contactNos: hospitals[2]
-                                                        ['phNos'],
-                                                  ),
-                                                ),
-                                              );
-                                            },
+                                            onPressed: () {},
                                           ),
                                         ),
                                       ],
@@ -1902,11 +1626,26 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        MapComponent(
-                                          // icb: 12,
-                                          oxygenBedCount: 8,
-                                          ventilatorBedCount: 4,
-                                          isolationBedCount: 33,
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                          ],
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -1929,33 +1668,7 @@ class _HomeMapState extends State<HomeMap> {
                                                     BorderRadius.circular(10)),
                                             borderSide: BorderSide(
                                                 color: darkBlue, width: 2),
-                                            onPressed: () {
-                                              Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      HospitalDetails(
-                                                    // imgLink: hospitals[2]
-                                                    //     ['imgLink'],
-                                                    hospitalName: hospitals[2]
-                                                        ['fullName'],
-                                                    instituteType: hospitals[2]
-                                                        ['instituteType'],
-                                                    oxygenBeds: hospitals[1]
-                                                        ['noOfOxygenBeds'],
-                                                    ventilatorBeds: hospitals[2]
-                                                        ['noOfVentilatorBeds'],
-                                                    oxygenCylinders: hospitals[
-                                                            2]
-                                                        ['noOfOxygenCylinders'],
-                                                    address: hospitals[2]
-                                                        ['address'],
-                                                    contactNos: hospitals[2]
-                                                        ['phNos'],
-                                                  ),
-                                                ),
-                                              );
-                                            },
+                                            onPressed: () {},
                                           ),
                                         ),
                                       ],
@@ -2061,11 +1774,26 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        MapComponent(
-                                          // icb: 12,
-                                          oxygenBedCount: 8,
-                                          ventilatorBedCount: 4,
-                                          isolationBedCount: 33,
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                          ],
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -2088,33 +1816,7 @@ class _HomeMapState extends State<HomeMap> {
                                                     BorderRadius.circular(10)),
                                             borderSide: BorderSide(
                                                 color: darkBlue, width: 2),
-                                            onPressed: () {
-                                              Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      HospitalDetails(
-                                                    // imgLink: hospitals[2]
-                                                    //     ['imgLink'],
-                                                    hospitalName: hospitals[2]
-                                                        ['fullName'],
-                                                    instituteType: hospitals[2]
-                                                        ['instituteType'],
-                                                    oxygenBeds: hospitals[1]
-                                                        ['noOfOxygenBeds'],
-                                                    ventilatorBeds: hospitals[2]
-                                                        ['noOfVentilatorBeds'],
-                                                    oxygenCylinders: hospitals[
-                                                            2]
-                                                        ['noOfOxygenCylinders'],
-                                                    address: hospitals[2]
-                                                        ['address'],
-                                                    contactNos: hospitals[2]
-                                                        ['phNos'],
-                                                  ),
-                                                ),
-                                              );
-                                            },
+                                            onPressed: () {},
                                           ),
                                         ),
                                       ],
@@ -2220,11 +1922,26 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        MapComponent(
-                                          // icb: 12,
-                                          oxygenBedCount: 8,
-                                          ventilatorBedCount: 4,
-                                          isolationBedCount: 33,
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                          ],
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -2247,33 +1964,7 @@ class _HomeMapState extends State<HomeMap> {
                                                     BorderRadius.circular(10)),
                                             borderSide: BorderSide(
                                                 color: darkBlue, width: 2),
-                                            onPressed: () {
-                                              Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      HospitalDetails(
-                                                    // imgLink: hospitals[2]
-                                                    //     ['imgLink'],
-                                                    hospitalName: hospitals[2]
-                                                        ['fullName'],
-                                                    instituteType: hospitals[2]
-                                                        ['instituteType'],
-                                                    oxygenBeds: hospitals[1]
-                                                        ['noOfOxygenBeds'],
-                                                    ventilatorBeds: hospitals[2]
-                                                        ['noOfVentilatorBeds'],
-                                                    oxygenCylinders: hospitals[
-                                                            2]
-                                                        ['noOfOxygenCylinders'],
-                                                    address: hospitals[2]
-                                                        ['address'],
-                                                    contactNos: hospitals[2]
-                                                        ['phNos'],
-                                                  ),
-                                                ),
-                                              );
-                                            },
+                                            onPressed: () {},
                                           ),
                                         ),
                                       ],
@@ -2379,11 +2070,26 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        MapComponent(
-                                          // icb: 12,
-                                          oxygenBedCount: 8,
-                                          ventilatorBedCount: 4,
-                                          isolationBedCount: 33,
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                          ],
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -2406,33 +2112,7 @@ class _HomeMapState extends State<HomeMap> {
                                                     BorderRadius.circular(10)),
                                             borderSide: BorderSide(
                                                 color: darkBlue, width: 2),
-                                            onPressed: () {
-                                              Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      HospitalDetails(
-                                                    // imgLink: hospitals[2]
-                                                    //     ['imgLink'],
-                                                    hospitalName: hospitals[2]
-                                                        ['fullName'],
-                                                    instituteType: hospitals[2]
-                                                        ['instituteType'],
-                                                    oxygenBeds: hospitals[1]
-                                                        ['noOfOxygenBeds'],
-                                                    ventilatorBeds: hospitals[2]
-                                                        ['noOfVentilatorBeds'],
-                                                    oxygenCylinders: hospitals[
-                                                            2]
-                                                        ['noOfOxygenCylinders'],
-                                                    address: hospitals[2]
-                                                        ['address'],
-                                                    contactNos: hospitals[2]
-                                                        ['phNos'],
-                                                  ),
-                                                ),
-                                              );
-                                            },
+                                            onPressed: () {},
                                           ),
                                         ),
                                       ],
@@ -2538,11 +2218,26 @@ class _HomeMapState extends State<HomeMap> {
                                           ),
                                         ),
                                         // THE COUNT ZONE
-                                        MapComponent(
-                                          // icb: 12,
-                                          oxygenBedCount: 8,
-                                          ventilatorBedCount: 4,
-                                          isolationBedCount: 33,
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                            MComp(
+                                              count: 12,
+                                              color: yellow,
+                                              type: 'Oxygen Bed',
+                                            ),
+                                          ],
                                         ),
                                         // BUTTON UP
                                         Container(
@@ -2565,33 +2260,7 @@ class _HomeMapState extends State<HomeMap> {
                                                     BorderRadius.circular(10)),
                                             borderSide: BorderSide(
                                                 color: darkBlue, width: 2),
-                                            onPressed: () {
-                                              Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      HospitalDetails(
-                                                    // imgLink: hospitals[2]
-                                                    //     ['imgLink'],
-                                                    hospitalName: hospitals[2]
-                                                        ['fullName'],
-                                                    instituteType: hospitals[2]
-                                                        ['instituteType'],
-                                                    oxygenBeds: hospitals[1]
-                                                        ['noOfOxygenBeds'],
-                                                    ventilatorBeds: hospitals[2]
-                                                        ['noOfVentilatorBeds'],
-                                                    oxygenCylinders: hospitals[
-                                                            2]
-                                                        ['noOfOxygenCylinders'],
-                                                    address: hospitals[2]
-                                                        ['address'],
-                                                    contactNos: hospitals[2]
-                                                        ['phNos'],
-                                                  ),
-                                                ),
-                                              );
-                                            },
+                                            onPressed: () {},
                                           ),
                                         ),
                                       ],
