@@ -5,6 +5,7 @@ import 'package:pycare/components/info_card.dart';
 import 'package:pycare/components/my_appbar.dart';
 import 'package:pycare/components/my_colors.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class AboutUs extends StatelessWidget {
   final List<InfoCard> details = [
@@ -125,12 +126,13 @@ class AboutUs extends StatelessWidget {
             padding: const EdgeInsets.all(10.0),
             child: Container(
               width: double.infinity,
-              height: 150,
+              height: 140,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(40),
+                borderRadius: BorderRadius.circular(18),
                 image: DecorationImage(
-                  image: NetworkImage(
-                      "https://pbs.twimg.com/profile_images/1173471139911221248/mZFiQFW6_400x400.jpg"),
+                  image: CachedNetworkImageProvider(
+                    "https://github.com/DSC-PEC-Puducherry/PyCare/blob/master/images/dsc_logo.png?raw=true",
+                  ),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -178,6 +180,7 @@ class AboutUs extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: GridView.count(
               shrinkWrap: true,
+              childAspectRatio: (3 / 4),
               physics: ScrollPhysics(),
               crossAxisCount: 2,
               children: List.generate(details.length, (index) {
