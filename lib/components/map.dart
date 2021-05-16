@@ -29,146 +29,145 @@ class MapComponent extends StatelessWidget {
                   padding: const EdgeInsets.only(
                     left: 20.0,
                   ),
-                  child: Center(
-                    child: Row(
-                      children: [
-                        // Oxygen Beds
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            bottom: 10.0,
-                            right: 10.0,
-                            left: 10.0,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      // Oxygen Beds
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          bottom: 10.0,
+                          right: 10.0,
+                          left: 10.0,
+                        ),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: green,
+                            borderRadius: BorderRadius.circular(10.0),
                           ),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: green,
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            height: 110,
-                            width: 110,
-                            child: Column(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                    top: 15.0,
-                                    bottom: 5.0,
-                                  ),
-                                  child: Text(
-                                    oxygenBedCount.toString(),
-                                    textAlign: TextAlign.center,
-                                    style: GoogleFonts.poppins(
-                                      fontSize: 26,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                          height: 110,
+                          width: 110,
+                          child: Column(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                  top: 15.0,
+                                  bottom: 5.0,
+                                ),
+                                child: Text(
+                                  oxygenBedCount.toString(),
+                                  textAlign: TextAlign.center,
+                                  style: GoogleFonts.poppins(
+                                    fontSize: 26,
+                                    fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.only(bottom: 9.0),
-                                  child: Text(
-                                    'Oxygen Beds',
-                                    textAlign: TextAlign.center,
-                                    maxLines: 3,
-                                    style: GoogleFonts.poppins(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold),
-                                  ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(bottom: 9.0),
+                                child: Text(
+                                  'Oxygen Beds',
+                                  textAlign: TextAlign.center,
+                                  maxLines: 3,
+                                  style: GoogleFonts.poppins(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold),
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
-                        //Ventilator beds
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            bottom: 10.0,
+                      ),
+                      //Ventilator beds
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          bottom: 10.0,
+                        ),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: yellow,
+                            borderRadius: BorderRadius.circular(10.0),
                           ),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: yellow,
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            height: 110,
-                            width: 110,
-                            child: Column(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                    top: 15.0,
-                                    bottom: 5.0,
-                                  ),
-                                  child: Text(
-                                    ventilatorBedCount.toString(),
-                                    textAlign: TextAlign.center,
-                                    style: GoogleFonts.poppins(
-                                      fontSize: 26,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                          height: 110,
+                          width: 110,
+                          child: Column(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                  top: 15.0,
+                                  bottom: 5.0,
+                                ),
+                                child: Text(
+                                  ventilatorBedCount.toString(),
+                                  textAlign: TextAlign.center,
+                                  style: GoogleFonts.poppins(
+                                    fontSize: 26,
+                                    fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.only(bottom: 9.0),
-                                  child: Text(
-                                    'Ventilator Beds',
-                                    textAlign: TextAlign.center,
-                                    maxLines: 3,
-                                    style: GoogleFonts.poppins(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold),
-                                  ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(bottom: 9.0),
+                                child: Text(
+                                  'Ventilator Beds',
+                                  textAlign: TextAlign.center,
+                                  maxLines: 3,
+                                  style: GoogleFonts.poppins(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold),
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
+                      ),
 
-                        // Ventilator Beds
+                      // Ventilator Beds
 
-                        // Oxygen Cylinders
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            left: 10.0,
-                            bottom: 10.0,
-                            right: 20.0,
+                      // Oxygen Cylinders
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          left: 10.0,
+                          bottom: 10.0,
+                          right: 20.0,
+                        ),
+                        child: Container(
+                          height: 110,
+                          width: 110,
+                          decoration: BoxDecoration(
+                            color: lightBlue,
+                            borderRadius: BorderRadius.circular(10.0),
                           ),
-                          child: Container(
-                            height: 110,
-                            width: 110,
-                            decoration: BoxDecoration(
-                              color: lightBlue,
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            child: Column(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                    top: 15.0,
-                                    bottom: 5.0,
-                                  ),
-                                  child: Text(
-                                    isolationBedCount.toString(),
-                                    style: GoogleFonts.poppins(
-                                      fontSize: 26,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                          child: Column(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                  top: 15.0,
+                                  bottom: 5.0,
+                                ),
+                                child: Text(
+                                  isolationBedCount.toString(),
+                                  style: GoogleFonts.poppins(
+                                    fontSize: 26,
+                                    fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.only(bottom: 9.0),
-                                  child: Text(
-                                    'Isolation Beds',
-                                    textAlign: TextAlign.center,
-                                    maxLines: 3,
-                                    style: GoogleFonts.poppins(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.bold),
-                                  ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(bottom: 9.0),
+                                child: Text(
+                                  'Isolation Beds',
+                                  textAlign: TextAlign.center,
+                                  maxLines: 3,
+                                  style: GoogleFonts.poppins(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold),
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ),

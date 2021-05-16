@@ -1,17 +1,26 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
+import 'package:pycare/components/my_colors.dart';
+import 'package:pycare/providers/fetch_data.dart';
 import 'package:pycare/screens/about_us.dart';
 import 'package:pycare/screens/home.dart';
-import 'package:pycare/screens/map_trial.dart';
+import 'package:pycare/screens/hospitals_list.dart';
 import 'package:pycare/screens/maps.dart';
 import 'package:pycare/screens/vaccination.dart';
 
-import 'components/my_colors.dart';
-import 'screens/hospitals_list.dart';
-
 void main() {
-  runApp(MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => FetchData(),
+        ),
+      ],
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -23,8 +32,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-// MAKE CHANGES HERE FOR SCREEN!!!!
 
 class Bar extends StatefulWidget {
   @override
@@ -43,98 +50,106 @@ class _BarState extends State<Bar> {
   ];
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: _screens[_currentIndex],
-      bottomNavigationBar: ClipRRect(
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(15.0),
-          topRight: Radius.circular(15.0),
-        ),
-        child: BottomNavyBar(
-          curve: Curves.elasticInOut,
-          backgroundColor: appBarCol,
-          selectedIndex: _currentIndex,
-          onItemSelected: (index) {
-            setState(
-              () {
-                _currentIndex = index;
-              },
+    return Consumer<FetchData>(builder: (context, api, child) {
+      return api.loading
+          ? Scaffold(
+              body: Center(
+                child: CircularProgressIndicator(),
+              ),
+            )
+          : Scaffold(
+              body: _screens[_currentIndex],
+              bottomNavigationBar: ClipRRect(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(15.0),
+                  topRight: Radius.circular(15.0),
+                ),
+                child: BottomNavyBar(
+                  curve: Curves.elasticInOut,
+                  backgroundColor: appBarCol,
+                  selectedIndex: _currentIndex,
+                  onItemSelected: (index) {
+                    setState(
+                      () {
+                        _currentIndex = index;
+                      },
+                    );
+                  },
+                  items: <BottomNavyBarItem>[
+                    BottomNavyBarItem(
+                      icon: FaIcon(
+                        FontAwesomeIcons.home,
+                        color: Colors.white,
+                      ),
+                      title: Text(
+                        " HOME",
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      activeColor: Colors.indigo.shade900,
+                      inactiveColor: Colors.white,
+                    ),
+                    BottomNavyBarItem(
+                      icon: FaIcon(
+                        FontAwesomeIcons.hospital,
+                        color: Colors.white,
+                      ),
+                      title: Text(
+                        " HOSPITAL",
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      activeColor: Colors.indigo.shade900,
+                      inactiveColor: Colors.white,
+                    ),
+                    BottomNavyBarItem(
+                      icon: FaIcon(
+                        FontAwesomeIcons.syringe,
+                        color: Colors.white,
+                      ),
+                      title: Text(
+                        " VACCINE",
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      activeColor: Colors.indigo.shade900,
+                      inactiveColor: Colors.white,
+                    ),
+                    BottomNavyBarItem(
+                      icon: FaIcon(
+                        FontAwesomeIcons.map,
+                        color: Colors.white,
+                      ),
+                      title: Text(
+                        "  MAP",
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      activeColor: Colors.indigo.shade900,
+                      inactiveColor: Colors.white,
+                    ),
+                    BottomNavyBarItem(
+                      icon: FaIcon(
+                        FontAwesomeIcons.users,
+                        color: Colors.white,
+                      ),
+                      title: Text(
+                        " ABOUT US",
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      activeColor: Colors.indigo.shade900,
+                      inactiveColor: Colors.white,
+                    ),
+                  ],
+                ),
+              ),
             );
-          },
-          items: <BottomNavyBarItem>[
-            BottomNavyBarItem(
-              icon: FaIcon(
-                FontAwesomeIcons.home,
-                color: Colors.white,
-              ),
-              title: Text(
-                " HOME",
-                style: TextStyle(
-                  color: Colors.white,
-                ),
-              ),
-              activeColor: Colors.indigo.shade900,
-              inactiveColor: Colors.white,
-            ),
-            BottomNavyBarItem(
-              icon: FaIcon(
-                FontAwesomeIcons.hospital,
-                color: Colors.white,
-              ),
-              title: Text(
-                " HOSPITAL",
-                style: TextStyle(
-                  color: Colors.white,
-                ),
-              ),
-              activeColor: Colors.indigo.shade900,
-              inactiveColor: Colors.white,
-            ),
-            BottomNavyBarItem(
-              icon: FaIcon(
-                FontAwesomeIcons.syringe,
-                color: Colors.white,
-              ),
-              title: Text(
-                " VACCINE",
-                style: TextStyle(
-                  color: Colors.white,
-                ),
-              ),
-              activeColor: Colors.indigo.shade900,
-              inactiveColor: Colors.white,
-            ),
-            BottomNavyBarItem(
-              icon: FaIcon(
-                FontAwesomeIcons.map,
-                color: Colors.white,
-              ),
-              title: Text(
-                "  MAP",
-                style: TextStyle(
-                  color: Colors.white,
-                ),
-              ),
-              activeColor: Colors.indigo.shade900,
-              inactiveColor: Colors.white,
-            ),
-            BottomNavyBarItem(
-              icon: FaIcon(
-                FontAwesomeIcons.users,
-                color: Colors.white,
-              ),
-              title: Text(
-                " ABOUT US",
-                style: TextStyle(
-                  color: Colors.white,
-                ),
-              ),
-              activeColor: Colors.indigo.shade900,
-              inactiveColor: Colors.white,
-            ),
-          ],
-        ),
-      ),
-    );
+    });
   }
 }

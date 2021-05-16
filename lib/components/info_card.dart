@@ -52,12 +52,12 @@ class InfoCard extends StatelessWidget {
               child: CachedNetworkImage(
                 imageUrl: '$imgLink',
                 imageBuilder: (context, imageProvider) => Container(
-                  width: 85.0,
-                  height: 85.0,
+                  width: 74,
+                  height: 74,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    image: DecorationImage(
-                        image: imageProvider, fit: BoxFit.cover),
+                    image:
+                        DecorationImage(image: imageProvider, fit: BoxFit.fill),
                   ),
                 ),
                 placeholder: (context, url) => CircularProgressIndicator(),

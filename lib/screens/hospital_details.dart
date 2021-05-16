@@ -133,29 +133,27 @@ class _HospitalDetailsState extends State<HospitalDetails> {
                                     borderRadius: BorderRadius.circular(9),
                                     color: green,
                                   ),
-                                  child: SafeArea(
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Center(
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            MyText(
-                                              text: widget.oxygenBeds,
-                                              fontWeight: 'BOLD',
-                                              color: Colors.black,
-                                              size: 25,
-                                            ),
-                                            Text(
-                                              'Oxygen Beds',
-                                              textAlign: TextAlign.center,
-                                              style: GoogleFonts.poppins(
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 12),
-                                            )
-                                          ],
-                                        ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Center(
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          MyText(
+                                            text: widget.oxygenBeds,
+                                            fontWeight: 'BOLD',
+                                            color: Colors.black,
+                                            size: 25,
+                                          ),
+                                          Text(
+                                            'Oxygen Beds',
+                                            textAlign: TextAlign.center,
+                                            style: GoogleFonts.poppins(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 12),
+                                          ),
+                                        ],
                                       ),
                                     ),
                                   ),
@@ -170,27 +168,25 @@ class _HospitalDetailsState extends State<HospitalDetails> {
                                     borderRadius: BorderRadius.circular(9),
                                     color: yellow,
                                   ),
-                                  child: SafeArea(
-                                    child: Center(
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          MyText(
-                                            text: widget.ventilatorBeds,
-                                            fontWeight: 'BOLD',
-                                            color: Colors.black,
-                                            size: 25,
-                                          ),
-                                          Text(
-                                            'Ventilator Beds',
-                                            textAlign: TextAlign.center,
-                                            style: GoogleFonts.poppins(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 12),
-                                          )
-                                        ],
-                                      ),
+                                  child: Center(
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        MyText(
+                                          text: widget.ventilatorBeds,
+                                          fontWeight: 'BOLD',
+                                          color: Colors.black,
+                                          size: 25,
+                                        ),
+                                        Text(
+                                          'Ventilator Beds',
+                                          textAlign: TextAlign.center,
+                                          style: GoogleFonts.poppins(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 12),
+                                        )
+                                      ],
                                     ),
                                   ),
                                 ),
@@ -204,30 +200,28 @@ class _HospitalDetailsState extends State<HospitalDetails> {
                                     borderRadius: BorderRadius.circular(9),
                                     color: lightBlue,
                                   ),
-                                  child: SafeArea(
-                                    child: Center(
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          MyText(
-                                            text: widget.oxygenCylinders,
-                                            fontWeight: 'BOLD',
-                                            color: Colors.black,
-                                            size: 25,
-                                          ),
-                                          Text(
-                                            'Oxygen Cylinders',
-                                            textAlign: TextAlign.center,
-                                            style: GoogleFonts.poppins(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 12),
-                                          )
-                                        ],
-                                      ),
+                                  child: Center(
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        MyText(
+                                          text: widget.oxygenCylinders,
+                                          fontWeight: 'BOLD',
+                                          color: Colors.black,
+                                          size: 25,
+                                        ),
+                                        Text(
+                                          'Oxygen Cylinders',
+                                          textAlign: TextAlign.center,
+                                          style: GoogleFonts.poppins(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 12),
+                                        )
+                                      ],
                                     ),
                                   ),
-                                )
+                                ),
                               ],
                             )
                           ],

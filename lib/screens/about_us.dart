@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -5,7 +6,6 @@ import 'package:pycare/components/info_card.dart';
 import 'package:pycare/components/my_appbar.dart';
 import 'package:pycare/components/my_colors.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 
 class AboutUs extends StatelessWidget {
   final List<InfoCard> details = [
@@ -176,17 +176,15 @@ class AboutUs extends StatelessWidget {
             thickness: 2,
             color: darkBlue,
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: GridView.count(
-              shrinkWrap: true,
-              childAspectRatio: (3 / 4),
-              physics: ScrollPhysics(),
-              crossAxisCount: 2,
-              children: List.generate(details.length, (index) {
-                return details[index];
-              }),
-            ),
+          GridView.count(
+            padding: EdgeInsets.all(8),
+            shrinkWrap: true,
+            childAspectRatio: (1 / 1),
+            physics: ScrollPhysics(),
+            crossAxisCount: 2,
+            children: List.generate(details.length, (index) {
+              return details[index];
+            }),
           ),
         ],
       ),
