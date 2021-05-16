@@ -7,6 +7,7 @@ import 'package:pycare/components/my_appbar.dart';
 import 'package:pycare/components/my_colors.dart';
 import 'package:pycare/components/precautions_scroll.dart';
 import 'package:pycare/providers/fetch_data.dart';
+import 'package:pycare/providers/translation.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -18,7 +19,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<FetchData>(builder: (context, api, child) {
+    return Consumer2<FetchData, TranslationText>(
+        builder: (context, api, translation, child) {
       int totalReported = int.parse(api.status["total"]);
 
       Map<String, double> dataMap = api.status.map((key, value) {
@@ -31,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
       return Scaffold(
         backgroundColor: bgColor,
         appBar: MyAppBar(
-          title: 'PYCARE',
+          title: translation.getTranslatedText("PYCARE"),
         ),
         body: SingleChildScrollView(
           child: Column(

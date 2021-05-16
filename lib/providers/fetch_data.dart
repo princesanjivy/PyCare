@@ -9,9 +9,6 @@ class FetchData with ChangeNotifier {
 
   Map status;
   List hospitalDetails;
-  Map translation = {
-    "pycare": ["பைக்கேர்", "पता"],
-  };
 
   FetchData() {
     getAllData();

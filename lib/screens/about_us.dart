@@ -2,10 +2,11 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'package:pycare/components/info_card.dart';
 import 'package:pycare/components/my_appbar.dart';
 import 'package:pycare/components/my_colors.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:pycare/providers/translation.dart';
 
 class AboutUs extends StatelessWidget {
   final List<InfoCard> details = [
@@ -113,81 +114,84 @@ class AboutUs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final title = 'About Us';
-
-    return Scaffold(
-      backgroundColor: bgColor,
-      appBar: MyAppBar(
-        title: title,
-      ),
-      body: ListView(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Container(
-              width: double.infinity,
-              height: 140,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(18),
-                image: DecorationImage(
-                  image: CachedNetworkImageProvider(
-                    "https://github.com/DSC-PEC-Puducherry/PyCare/blob/master/images/dsc_logo.png?raw=true",
+    return Consumer<TranslationText>(builder: (context, translation, child) {
+      return Scaffold(
+        backgroundColor: bgColor,
+        appBar: MyAppBar(
+          title: translation.getTranslatedText("About Us"),
+        ),
+        body: ListView(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Container(
+                width: double.infinity,
+                height: 140,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(18),
+                  image: DecorationImage(
+                    image: CachedNetworkImageProvider(
+                      "https://github.com/DSC-PEC-Puducherry/PyCare/blob/master/images/dsc_logo.png?raw=true",
+                    ),
+                    fit: BoxFit.cover,
                   ),
-                  fit: BoxFit.cover,
                 ),
               ),
             ),
-          ),
-          Center(
-            child: Text(
-              "An Outcome of Google DSC PTU,Puducherry",
-              style: GoogleFonts.poppins(
-                textStyle: TextStyle(
-                  fontSize: 15,
-                  fontStyle: FontStyle.italic,
-                  //color: Colors.white,
+            Center(
+              child: Text(
+                "An Outcome of Google DSC PTU,Puducherry",
+                style: GoogleFonts.poppins(
+                  textStyle: TextStyle(
+                    fontSize: 15,
+                    fontStyle: FontStyle.italic,
+                    //color: Colors.white,
+                  ),
                 ),
               ),
             ),
-          ),
-          Center(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                IconButton(
-                  icon: Icon(FontAwesomeIcons.envelope),
-                  iconSize: 25,
-                  onPressed: () {
-                    launch("mailto:google.dsc@pec.edu");
-                  },
-                ),
-                IconButton(
-                  icon: Icon(FontAwesomeIcons.instagram),
-                  iconSize: 25,
-                  onPressed: () {
-                    launch('https://www.instagram.com/dsc_pec/');
-                  },
-                ),
-              ],
+            Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  IconButton(
+                    icon: Icon(FontAwesomeIcons.envelope),
+                    iconSize: 25,
+                    onPressed: () {
+                      translation.setCurrentLanguage("tamil");
+                      // launch("mailto:google.dsc@pec.edu");
+                    },
+                  ),
+                  IconButton(
+                    icon: Icon(FontAwesomeIcons.instagram),
+                    iconSize: 25,
+                    onPressed: () {
+                      translation.setCurrentLanguage("hindi");
+
+                      // launch('https://www.instagram.com/dsc_pec/');
+                    },
+                  ),
+                ],
+              ),
             ),
-          ),
-          Divider(
-            height: 30,
-            thickness: 2,
-            color: darkBlue,
-          ),
-          GridView.count(
-            padding: EdgeInsets.all(8),
-            shrinkWrap: true,
-            childAspectRatio: (1 / 1),
-            physics: ScrollPhysics(),
-            crossAxisCount: 2,
-            children: List.generate(details.length, (index) {
-              return details[index];
-            }),
-          ),
-        ],
-      ),
-    );
+            Divider(
+              height: 30,
+              thickness: 2,
+              color: darkBlue,
+            ),
+            GridView.count(
+              padding: EdgeInsets.all(8),
+              shrinkWrap: true,
+              childAspectRatio: (1 / 1),
+              physics: ScrollPhysics(),
+              crossAxisCount: 2,
+              children: List.generate(details.length, (index) {
+                return details[index];
+              }),
+            ),
+          ],
+        ),
+      );
+    });
   }
 }

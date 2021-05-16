@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:pycare/components/my_colors.dart';
 import 'package:pycare/providers/fetch_data.dart';
+import 'package:pycare/providers/translation.dart';
 import 'package:pycare/screens/about_us.dart';
 import 'package:pycare/screens/home.dart';
 import 'package:pycare/screens/hospitals_list.dart';
@@ -16,6 +17,9 @@ void main() {
       providers: [
         ChangeNotifierProvider(
           create: (_) => FetchData(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => TranslationText(),
         ),
       ],
       child: MyApp(),
