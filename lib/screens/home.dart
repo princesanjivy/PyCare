@@ -5,9 +5,12 @@ import 'package:provider/provider.dart';
 import 'package:pycare/components/hcard.dart';
 import 'package:pycare/components/my_appbar.dart';
 import 'package:pycare/components/my_colors.dart';
+import 'package:pycare/components/popup.dart';
 import 'package:pycare/components/precautions_scroll.dart';
 import 'package:pycare/providers/fetch_data.dart';
 import 'package:pycare/providers/translation.dart';
+
+import '../components/my_colors.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -32,8 +35,21 @@ class _HomeScreenState extends State<HomeScreen> {
 
       return Scaffold(
         backgroundColor: bgColor,
-        appBar: MyAppBar(
-          title: translation.getTranslatedText(context, "PYCARE"),
+        appBar: AppBar(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(
+              bottom: Radius.circular(15),
+            ),
+          ),
+          title: Text(
+            translation.getTranslatedText(context, "PYCARE"),
+            style: GoogleFonts.poppins(),
+          ),
+          centerTitle: true,
+          backgroundColor: appBarCol,
+          actions: [
+            popup(),
+          ],
         ),
         body: SingleChildScrollView(
           child: Column(
