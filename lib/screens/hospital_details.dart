@@ -17,10 +17,14 @@ class HospitalDetails extends StatefulWidget {
   final String ventilatorBeds;
   final String isolationBeds;
   final String address;
+  final String latitude;
+  final String longitude;
   final List contactNos;
 
   HospitalDetails(
-      {this.imgLink,
+      {this.latitude,
+      this.longitude,
+      this.imgLink,
       this.hospitalName,
       this.instituteType,
       this.oxygenBeds,
@@ -46,12 +50,13 @@ class _HospitalDetailsState extends State<HospitalDetails> {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
     return Consumer2<FetchData, TranslationText>(
         builder: (context, api, translation, child) {
       return Scaffold(
         backgroundColor: bgColor,
         appBar: MyAppBar(
-          title: translation.getTranslatedText(context, 'HOSPITAL DETAILS'),
+          title: translation.getTranslatedText(context, widget.hospitalName),
         ),
         body: SafeArea(
           child: SingleChildScrollView(
@@ -250,7 +255,6 @@ class _HospitalDetailsState extends State<HospitalDetails> {
                         ),
                         Container(
                           width: double.infinity,
-                          height: 125,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -285,7 +289,13 @@ class _HospitalDetailsState extends State<HospitalDetails> {
                                       child: InkWell(
                                         splashColor: Colors.white,
                                         radius: 900,
-                                        onTap: () {}, //Navigate to Maps Page
+                                        onTap: () {
+                                          _launchURL(
+                                              'https://www.google.com/maps/search/?api=1&query=' +
+                                                  widget.latitude +
+                                                  ',' +
+                                                  widget.longitude);
+                                        }, //Navigate to Maps Page
                                         borderRadius: BorderRadius.circular(10),
                                         child: Container(
                                           width: 80,

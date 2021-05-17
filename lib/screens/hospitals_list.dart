@@ -445,6 +445,9 @@ class _HospitalsState extends State<Hospitals> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => HospitalDetails(
+                                    latitude: api.hospitalDetails[index]['lat'],
+                                    longitude: api.hospitalDetails[index]
+                                        ['long'],
                                     imgLink: api.hospitalDetails[index]["URL"],
                                     hospitalName: api.hospitalDetails[index]
                                         ['hospitalName'],
