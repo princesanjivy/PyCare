@@ -43,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Padding(
                 padding: EdgeInsets.only(top: 16, left: 16),
                 child: Text(
-                  "PUDUCHERRY",
+                  translation.getTranslatedText("PUDUCHERRY"),
                   style: GoogleFonts.poppins(
                     fontSize: 28,
                     color: Colors.black,
@@ -58,7 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Padding(
                 padding: EdgeInsets.only(left: 16, bottom: 4, top: 4),
                 child: Text(
-                  "COVID-19 TRACKER",
+                  translation.getTranslatedText("COVID-19 TRACKER"),
                   style: GoogleFonts.poppins(
                     color: Colors.indigo,
                     fontSize: 16,
@@ -95,12 +95,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     HCard(
                       count: totalReported,
                       color: lightBlue,
-                      title: "Total Reported",
+                      title: translation.getTranslatedText("Total Reported"),
                     ),
                     HCard(
                       count: int.parse(api.status["cured"]),
                       color: green,
-                      title: "Cured",
+                      title: translation.getTranslatedText("Cured"),
                       percentage:
                           (int.parse(api.status["cured"]) / totalReported * 100)
                               .toInt(),
@@ -118,7 +118,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     HCard(
                         count: int.parse(api.status["active"]),
                         color: yellow,
-                        title: "Active",
+                        title: translation.getTranslatedText("Active"),
                         percentage: (int.parse(api.status["active"]) /
                                 totalReported *
                                 100)
@@ -126,7 +126,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     HCard(
                         count: int.parse(api.status["death"]),
                         color: red,
-                        title: "Death",
+                        title: translation.getTranslatedText("Death"),
                         percentage: (int.parse(api.status["death"]) /
                                 totalReported *
                                 100)
@@ -166,7 +166,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Container(
                   color: Color(0xf4f9f9),
                   child: Text(
-                    'PRECAUTIONS',
+                    translation.getTranslatedText('PRECAUTIONS'),
                     style: GoogleFonts.poppins(
                       fontSize: 28,
                       color: Colors.black,

@@ -202,7 +202,7 @@ class _HomeMapState extends State<HomeMap> {
         builder: (context, api, translation, child) {
       return Scaffold(
         appBar: MyAppBar(
-          title: 'LOCATION',
+          title: translation.getTranslatedText('LOCATION'),
         ),
         body: FlutterMap(
           options: MapOptions(
@@ -266,7 +266,8 @@ class _HomeMapState extends State<HomeMap> {
                                                 child: Container(
                                                   width: 300.0,
                                                   child: Text(
-                                                    'Pondicherry Institute of Medical Sciences',
+                                                    translation.getTranslatedText(
+                                                        'Pondicherry Institute of Medical Sciences'),
                                                     maxLines: 10,
                                                     style: GoogleFonts.poppins(
                                                       fontSize: 18,
@@ -300,7 +301,8 @@ class _HomeMapState extends State<HomeMap> {
                                               bottom: 10.0,
                                             ),
                                             child: Text(
-                                              'Bed Availiblity',
+                                              translation.getTranslatedText(
+                                                  'Bed Availiblity'),
                                               maxLines: 1,
                                               // textAlign: ,
                                               textAlign: TextAlign.start,
@@ -328,7 +330,8 @@ class _HomeMapState extends State<HomeMap> {
                                             ),
                                             child: OutlineButton(
                                               child: Text(
-                                                "More Details",
+                                                translation.getTranslatedText(
+                                                    "More Details"),
                                                 style: GoogleFonts.poppins(
                                                   fontSize: 20.0,
                                                   color: darkBlue,
@@ -429,7 +432,8 @@ class _HomeMapState extends State<HomeMap> {
                                                 child: Container(
                                                   width: 300.0,
                                                   child: Text(
-                                                    'Sri Vanakalum Medical College',
+                                                    translation.getTranslatedText(
+                                                        'Sri Vanakalum Medical College'),
                                                     maxLines: 10,
                                                     style: GoogleFonts.poppins(
                                                       fontSize: 18,
@@ -463,7 +467,8 @@ class _HomeMapState extends State<HomeMap> {
                                               bottom: 10.0,
                                             ),
                                             child: Text(
-                                              'Bed Availiblity',
+                                              translation.getTranslatedText(
+                                                  'Bed Availiblity'),
                                               maxLines: 1,
                                               // textAlign: ,
                                               textAlign: TextAlign.start,
@@ -490,7 +495,8 @@ class _HomeMapState extends State<HomeMap> {
                                             ),
                                             child: OutlineButton(
                                               child: Text(
-                                                "More Details",
+                                                translation.getTranslatedText(
+                                                    "More Details"),
                                                 style: GoogleFonts.poppins(
                                                   fontSize: 20.0,
                                                   color: darkBlue,
@@ -591,7 +597,8 @@ class _HomeMapState extends State<HomeMap> {
                                                 child: Container(
                                                   width: 300.0,
                                                   child: Text(
-                                                    'Mahatama Gandhi Medical College',
+                                                    translation.getTranslatedText(
+                                                        'Mahatama Gandhi Medical College'),
                                                     maxLines: 10,
                                                     style: GoogleFonts.poppins(
                                                       fontSize: 18,
@@ -625,7 +632,8 @@ class _HomeMapState extends State<HomeMap> {
                                               bottom: 10.0,
                                             ),
                                             child: Text(
-                                              'Bed Availiblity',
+                                              translation.getTranslatedText(
+                                                  'Bed Availiblity'),
                                               maxLines: 1,
                                               // textAlign: ,
                                               textAlign: TextAlign.start,
@@ -652,7 +660,8 @@ class _HomeMapState extends State<HomeMap> {
                                             ),
                                             child: OutlineButton(
                                               child: Text(
-                                                "More Details",
+                                                translation.getTranslatedText(
+                                                    "More Details"),
                                                 style: GoogleFonts.poppins(
                                                   fontSize: 20.0,
                                                   color: darkBlue,
@@ -753,7 +762,9 @@ class _HomeMapState extends State<HomeMap> {
                                                 child: Container(
                                                   width: 300.0,
                                                   child: Text(
-                                                    'SLIMS',
+                                                    translation
+                                                        .getTranslatedText(
+                                                            'SLIMS'),
                                                     maxLines: 10,
                                                     style: GoogleFonts.poppins(
                                                       fontSize: 18,
@@ -787,7 +798,8 @@ class _HomeMapState extends State<HomeMap> {
                                               bottom: 10.0,
                                             ),
                                             child: Text(
-                                              'Bed Availiblity',
+                                              translation.getTranslatedText(
+                                                  'Bed Availiblity'),
                                               maxLines: 1,
                                               // textAlign: ,
                                               textAlign: TextAlign.start,
@@ -814,7 +826,8 @@ class _HomeMapState extends State<HomeMap> {
                                             ),
                                             child: OutlineButton(
                                               child: Text(
-                                                "More Details",
+                                                translation.getTranslatedText(
+                                                    "More Details"),
                                                 style: GoogleFonts.poppins(
                                                   fontSize: 20.0,
                                                   color: darkBlue,
@@ -915,7 +928,9 @@ class _HomeMapState extends State<HomeMap> {
                                                 child: Container(
                                                   width: 300.0,
                                                   child: Text(
-                                                    'SMVMC',
+                                                    translation
+                                                        .getTranslatedText(
+                                                            'SMVMC'),
                                                     maxLines: 10,
                                                     style: GoogleFonts.poppins(
                                                       fontSize: 18,
@@ -949,7 +964,8 @@ class _HomeMapState extends State<HomeMap> {
                                               bottom: 10.0,
                                             ),
                                             child: Text(
-                                              'Bed Availiblity',
+                                              translation.getTranslatedText(
+                                                  'Bed Availiblity'),
                                               maxLines: 1,
                                               // textAlign: ,
                                               textAlign: TextAlign.start,
@@ -976,7 +992,8 @@ class _HomeMapState extends State<HomeMap> {
                                             ),
                                             child: OutlineButton(
                                               child: Text(
-                                                "More Details",
+                                                translation.getTranslatedText(
+                                                    "More Details"),
                                                 style: GoogleFonts.poppins(
                                                   fontSize: 20.0,
                                                   color: darkBlue,
@@ -1077,7 +1094,8 @@ class _HomeMapState extends State<HomeMap> {
                                                 child: Container(
                                                   width: 300.0,
                                                   child: Text(
-                                                    'Pondicherry Institute of Medical Sciences',
+                                                    translation.getTranslatedText(
+                                                        'Pondicherry Institute of Medical Sciences'),
                                                     maxLines: 10,
                                                     style: GoogleFonts.poppins(
                                                       fontSize: 18,
@@ -1111,7 +1129,8 @@ class _HomeMapState extends State<HomeMap> {
                                               bottom: 10.0,
                                             ),
                                             child: Text(
-                                              'Bed Availiblity',
+                                              translation.getTranslatedText(
+                                                  'Bed Availiblity'),
                                               maxLines: 1,
                                               // textAlign: ,
                                               textAlign: TextAlign.start,
@@ -1138,7 +1157,8 @@ class _HomeMapState extends State<HomeMap> {
                                             ),
                                             child: OutlineButton(
                                               child: Text(
-                                                "More Details",
+                                                translation.getTranslatedText(
+                                                    "More Details"),
                                                 style: GoogleFonts.poppins(
                                                   fontSize: 20.0,
                                                   color: darkBlue,
@@ -1239,7 +1259,8 @@ class _HomeMapState extends State<HomeMap> {
                                                 child: Container(
                                                   width: 300.0,
                                                   child: Text(
-                                                    'Indhra Gandhi Medical Colege',
+                                                    translation.getTranslatedText(
+                                                        'Indhra Gandhi Medical Colege'),
                                                     maxLines: 10,
                                                     style: GoogleFonts.poppins(
                                                       fontSize: 18,
@@ -1273,7 +1294,8 @@ class _HomeMapState extends State<HomeMap> {
                                               bottom: 10.0,
                                             ),
                                             child: Text(
-                                              'Bed Availiblity',
+                                              translation.getTranslatedText(
+                                                  'Bed Availiblity'),
                                               maxLines: 1,
                                               // textAlign: ,
                                               textAlign: TextAlign.start,
@@ -1300,7 +1322,8 @@ class _HomeMapState extends State<HomeMap> {
                                             ),
                                             child: OutlineButton(
                                               child: Text(
-                                                "More Details",
+                                                translation.getTranslatedText(
+                                                    "More Details"),
                                                 style: GoogleFonts.poppins(
                                                   fontSize: 20.0,
                                                   color: darkBlue,
@@ -1401,7 +1424,8 @@ class _HomeMapState extends State<HomeMap> {
                                                 child: Container(
                                                   width: 300.0,
                                                   child: Text(
-                                                    'Jawaharlal Institute of Postgraduate Medical Education and Research,Government of India',
+                                                    translation.getTranslatedText(
+                                                        'Jawaharlal Institute of Postgraduate Medical Education and Research,Government of India'),
                                                     maxLines: 10,
                                                     style: GoogleFonts.poppins(
                                                       fontSize: 18,
@@ -1435,7 +1459,8 @@ class _HomeMapState extends State<HomeMap> {
                                               bottom: 10.0,
                                             ),
                                             child: Text(
-                                              'Bed Availiblity',
+                                              translation.getTranslatedText(
+                                                  'Bed Availiblity'),
                                               maxLines: 1,
                                               // textAlign: ,
                                               textAlign: TextAlign.start,
@@ -1462,7 +1487,8 @@ class _HomeMapState extends State<HomeMap> {
                                             ),
                                             child: OutlineButton(
                                               child: Text(
-                                                "More Details",
+                                                translation.getTranslatedText(
+                                                    "More Details"),
                                                 style: GoogleFonts.poppins(
                                                   fontSize: 20.0,
                                                   color: darkBlue,
@@ -1563,7 +1589,9 @@ class _HomeMapState extends State<HomeMap> {
                                                 child: Container(
                                                   width: 300.0,
                                                   child: Text(
-                                                    'Dental College',
+                                                    translation
+                                                        .getTranslatedText(
+                                                            'Dental College'),
                                                     maxLines: 10,
                                                     style: GoogleFonts.poppins(
                                                       fontSize: 18,
@@ -1597,7 +1625,8 @@ class _HomeMapState extends State<HomeMap> {
                                               bottom: 10.0,
                                             ),
                                             child: Text(
-                                              'Bed Availiblity',
+                                              translation.getTranslatedText(
+                                                  'Bed Availiblity'),
                                               maxLines: 1,
                                               // textAlign: ,
                                               textAlign: TextAlign.start,
@@ -1624,7 +1653,8 @@ class _HomeMapState extends State<HomeMap> {
                                             ),
                                             child: OutlineButton(
                                               child: Text(
-                                                "More Details",
+                                                translation.getTranslatedText(
+                                                    "More Details"),
                                                 style: GoogleFonts.poppins(
                                                   fontSize: 20.0,
                                                   color: darkBlue,
@@ -1729,7 +1759,9 @@ class _HomeMapState extends State<HomeMap> {
                                                 child: Container(
                                                   width: 300.0,
                                                   child: Text(
-                                                    'Be Well Hospital',
+                                                    translation
+                                                        .getTranslatedText(
+                                                            'Be Well Hospital'),
                                                     maxLines: 10,
                                                     style: GoogleFonts.poppins(
                                                       fontSize: 18,
@@ -1763,7 +1795,8 @@ class _HomeMapState extends State<HomeMap> {
                                               bottom: 10.0,
                                             ),
                                             child: Text(
-                                              'Bed Availiblity',
+                                              translation.getTranslatedText(
+                                                  'Bed Availiblity'),
                                               maxLines: 1,
                                               // textAlign: ,
                                               textAlign: TextAlign.start,
@@ -1790,7 +1823,8 @@ class _HomeMapState extends State<HomeMap> {
                                             ),
                                             child: OutlineButton(
                                               child: Text(
-                                                "More Details",
+                                                translation.getTranslatedText(
+                                                    "More Details"),
                                                 style: GoogleFonts.poppins(
                                                   fontSize: 20.0,
                                                   color: darkBlue,
@@ -1891,7 +1925,9 @@ class _HomeMapState extends State<HomeMap> {
                                                 child: Container(
                                                   width: 300.0,
                                                   child: Text(
-                                                    'Rani Hospital',
+                                                    translation
+                                                        .getTranslatedText(
+                                                            'Rani Hospital'),
                                                     maxLines: 10,
                                                     style: GoogleFonts.poppins(
                                                       fontSize: 18,
@@ -1925,7 +1961,8 @@ class _HomeMapState extends State<HomeMap> {
                                               bottom: 10.0,
                                             ),
                                             child: Text(
-                                              'Bed Availiblity',
+                                              translation.getTranslatedText(
+                                                  'Bed Availiblity'),
                                               maxLines: 1,
                                               // textAlign: ,
                                               textAlign: TextAlign.start,
@@ -1952,7 +1989,8 @@ class _HomeMapState extends State<HomeMap> {
                                             ),
                                             child: OutlineButton(
                                               child: Text(
-                                                "More Details",
+                                                translation.getTranslatedText(
+                                                    "More Details"),
                                                 style: GoogleFonts.poppins(
                                                   fontSize: 20.0,
                                                   color: darkBlue,
@@ -2053,7 +2091,8 @@ class _HomeMapState extends State<HomeMap> {
                                                 child: Container(
                                                   width: 300.0,
                                                   child: Text(
-                                                    'New Medical Center',
+                                                    translation.getTranslatedText(
+                                                        'New Medical Center'),
                                                     maxLines: 10,
                                                     style: GoogleFonts.poppins(
                                                       fontSize: 18,
@@ -2087,7 +2126,8 @@ class _HomeMapState extends State<HomeMap> {
                                               bottom: 10.0,
                                             ),
                                             child: Text(
-                                              'Bed Availiblity',
+                                              translation.getTranslatedText(
+                                                  'Bed Availiblity'),
                                               maxLines: 1,
                                               // textAlign: ,
                                               textAlign: TextAlign.start,
@@ -2114,7 +2154,8 @@ class _HomeMapState extends State<HomeMap> {
                                             ),
                                             child: OutlineButton(
                                               child: Text(
-                                                "More Details",
+                                                translation.getTranslatedText(
+                                                    "More Details"),
                                                 style: GoogleFonts.poppins(
                                                   fontSize: 20.0,
                                                   color: darkBlue,
@@ -2215,7 +2256,8 @@ class _HomeMapState extends State<HomeMap> {
                                                 child: Container(
                                                   width: 300.0,
                                                   child: Text(
-                                                    'MVR Medical Center',
+                                                    translation.getTranslatedText(
+                                                        'MVR Medical Center'),
                                                     maxLines: 10,
                                                     style: GoogleFonts.poppins(
                                                       fontSize: 18,
@@ -2249,7 +2291,8 @@ class _HomeMapState extends State<HomeMap> {
                                               bottom: 10.0,
                                             ),
                                             child: Text(
-                                              'Bed Availiblity',
+                                              translation.getTranslatedText(
+                                                  'Bed Availiblity'),
                                               maxLines: 1,
                                               // textAlign: ,
                                               textAlign: TextAlign.start,
@@ -2276,7 +2319,8 @@ class _HomeMapState extends State<HomeMap> {
                                             ),
                                             child: OutlineButton(
                                               child: Text(
-                                                "More Details",
+                                                translation.getTranslatedText(
+                                                    "More Details"),
                                                 style: GoogleFonts.poppins(
                                                   fontSize: 20.0,
                                                   color: darkBlue,
@@ -2377,7 +2421,9 @@ class _HomeMapState extends State<HomeMap> {
                                                 child: Container(
                                                   width: 300.0,
                                                   child: Text(
-                                                    'IGGGH & PGI',
+                                                    translation
+                                                        .getTranslatedText(
+                                                            'IGGGH & PGI'),
                                                     maxLines: 10,
                                                     style: GoogleFonts.poppins(
                                                       fontSize: 18,
@@ -2411,7 +2457,8 @@ class _HomeMapState extends State<HomeMap> {
                                               bottom: 10.0,
                                             ),
                                             child: Text(
-                                              'Bed Availiblity',
+                                              translation.getTranslatedText(
+                                                  'Bed Availiblity'),
                                               maxLines: 1,
                                               // textAlign: ,
                                               textAlign: TextAlign.start,
@@ -2438,7 +2485,8 @@ class _HomeMapState extends State<HomeMap> {
                                             ),
                                             child: OutlineButton(
                                               child: Text(
-                                                "More Details",
+                                                translation.getTranslatedText(
+                                                    "More Details"),
                                                 style: GoogleFonts.poppins(
                                                   fontSize: 20.0,
                                                   color: darkBlue,
@@ -2539,7 +2587,8 @@ class _HomeMapState extends State<HomeMap> {
                                                 child: Container(
                                                   width: 300.0,
                                                   child: Text(
-                                                    'Common Health Center Karikalampakkam',
+                                                    translation.getTranslatedText(
+                                                        'Common Health Center Karikalampakkam'),
                                                     maxLines: 10,
                                                     style: GoogleFonts.poppins(
                                                       fontSize: 18,
@@ -2573,7 +2622,8 @@ class _HomeMapState extends State<HomeMap> {
                                               bottom: 10.0,
                                             ),
                                             child: Text(
-                                              'Bed Availiblity',
+                                              translation.getTranslatedText(
+                                                  'Bed Availiblity'),
                                               maxLines: 1,
                                               // textAlign: ,
                                               textAlign: TextAlign.start,
@@ -2600,7 +2650,8 @@ class _HomeMapState extends State<HomeMap> {
                                             ),
                                             child: OutlineButton(
                                               child: Text(
-                                                "More Details",
+                                                translation.getTranslatedText(
+                                                    "More Details"),
                                                 style: GoogleFonts.poppins(
                                                   fontSize: 20.0,
                                                   color: darkBlue,
