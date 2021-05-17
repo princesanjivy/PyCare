@@ -4,8 +4,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:pycare/components/my_colors.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:pycare/providers/translation.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class InfoCard extends StatelessWidget {
   final String name;
@@ -68,7 +68,7 @@ class InfoCard extends StatelessWidget {
                 ),
               ),
               Text(
-                translation.getTranslatedText("$name"),
+                translation.getTranslatedText(context, "$name"),
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
                     fontSize: 16,
@@ -79,7 +79,7 @@ class InfoCard extends StatelessWidget {
                 ),
               ),
               Text(
-                translation.getTranslatedText("$role"),
+                translation.getTranslatedText(context, "$role"),
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
                     fontSize: 12,

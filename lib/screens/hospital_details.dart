@@ -5,10 +5,9 @@ import 'package:provider/provider.dart';
 import 'package:pycare/components/my_appbar.dart';
 import 'package:pycare/components/my_colors.dart';
 import 'package:pycare/components/my_text.dart';
+import 'package:pycare/providers/fetch_data.dart';
+import 'package:pycare/providers/translation.dart';
 import 'package:url_launcher/url_launcher.dart';
-
-import '../providers/fetch_data.dart';
-import '../providers/translation.dart';
 
 class HospitalDetails extends StatefulWidget {
   final String imgLink;
@@ -16,7 +15,7 @@ class HospitalDetails extends StatefulWidget {
   final String instituteType;
   final String oxygenBeds;
   final String ventilatorBeds;
-  final String oxygenCylinders;
+  final String isolationBeds;
   final String address;
   final List contactNos;
 
@@ -26,7 +25,7 @@ class HospitalDetails extends StatefulWidget {
       this.instituteType,
       this.oxygenBeds,
       this.ventilatorBeds,
-      this.oxygenCylinders,
+      this.isolationBeds,
       this.address,
       this.contactNos});
 
@@ -52,7 +51,7 @@ class _HospitalDetailsState extends State<HospitalDetails> {
       return Scaffold(
         backgroundColor: bgColor,
         appBar: MyAppBar(
-          title: 'HOSPITAL DETAILS',
+          title: translation.getTranslatedText(context, 'HOSPITAL DETAILS'),
         ),
         body: SafeArea(
           child: SingleChildScrollView(
@@ -88,7 +87,8 @@ class _HospitalDetailsState extends State<HospitalDetails> {
                         Wrap(
                           children: [
                             MyText(
-                              text: widget.hospitalName + '.',
+                              text: translation.getTranslatedText(
+                                  context, widget.hospitalName),
                               color: Colors.black,
                               size: 15,
                             ),
@@ -101,7 +101,9 @@ class _HospitalDetailsState extends State<HospitalDetails> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text(
-                              'INSTITUTE TYPE : ',
+                              translation.getTranslatedText(
+                                      context, 'INSTITUTE TYPE') +
+                                  ": ",
                               style: GoogleFonts.poppins(
                                 fontWeight: FontWeight.w600,
                               ),
@@ -121,7 +123,9 @@ class _HospitalDetailsState extends State<HospitalDetails> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'AVAILABILITY OF : ',
+                                translation.getTranslatedText(
+                                        context, 'AVAILABILITY OF') +
+                                    ": ",
                                 style: GoogleFonts.poppins(
                                   fontWeight: FontWeight.w600,
                                 ),
@@ -147,13 +151,17 @@ class _HospitalDetailsState extends State<HospitalDetails> {
                                               MainAxisAlignment.center,
                                           children: [
                                             MyText(
-                                              text: widget.oxygenBeds,
+                                              text:
+                                                  translation.getTranslatedText(
+                                                      context,
+                                                      widget.oxygenBeds),
                                               fontWeight: 'BOLD',
                                               color: Colors.black,
                                               size: 25,
                                             ),
                                             Text(
-                                              'Oxygen Beds',
+                                              translation.getTranslatedText(
+                                                  context, 'Oxygen Beds'),
                                               textAlign: TextAlign.center,
                                               style: GoogleFonts.poppins(
                                                   fontWeight: FontWeight.bold,
@@ -180,13 +188,15 @@ class _HospitalDetailsState extends State<HospitalDetails> {
                                             MainAxisAlignment.center,
                                         children: [
                                           MyText(
-                                            text: widget.ventilatorBeds,
+                                            text: translation.getTranslatedText(
+                                                context, widget.ventilatorBeds),
                                             fontWeight: 'BOLD',
                                             color: Colors.black,
                                             size: 25,
                                           ),
                                           Text(
-                                            'Ventilator Beds',
+                                            translation.getTranslatedText(
+                                                context, 'Ventilator Beds'),
                                             textAlign: TextAlign.center,
                                             style: GoogleFonts.poppins(
                                                 fontWeight: FontWeight.bold,
@@ -212,13 +222,15 @@ class _HospitalDetailsState extends State<HospitalDetails> {
                                             MainAxisAlignment.center,
                                         children: [
                                           MyText(
-                                            text: widget.oxygenCylinders,
+                                            text: translation.getTranslatedText(
+                                                context, widget.isolationBeds),
                                             fontWeight: 'BOLD',
                                             color: Colors.black,
                                             size: 25,
                                           ),
                                           Text(
-                                            'Oxygen Cylinders',
+                                            translation.getTranslatedText(
+                                                context, 'Oxygen Cylinders'),
                                             textAlign: TextAlign.center,
                                             style: GoogleFonts.poppins(
                                                 fontWeight: FontWeight.bold,
@@ -243,7 +255,9 @@ class _HospitalDetailsState extends State<HospitalDetails> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'ADDRESS : ',
+                                translation.getTranslatedText(
+                                        context, 'ADDRESS') +
+                                    ": ",
                                 style: GoogleFonts.poppins(
                                   fontWeight: FontWeight.w600,
                                 ),
@@ -301,7 +315,9 @@ class _HospitalDetailsState extends State<HospitalDetails> {
                         Row(
                           children: [
                             Text(
-                              'PHONE NUMBER : ',
+                              translation.getTranslatedText(
+                                      context, 'PHONE NUMBER') +
+                                  ": ",
                               style: GoogleFonts.poppins(
                                 fontWeight: FontWeight.w600,
                               ),
@@ -343,7 +359,10 @@ class _HospitalDetailsState extends State<HospitalDetails> {
                                         child: Row(
                                           children: [
                                             MyText(
-                                              text: widget.contactNos[index],
+                                              text:
+                                                  translation.getTranslatedText(
+                                                      context,
+                                                      widget.contactNos[index]),
                                               color: Colors.black,
                                             ),
                                             SizedBox(width: width * 0.55),

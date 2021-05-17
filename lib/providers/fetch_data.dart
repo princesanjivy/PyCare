@@ -24,6 +24,17 @@ class FetchData with ChangeNotifier {
         await http.get(Uri.parse(uri + "/hospitalDetails"));
     hospitalDetails = jsonDecode(response1.body);
 
+    print(hospitalDetails.length);
+
+    // http.Response response2 =
+    //     await http.get(Uri.parse(uri + "/translation"), headers: {
+    //   "Content-Type": "application/json",
+    //   "Accept-Charset": "utf-8",
+    // });
+    // print(utf8.decode(utf8.encode(response2.body)));
+    //
+    // translation = jsonDecode(response2.body);
+
     loading = false;
     notifyListeners();
   }
