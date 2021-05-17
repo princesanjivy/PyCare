@@ -50,7 +50,6 @@ class _HospitalDetailsState extends State<HospitalDetails> {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
-    var height = MediaQuery.of(context).size.height;
     return Consumer2<FetchData, TranslationText>(
         builder: (context, api, translation, child) {
       return Scaffold(
