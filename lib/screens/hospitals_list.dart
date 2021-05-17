@@ -20,178 +20,178 @@ class _HospitalsState extends State<Hospitals> {
   var tempHospitals = [];
   var hospitals = [];
 
-  @override
-  void initState() {
-    hospitals = [
-      {
-        'name': 'Jipmer',
-        'vacancy': '20',
-        'TOI': 'govt',
-        'imgLink':
-            'https://images.shiksha.com/mediadata/images/1663197407phpCQxnSz.jpeg',
-        'fullName':
-            'Jawaharlal Institute of Postgraduate Medical Education and Research,Government of India',
-        'instituteType': 'Government',
-        'noOfOxygenBeds': '8',
-        'noOfVentilatorBeds': '4',
-        'noOfOxygenCylinders': '33',
-        'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
-        'phNos': ['9943165383', '8999889896']
-      },
-      {
-        'name': 'Pims',
-        'vacancy': '12',
-        'TOI': 'private',
-        'imgLink':
-            'https://images.unsplash.com/photo-1696541223130-5d31a73fb6c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80',
-        'fullName': 'Pondicherry Institute of Medical Sciences',
-        'instituteType': 'Government',
-        'noOfOxygenBeds': '8',
-        'noOfVentilatorBeds': '4',
-        'noOfOxygenCylinders': '33',
-        'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
-        'phNos': ['9943165383', '8999889898']
-      },
-      {
-        'name': 'East Coast Hospitals',
-        'vacancy': '18',
-        'TOI': 'private',
-        'imgLink':
-            'https://images.unsplash.com/photo-1696541223130-5d31a73fb6c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80',
-        'fullName':
-            'Jawaharlal Institute of Postgraduate Medical Education and Research,Government of India',
-        'instituteType': 'Government',
-        'noOfOxygenBeds': '8',
-        'noOfVentilatorBeds': '4',
-        'noOfOxygenCylinders': '33',
-        'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
-        'phNos': ['9943165383', '8999889898']
-      },
-      {
-        'name': 'Padmavathy',
-        'vacancy': '17',
-        'TOI': 'private',
-        'imgLink':
-            'https://images.unsplash.com/photo-1696541223130-5d31a73fb6c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80',
-        'fullName':
-            'Jawaharlal Institute of Postgraduate Medical Education and Research,Government of India',
-        'instituteType': 'Government',
-        'noOfOxygenBeds': '8',
-        'noOfVentilatorBeds': '4',
-        'noOfOxygenCylinders': '33',
-        'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
-        'phNos': ['9943165383', '8999889898']
-      },
-      {
-        'name': 'Cluny',
-        'vacancy': '21',
-        'TOI': 'private',
-        'imgLink':
-            'https://images.unsplash.com/photo-1696541223130-5d31a73fb6c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80',
-        'fullName':
-            'Jawaharlal Institute of Postgraduate Medical Education and Research,Government of India',
-        'instituteType': 'Government',
-        'noOfOxygenBeds': '8',
-        'noOfVentilatorBeds': '4',
-        'noOfOxygenCylinders': '33',
-        'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
-        'phNos': ['9943165383', '8999889898']
-      },
-      {
-        'name': 'GH',
-        'vacancy': '16',
-        'TOI': 'govt',
-        'imgLink':
-            'https://images.unsplash.com/photo-1696541223130-5d31a73fb6c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80',
-        'fullName':
-            'Jawaharlal Institute of Postgraduate Medical Education and Research,Government of India',
-        'instituteType': 'Government',
-        'noOfOxygenBeds': '8',
-        'noOfVentilatorBeds': '4',
-        'noOfOxygenCylinders': '33',
-        'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
-        'phNos': ['9943165383', '8999889898']
-      },
-      {
-        'name': 'Hospital Name',
-        'vacancy': '16',
-        'TOI': 'private',
-        'imgLink':
-            'https://images.unsplash.com/photo-1696541223130-5d31a73fb6c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80',
-        'fullName':
-            'Jawaharlal Institute of Postgraduate Medical Education and Research,Government of India',
-        'instituteType': 'Government',
-        'noOfOxygenBeds': '8',
-        'noOfVentilatorBeds': '4',
-        'noOfOxygenCylinders': '33',
-        'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
-        'phNos': ['9943165383', '8999889898']
-      },
-      {
-        'name': 'Hospital Name',
-        'vacancy': '16',
-        'TOI': 'private',
-        'imgLink':
-            'https://images.unsplash.com/photo-1696541223130-5d31a73fb6c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80',
-        'fullName':
-            'Jawaharlal Institute of Postgraduate Medical Education and Research,Government of India',
-        'instituteType': 'Government',
-        'noOfOxygenBeds': '8',
-        'noOfVentilatorBeds': '4',
-        'noOfOxygenCylinders': '33',
-        'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
-        'phNos': ['9943165383', '8999889898']
-      },
-      {
-        'name': 'Hospital Name',
-        'vacancy': '16',
-        'TOI': 'private',
-        'imgLink':
-            'https://images.unsplash.com/photo-1696541223130-5d31a73fb6c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80',
-        'fullName':
-            'Jawaharlal Institute of Postgraduate Medical Education and Research,Government of India',
-        'instituteType': 'Government',
-        'noOfOxygenBeds': '8',
-        'noOfVentilatorBeds': '4',
-        'noOfOxygenCylinders': '33',
-        'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
-        'phNos': ['9943165383', '8999889898']
-      },
-      {
-        'name': 'Hospital Name',
-        'vacancy': '16',
-        'TOI': 'private',
-        'imgLink':
-            'https://images.unsplash.com/photo-1696541223130-5d31a73fb6c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80',
-        'fullName':
-            'Jawaharlal Institute of Postgraduate Medical Education and Research,Government of India',
-        'instituteType': 'Government',
-        'noOfOxygenBeds': '8',
-        'noOfVentilatorBeds': '4',
-        'noOfOxygenCylinders': '33',
-        'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
-        'phNos': ['9943165383', '8999889898']
-      },
-      {
-        'name': 'Hospital Name',
-        'vacancy': '16',
-        'TOI': 'private',
-        'imgLink':
-            'https://images.unsplash.com/photo-1696541223130-5d31a73fb6c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80',
-        'fullName':
-            'Jawaharlal Institute of Postgraduate Medical Education and Research,Government of India',
-        'instituteType': 'Government',
-        'noOfOxygenBeds': '8',
-        'noOfVentilatorBeds': '4',
-        'noOfOxygenCylinders': '33',
-        'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
-        'phNos': ['9943165383', '8999889898']
-      }
-    ];
-
-    tempHospitals = hospitals;
-    super.initState();
-  }
+  // @override
+  // void initState() {
+  //   hospitals = [
+  //     {
+  //       'name': 'Jipmer',
+  //       'vacancy': '20',
+  //       'TOI': 'govt',
+  //       'imgLink':
+  //           'https://images.shiksha.com/mediadata/images/1663197407phpCQxnSz.jpeg',
+  //       'fullName':
+  //           'Jawaharlal Institute of Postgraduate Medical Education and Research,Government of India',
+  //       'instituteType': 'Government',
+  //       'noOfOxygenBeds': '8',
+  //       'noOfVentilatorBeds': '4',
+  //       'noOfisolationBeds': '33',
+  //       'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
+  //       'phNos': ['9943165383', '8999889896']
+  //     },
+  //     {
+  //       'name': 'Pims',
+  //       'vacancy': '12',
+  //       'TOI': 'private',
+  //       'imgLink':
+  //           'https://images.unsplash.com/photo-1696541223130-5d31a73fb6c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80',
+  //       'fullName': 'Pondicherry Institute of Medical Sciences',
+  //       'instituteType': 'Government',
+  //       'noOfOxygenBeds': '8',
+  //       'noOfVentilatorBeds': '4',
+  //       'noOfisolationBeds': '33',
+  //       'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
+  //       'phNos': ['9943165383', '8999889898']
+  //     },
+  //     {
+  //       'name': 'East Coast Hospitals',
+  //       'vacancy': '18',
+  //       'TOI': 'private',
+  //       'imgLink':
+  //           'https://images.unsplash.com/photo-1696541223130-5d31a73fb6c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80',
+  //       'fullName':
+  //           'Jawaharlal Institute of Postgraduate Medical Education and Research,Government of India',
+  //       'instituteType': 'Government',
+  //       'noOfOxygenBeds': '8',
+  //       'noOfVentilatorBeds': '4',
+  //       'noOfisolationBeds': '33',
+  //       'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
+  //       'phNos': ['9943165383', '8999889898']
+  //     },
+  //     {
+  //       'name': 'Padmavathy',
+  //       'vacancy': '17',
+  //       'TOI': 'private',
+  //       'imgLink':
+  //           'https://images.unsplash.com/photo-1696541223130-5d31a73fb6c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80',
+  //       'fullName':
+  //           'Jawaharlal Institute of Postgraduate Medical Education and Research,Government of India',
+  //       'instituteType': 'Government',
+  //       'noOfOxygenBeds': '8',
+  //       'noOfVentilatorBeds': '4',
+  //       'noOfisolationBeds': '33',
+  //       'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
+  //       'phNos': ['9943165383', '8999889898']
+  //     },
+  //     {
+  //       'name': 'Cluny',
+  //       'vacancy': '21',
+  //       'TOI': 'private',
+  //       'imgLink':
+  //           'https://images.unsplash.com/photo-1696541223130-5d31a73fb6c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80',
+  //       'fullName':
+  //           'Jawaharlal Institute of Postgraduate Medical Education and Research,Government of India',
+  //       'instituteType': 'Government',
+  //       'noOfOxygenBeds': '8',
+  //       'noOfVentilatorBeds': '4',
+  //       'noOfisolationBeds': '33',
+  //       'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
+  //       'phNos': ['9943165383', '8999889898']
+  //     },
+  //     {
+  //       'name': 'GH',
+  //       'vacancy': '16',
+  //       'TOI': 'govt',
+  //       'imgLink':
+  //           'https://images.unsplash.com/photo-1696541223130-5d31a73fb6c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80',
+  //       'fullName':
+  //           'Jawaharlal Institute of Postgraduate Medical Education and Research,Government of India',
+  //       'instituteType': 'Government',
+  //       'noOfOxygenBeds': '8',
+  //       'noOfVentilatorBeds': '4',
+  //       'noOfisolationBeds': '33',
+  //       'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
+  //       'phNos': ['9943165383', '8999889898']
+  //     },
+  //     {
+  //       'name': 'Hospital Name',
+  //       'vacancy': '16',
+  //       'TOI': 'private',
+  //       'imgLink':
+  //           'https://images.unsplash.com/photo-1696541223130-5d31a73fb6c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80',
+  //       'fullName':
+  //           'Jawaharlal Institute of Postgraduate Medical Education and Research,Government of India',
+  //       'instituteType': 'Government',
+  //       'noOfOxygenBeds': '8',
+  //       'noOfVentilatorBeds': '4',
+  //       'noOfisolationBeds': '33',
+  //       'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
+  //       'phNos': ['9943165383', '8999889898']
+  //     },
+  //     {
+  //       'name': 'Hospital Name',
+  //       'vacancy': '16',
+  //       'TOI': 'private',
+  //       'imgLink':
+  //           'https://images.unsplash.com/photo-1696541223130-5d31a73fb6c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80',
+  //       'fullName':
+  //           'Jawaharlal Institute of Postgraduate Medical Education and Research,Government of India',
+  //       'instituteType': 'Government',
+  //       'noOfOxygenBeds': '8',
+  //       'noOfVentilatorBeds': '4',
+  //       'noOfisolationBeds': '33',
+  //       'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
+  //       'phNos': ['9943165383', '8999889898']
+  //     },
+  //     {
+  //       'name': 'Hospital Name',
+  //       'vacancy': '16',
+  //       'TOI': 'private',
+  //       'imgLink':
+  //           'https://images.unsplash.com/photo-1696541223130-5d31a73fb6c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80',
+  //       'fullName':
+  //           'Jawaharlal Institute of Postgraduate Medical Education and Research,Government of India',
+  //       'instituteType': 'Government',
+  //       'noOfOxygenBeds': '8',
+  //       'noOfVentilatorBeds': '4',
+  //       'noOfisolationBeds': '33',
+  //       'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
+  //       'phNos': ['9943165383', '8999889898']
+  //     },
+  //     {
+  //       'name': 'Hospital Name',
+  //       'vacancy': '16',
+  //       'TOI': 'private',
+  //       'imgLink':
+  //           'https://images.unsplash.com/photo-1696541223130-5d31a73fb6c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80',
+  //       'fullName':
+  //           'Jawaharlal Institute of Postgraduate Medical Education and Research,Government of India',
+  //       'instituteType': 'Government',
+  //       'noOfOxygenBeds': '8',
+  //       'noOfVentilatorBeds': '4',
+  //       'noOfisolationBeds': '33',
+  //       'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
+  //       'phNos': ['9943165383', '8999889898']
+  //     },
+  //     {
+  //       'name': 'Hospital Name',
+  //       'vacancy': '16',
+  //       'TOI': 'private',
+  //       'imgLink':
+  //           'https://images.unsplash.com/photo-1696541223130-5d31a73fb6c6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80',
+  //       'fullName':
+  //           'Jawaharlal Institute of Postgraduate Medical Education and Research,Government of India',
+  //       'instituteType': 'Government',
+  //       'noOfOxygenBeds': '8',
+  //       'noOfVentilatorBeds': '4',
+  //       'noOfisolationBeds': '33',
+  //       'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
+  //       'phNos': ['9943165383', '8999889898']
+  //     }
+  //   ];
+  //
+  //   tempHospitals = hospitals;
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -201,7 +201,7 @@ class _HospitalsState extends State<Hospitals> {
       return Scaffold(
         backgroundColor: bgColor,
         appBar: MyAppBar(
-          title: 'LIST OF HOSPITALS',
+          title: translation.getTranslatedText(context, 'LIST OF HOSPITALS'),
         ),
         body: SingleChildScrollView(
           child: Padding(
@@ -225,7 +225,8 @@ class _HospitalsState extends State<Hospitals> {
                                 width: 10,
                               ),
                               MyText(
-                                text: 'Filter',
+                                text: translation.getTranslatedText(
+                                    context, 'Filter'),
                                 color: Colors.white,
                               ),
                               SizedBox(
@@ -254,7 +255,8 @@ class _HospitalsState extends State<Hospitals> {
                             ),
                             color: bgColor,
                             child: MyText(
-                              text: 'Type Of Institute',
+                              text: translation.getTranslatedText(
+                                  context, 'Type Of Institute'),
                             ),
                             itemBuilder: (BuildContext context) =>
                                 <PopupMenuEntry>[
@@ -303,7 +305,8 @@ class _HospitalsState extends State<Hospitals> {
                                     Navigator.pop(context);
                                   }, //Show Nursing homes.
                                   title: MyText(
-                                    text: 'Nursing Homes',
+                                    text: translation.getTranslatedText(
+                                        context, 'Nursing Homes'),
                                   ),
                                 ),
                               )
@@ -319,7 +322,8 @@ class _HospitalsState extends State<Hospitals> {
                               Navigator.pop(context);
                             }, //Show all
                             title: MyText(
-                              text: 'All',
+                              text:
+                                  translation.getTranslatedText(context, 'All'),
                             ),
                           ),
                         ),
@@ -346,7 +350,8 @@ class _HospitalsState extends State<Hospitals> {
                                 width: 10,
                               ),
                               MyText(
-                                text: 'Sort By',
+                                text: translation.getTranslatedText(
+                                    context, 'Sort By'),
                                 color: Colors.white,
                               ),
                               SizedBox(
@@ -373,7 +378,8 @@ class _HospitalsState extends State<Hospitals> {
                               Navigator.pop(context);
                             }, //Sort Logic (Ascending)
                             title: MyText(
-                              text: 'Alphabets(A-Z)',
+                              text: translation.getTranslatedText(
+                                  context, 'Alphabets(A-Z)'),
                             ),
                           ),
                         ),
@@ -386,7 +392,8 @@ class _HospitalsState extends State<Hospitals> {
                               Navigator.pop(context);
                             }, //Sort Logic (Descending)
                             title: Text(
-                              'Alphabets(Z-A)',
+                              translation.getTranslatedText(
+                                  context, 'Alphabets(Z-A)'),
                               style: GoogleFonts.poppins(),
                             ),
                           ),
@@ -400,7 +407,8 @@ class _HospitalsState extends State<Hospitals> {
                               Navigator.pop(context);
                             }, //Sort Logic (Vacant Beds)
                             title: MyText(
-                              text: 'No. Of Vacant Beds',
+                              text: translation.getTranslatedText(
+                                  context, 'No. Of Vacant Beds'),
                             ),
                           ),
                         )
@@ -417,7 +425,7 @@ class _HospitalsState extends State<Hospitals> {
                 ListView.builder(
                   physics: ScrollPhysics(),
                   shrinkWrap: true,
-                  itemCount: hospitals.length,
+                  itemCount: api.hospitalDetails.length,
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: EdgeInsets.only(bottom: 8),
@@ -437,18 +445,23 @@ class _HospitalsState extends State<Hospitals> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => HospitalDetails(
-                                    imgLink: hospitals[index]['imgLink'],
-                                    hospitalName: hospitals[index]['fullName'],
-                                    instituteType: hospitals[index]
-                                        ['instituteType'],
-                                    oxygenBeds: hospitals[index]
-                                        ['noOfOxygenBeds'],
-                                    ventilatorBeds: hospitals[index]
-                                        ['noOfVentilatorBeds'],
-                                    oxygenCylinders: hospitals[index]
-                                        ['noOfOxygenCylinders'],
-                                    address: hospitals[index]['address'],
-                                    contactNos: hospitals[index]['phNos'],
+                                    imgLink: api.hospitalDetails[index]["URL"],
+                                    hospitalName: api.hospitalDetails[index]
+                                        ['hospitalName'],
+                                    oxygenBeds: api.hospitalDetails[index]
+                                            ['oxygenBeds']["vacant"]
+                                        .toString(),
+                                    instituteType: "GOVT",
+                                    ventilatorBeds: api.hospitalDetails[index]
+                                            ['ventilatorBeds']["vacant"]
+                                        .toString(),
+                                    isolationBeds: api.hospitalDetails[index]
+                                            ['isolationBeds']["vacant"]
+                                        .toString(),
+                                    address: api.hospitalDetails[index]
+                                        ['address'],
+                                    contactNos: api.hospitalDetails[index]
+                                        ['phNumber'],
                                   ),
                                 ),
                               );
@@ -475,8 +488,12 @@ class _HospitalsState extends State<Hospitals> {
                                                     CrossAxisAlignment.start,
                                                 children: [
                                                   MyText(
-                                                    text: hospitals[index]
-                                                        ['name'],
+                                                    text: translation
+                                                        .getTranslatedText(
+                                                            context,
+                                                            api.hospitalDetails[
+                                                                    index][
+                                                                'hospitalName']),
                                                     size: 16,
                                                     color: Colors.black,
                                                     fontWeight: 'BOLD',
@@ -487,14 +504,29 @@ class _HospitalsState extends State<Hospitals> {
                                                   Row(
                                                     children: [
                                                       MyText(
-                                                        text:
-                                                            'Vacancy Of Beds : ',
+                                                        text: translation
+                                                                .getTranslatedText(
+                                                                    context,
+                                                                    'Vacancy Of Beds') +
+                                                            ": ",
                                                         color: darkBlue,
                                                         fontWeight: 'BOLD',
                                                       ),
                                                       MyText(
-                                                        text: hospitals[index]
-                                                            ['vacancy'],
+                                                        text: translation.getTranslatedText(
+                                                            context,
+                                                            (api.hospitalDetails[index]['oxygenBeds']["vacant"] +
+                                                                    api.hospitalDetails[index]
+                                                                            [
+                                                                            'ventilatorBeds']
+                                                                        [
+                                                                        "vacant"] +
+                                                                    api.hospitalDetails[index]
+                                                                            [
+                                                                            'isolationBeds']
+                                                                        [
+                                                                        "vacant"])
+                                                                .toString()),
                                                         color: numberRed,
                                                         fontWeight: 'BOLD',
                                                       ),

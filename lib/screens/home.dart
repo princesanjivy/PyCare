@@ -33,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
       return Scaffold(
         backgroundColor: bgColor,
         appBar: MyAppBar(
-          title: translation.getTranslatedText("PYCARE"),
+          title: translation.getTranslatedText(context, "PYCARE"),
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -43,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Padding(
                 padding: EdgeInsets.only(top: 16, left: 16),
                 child: Text(
-                  translation.getTranslatedText("PUDUCHERRY"),
+                  translation.getTranslatedText(context, "PUDUCHERRY"),
                   style: GoogleFonts.poppins(
                     fontSize: 28,
                     color: Colors.black,
@@ -58,7 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Padding(
                 padding: EdgeInsets.only(left: 16, bottom: 4, top: 4),
                 child: Text(
-                  translation.getTranslatedText("COVID-19 TRACKER"),
+                  translation.getTranslatedText(context, "COVID-19 TRACKER"),
                   style: GoogleFonts.poppins(
                     color: Colors.indigo,
                     fontSize: 16,
@@ -95,12 +95,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     HCard(
                       count: totalReported,
                       color: lightBlue,
-                      title: translation.getTranslatedText("Total Reported"),
+                      title: translation.getTranslatedText(
+                          context, "Total Reported"),
                     ),
                     HCard(
                       count: int.parse(api.status["cured"]),
                       color: green,
-                      title: translation.getTranslatedText("Cured"),
+                      title: translation.getTranslatedText(context, "Cured"),
                       percentage:
                           (int.parse(api.status["cured"]) / totalReported * 100)
                               .toInt(),
@@ -118,7 +119,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     HCard(
                         count: int.parse(api.status["active"]),
                         color: yellow,
-                        title: translation.getTranslatedText("Active"),
+                        title: translation.getTranslatedText(context, "Active"),
                         percentage: (int.parse(api.status["active"]) /
                                 totalReported *
                                 100)
@@ -126,7 +127,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     HCard(
                         count: int.parse(api.status["death"]),
                         color: red,
-                        title: translation.getTranslatedText("Death"),
+                        title: translation.getTranslatedText(context, "Death"),
                         percentage: (int.parse(api.status["death"]) /
                                 totalReported *
                                 100)
@@ -166,7 +167,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Container(
                   color: Color(0xf4f9f9),
                   child: Text(
-                    translation.getTranslatedText('PRECAUTIONS'),
+                    translation.getTranslatedText(context, 'PRECAUTIONS'),
                     style: GoogleFonts.poppins(
                       fontSize: 28,
                       color: Colors.black,

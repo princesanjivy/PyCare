@@ -19,7 +19,7 @@ class _VaccineDriveState extends State<VaccineDrive> {
         builder: (context, api, translation, child) {
       return Scaffold(
         appBar: MyAppBar(
-          title: translation.getTranslatedText('Vaccine Drive'),
+          title: translation.getTranslatedText(context, 'Vaccine Drive'),
         ),
         body: SafeArea(
           child: WebView(

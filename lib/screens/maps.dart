@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:latlong/latlong.dart';
 import 'package:provider/provider.dart';
@@ -8,10 +7,8 @@ import 'package:pycare/components/map.dart';
 import 'package:pycare/components/my_appbar.dart';
 import 'package:pycare/components/my_colors.dart';
 
-import '../components/my_text.dart';
 import '../providers/fetch_data.dart';
 import '../providers/translation.dart';
-import 'hospital_details.dart';
 import 'hospital_details.dart';
 
 class HomeMap extends StatefulWidget {
@@ -37,7 +34,7 @@ class _HomeMapState extends State<HomeMap> {
         'instituteType': 'Government',
         'noOfOxygenBeds': '8',
         'noOfVentilatorBeds': '4',
-        'noOfOxygenCylinders': '33',
+        'noOfisolationBeds': '33',
         'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
         'phNos': ['9943165383', '8999889896']
       },
@@ -51,7 +48,7 @@ class _HomeMapState extends State<HomeMap> {
         'instituteType': 'Government',
         'noOfOxygenBeds': '8',
         'noOfVentilatorBeds': '4',
-        'noOfOxygenCylinders': '33',
+        'noOfisolationBeds': '33',
         'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
         'phNos': ['9943165383', '8999889898']
       },
@@ -66,7 +63,7 @@ class _HomeMapState extends State<HomeMap> {
         'instituteType': 'Government',
         'noOfOxygenBeds': '8',
         'noOfVentilatorBeds': '4',
-        'noOfOxygenCylinders': '33',
+        'noOfisolationBeds': '33',
         'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
         'phNos': ['9943165383', '8999889898']
       },
@@ -81,7 +78,7 @@ class _HomeMapState extends State<HomeMap> {
         'instituteType': 'Government',
         'noOfOxygenBeds': '8',
         'noOfVentilatorBeds': '4',
-        'noOfOxygenCylinders': '33',
+        'noOfisolationBeds': '33',
         'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
         'phNos': ['9943165383', '8999889898']
       },
@@ -96,7 +93,7 @@ class _HomeMapState extends State<HomeMap> {
         'instituteType': 'Government',
         'noOfOxygenBeds': '8',
         'noOfVentilatorBeds': '4',
-        'noOfOxygenCylinders': '33',
+        'noOfisolationBeds': '33',
         'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
         'phNos': ['9943165383', '8999889898']
       },
@@ -111,7 +108,7 @@ class _HomeMapState extends State<HomeMap> {
         'instituteType': 'Government',
         'noOfOxygenBeds': '8',
         'noOfVentilatorBeds': '4',
-        'noOfOxygenCylinders': '33',
+        'noOfisolationBeds': '33',
         'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
         'phNos': ['9943165383', '8999889898']
       },
@@ -126,7 +123,7 @@ class _HomeMapState extends State<HomeMap> {
         'instituteType': 'Government',
         'noOfOxygenBeds': '8',
         'noOfVentilatorBeds': '4',
-        'noOfOxygenCylinders': '33',
+        'noOfisolationBeds': '33',
         'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
         'phNos': ['9943165383', '8999889898']
       },
@@ -141,7 +138,7 @@ class _HomeMapState extends State<HomeMap> {
         'instituteType': 'Government',
         'noOfOxygenBeds': '8',
         'noOfVentilatorBeds': '4',
-        'noOfOxygenCylinders': '33',
+        'noOfisolationBeds': '33',
         'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
         'phNos': ['9943165383', '8999889898']
       },
@@ -156,7 +153,7 @@ class _HomeMapState extends State<HomeMap> {
         'instituteType': 'Government',
         'noOfOxygenBeds': '8',
         'noOfVentilatorBeds': '4',
-        'noOfOxygenCylinders': '33',
+        'noOfisolationBeds': '33',
         'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
         'phNos': ['9943165383', '8999889898']
       },
@@ -171,7 +168,7 @@ class _HomeMapState extends State<HomeMap> {
         'instituteType': 'Government',
         'noOfOxygenBeds': '8',
         'noOfVentilatorBeds': '4',
-        'noOfOxygenCylinders': '33',
+        'noOfisolationBeds': '33',
         'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
         'phNos': ['9943165383', '8999889898']
       },
@@ -186,7 +183,7 @@ class _HomeMapState extends State<HomeMap> {
         'instituteType': 'Government',
         'noOfOxygenBeds': '8',
         'noOfVentilatorBeds': '4',
-        'noOfOxygenCylinders': '33',
+        'noOfisolationBeds': '33',
         'address': 'Jipmer Campus Rd,Jipmer Campus,Puducherry,6055006',
         'phNos': ['9943165383', '8999889898']
       }
@@ -202,7 +199,7 @@ class _HomeMapState extends State<HomeMap> {
         builder: (context, api, translation, child) {
       return Scaffold(
         appBar: MyAppBar(
-          title: translation.getTranslatedText('LOCATION'),
+          title: translation.getTranslatedText(context, 'LOCATION'),
         ),
         body: FlutterMap(
           options: MapOptions(
@@ -267,6 +264,7 @@ class _HomeMapState extends State<HomeMap> {
                                                   width: 300.0,
                                                   child: Text(
                                                     translation.getTranslatedText(
+                                                        context,
                                                         'Pondicherry Institute of Medical Sciences'),
                                                     maxLines: 10,
                                                     style: GoogleFonts.poppins(
@@ -302,7 +300,7 @@ class _HomeMapState extends State<HomeMap> {
                                             ),
                                             child: Text(
                                               translation.getTranslatedText(
-                                                  'Bed Availiblity'),
+                                                  context, 'Bed Availiblity'),
                                               maxLines: 1,
                                               // textAlign: ,
                                               textAlign: TextAlign.start,
@@ -331,7 +329,7 @@ class _HomeMapState extends State<HomeMap> {
                                             child: OutlineButton(
                                               child: Text(
                                                 translation.getTranslatedText(
-                                                    "More Details"),
+                                                    context, "More Details"),
                                                 style: GoogleFonts.poppins(
                                                   fontSize: 20.0,
                                                   color: darkBlue,
@@ -362,9 +360,9 @@ class _HomeMapState extends State<HomeMap> {
                                                       ventilatorBeds: hospitals[
                                                               2][
                                                           'noOfVentilatorBeds'],
-                                                      oxygenCylinders: hospitals[
-                                                              2][
-                                                          'noOfOxygenCylinders'],
+                                                      isolationBeds: hospitals[
+                                                              2]
+                                                          ['noOfisolationBeds'],
                                                       address: hospitals[2]
                                                           ['address'],
                                                       contactNos: hospitals[2]
@@ -433,6 +431,7 @@ class _HomeMapState extends State<HomeMap> {
                                                   width: 300.0,
                                                   child: Text(
                                                     translation.getTranslatedText(
+                                                        context,
                                                         'Sri Vanakalum Medical College'),
                                                     maxLines: 10,
                                                     style: GoogleFonts.poppins(
@@ -468,7 +467,7 @@ class _HomeMapState extends State<HomeMap> {
                                             ),
                                             child: Text(
                                               translation.getTranslatedText(
-                                                  'Bed Availiblity'),
+                                                  context, 'Bed Availiblity'),
                                               maxLines: 1,
                                               // textAlign: ,
                                               textAlign: TextAlign.start,
@@ -496,7 +495,7 @@ class _HomeMapState extends State<HomeMap> {
                                             child: OutlineButton(
                                               child: Text(
                                                 translation.getTranslatedText(
-                                                    "More Details"),
+                                                    context, "More Details"),
                                                 style: GoogleFonts.poppins(
                                                   fontSize: 20.0,
                                                   color: darkBlue,
@@ -527,9 +526,9 @@ class _HomeMapState extends State<HomeMap> {
                                                       ventilatorBeds: hospitals[
                                                               2][
                                                           'noOfVentilatorBeds'],
-                                                      oxygenCylinders: hospitals[
-                                                              2][
-                                                          'noOfOxygenCylinders'],
+                                                      isolationBeds: hospitals[
+                                                              2]
+                                                          ['noOfisolationBeds'],
                                                       address: hospitals[2]
                                                           ['address'],
                                                       contactNos: hospitals[2]
@@ -598,6 +597,7 @@ class _HomeMapState extends State<HomeMap> {
                                                   width: 300.0,
                                                   child: Text(
                                                     translation.getTranslatedText(
+                                                        context,
                                                         'Mahatama Gandhi Medical College'),
                                                     maxLines: 10,
                                                     style: GoogleFonts.poppins(
@@ -633,7 +633,7 @@ class _HomeMapState extends State<HomeMap> {
                                             ),
                                             child: Text(
                                               translation.getTranslatedText(
-                                                  'Bed Availiblity'),
+                                                  context, 'Bed Availiblity'),
                                               maxLines: 1,
                                               // textAlign: ,
                                               textAlign: TextAlign.start,
@@ -661,7 +661,7 @@ class _HomeMapState extends State<HomeMap> {
                                             child: OutlineButton(
                                               child: Text(
                                                 translation.getTranslatedText(
-                                                    "More Details"),
+                                                    context, "More Details"),
                                                 style: GoogleFonts.poppins(
                                                   fontSize: 20.0,
                                                   color: darkBlue,
@@ -692,9 +692,9 @@ class _HomeMapState extends State<HomeMap> {
                                                       ventilatorBeds: hospitals[
                                                               2][
                                                           'noOfVentilatorBeds'],
-                                                      oxygenCylinders: hospitals[
-                                                              2][
-                                                          'noOfOxygenCylinders'],
+                                                      isolationBeds: hospitals[
+                                                              2]
+                                                          ['noOfisolationBeds'],
                                                       address: hospitals[2]
                                                           ['address'],
                                                       contactNos: hospitals[2]
@@ -764,7 +764,7 @@ class _HomeMapState extends State<HomeMap> {
                                                   child: Text(
                                                     translation
                                                         .getTranslatedText(
-                                                            'SLIMS'),
+                                                            context, 'SLIMS'),
                                                     maxLines: 10,
                                                     style: GoogleFonts.poppins(
                                                       fontSize: 18,
@@ -799,7 +799,7 @@ class _HomeMapState extends State<HomeMap> {
                                             ),
                                             child: Text(
                                               translation.getTranslatedText(
-                                                  'Bed Availiblity'),
+                                                  context, 'Bed Availiblity'),
                                               maxLines: 1,
                                               // textAlign: ,
                                               textAlign: TextAlign.start,
@@ -827,7 +827,7 @@ class _HomeMapState extends State<HomeMap> {
                                             child: OutlineButton(
                                               child: Text(
                                                 translation.getTranslatedText(
-                                                    "More Details"),
+                                                    context, "More Details"),
                                                 style: GoogleFonts.poppins(
                                                   fontSize: 20.0,
                                                   color: darkBlue,
@@ -858,9 +858,9 @@ class _HomeMapState extends State<HomeMap> {
                                                       ventilatorBeds: hospitals[
                                                               2][
                                                           'noOfVentilatorBeds'],
-                                                      oxygenCylinders: hospitals[
-                                                              2][
-                                                          'noOfOxygenCylinders'],
+                                                      isolationBeds: hospitals[
+                                                              2]
+                                                          ['noOfisolationBeds'],
                                                       address: hospitals[2]
                                                           ['address'],
                                                       contactNos: hospitals[2]
@@ -930,7 +930,7 @@ class _HomeMapState extends State<HomeMap> {
                                                   child: Text(
                                                     translation
                                                         .getTranslatedText(
-                                                            'SMVMC'),
+                                                            context, 'SMVMC'),
                                                     maxLines: 10,
                                                     style: GoogleFonts.poppins(
                                                       fontSize: 18,
@@ -965,7 +965,7 @@ class _HomeMapState extends State<HomeMap> {
                                             ),
                                             child: Text(
                                               translation.getTranslatedText(
-                                                  'Bed Availiblity'),
+                                                  context, 'Bed Availiblity'),
                                               maxLines: 1,
                                               // textAlign: ,
                                               textAlign: TextAlign.start,
@@ -993,7 +993,7 @@ class _HomeMapState extends State<HomeMap> {
                                             child: OutlineButton(
                                               child: Text(
                                                 translation.getTranslatedText(
-                                                    "More Details"),
+                                                    context, "More Details"),
                                                 style: GoogleFonts.poppins(
                                                   fontSize: 20.0,
                                                   color: darkBlue,
@@ -1024,9 +1024,9 @@ class _HomeMapState extends State<HomeMap> {
                                                       ventilatorBeds: hospitals[
                                                               2][
                                                           'noOfVentilatorBeds'],
-                                                      oxygenCylinders: hospitals[
-                                                              2][
-                                                          'noOfOxygenCylinders'],
+                                                      isolationBeds: hospitals[
+                                                              2]
+                                                          ['noOfisolationBeds'],
                                                       address: hospitals[2]
                                                           ['address'],
                                                       contactNos: hospitals[2]
@@ -1095,6 +1095,7 @@ class _HomeMapState extends State<HomeMap> {
                                                   width: 300.0,
                                                   child: Text(
                                                     translation.getTranslatedText(
+                                                        context,
                                                         'Pondicherry Institute of Medical Sciences'),
                                                     maxLines: 10,
                                                     style: GoogleFonts.poppins(
@@ -1130,7 +1131,7 @@ class _HomeMapState extends State<HomeMap> {
                                             ),
                                             child: Text(
                                               translation.getTranslatedText(
-                                                  'Bed Availiblity'),
+                                                  context, 'Bed Availiblity'),
                                               maxLines: 1,
                                               // textAlign: ,
                                               textAlign: TextAlign.start,
@@ -1158,7 +1159,7 @@ class _HomeMapState extends State<HomeMap> {
                                             child: OutlineButton(
                                               child: Text(
                                                 translation.getTranslatedText(
-                                                    "More Details"),
+                                                    context, "More Details"),
                                                 style: GoogleFonts.poppins(
                                                   fontSize: 20.0,
                                                   color: darkBlue,
@@ -1189,9 +1190,9 @@ class _HomeMapState extends State<HomeMap> {
                                                       ventilatorBeds: hospitals[
                                                               2][
                                                           'noOfVentilatorBeds'],
-                                                      oxygenCylinders: hospitals[
-                                                              2][
-                                                          'noOfOxygenCylinders'],
+                                                      isolationBeds: hospitals[
+                                                              2]
+                                                          ['noOfisolationBeds'],
                                                       address: hospitals[2]
                                                           ['address'],
                                                       contactNos: hospitals[2]
@@ -1260,6 +1261,7 @@ class _HomeMapState extends State<HomeMap> {
                                                   width: 300.0,
                                                   child: Text(
                                                     translation.getTranslatedText(
+                                                        context,
                                                         'Indhra Gandhi Medical Colege'),
                                                     maxLines: 10,
                                                     style: GoogleFonts.poppins(
@@ -1295,7 +1297,7 @@ class _HomeMapState extends State<HomeMap> {
                                             ),
                                             child: Text(
                                               translation.getTranslatedText(
-                                                  'Bed Availiblity'),
+                                                  context, 'Bed Availiblity'),
                                               maxLines: 1,
                                               // textAlign: ,
                                               textAlign: TextAlign.start,
@@ -1323,7 +1325,7 @@ class _HomeMapState extends State<HomeMap> {
                                             child: OutlineButton(
                                               child: Text(
                                                 translation.getTranslatedText(
-                                                    "More Details"),
+                                                    context, "More Details"),
                                                 style: GoogleFonts.poppins(
                                                   fontSize: 20.0,
                                                   color: darkBlue,
@@ -1354,9 +1356,9 @@ class _HomeMapState extends State<HomeMap> {
                                                       ventilatorBeds: hospitals[
                                                               2][
                                                           'noOfVentilatorBeds'],
-                                                      oxygenCylinders: hospitals[
-                                                              2][
-                                                          'noOfOxygenCylinders'],
+                                                      isolationBeds: hospitals[
+                                                              2]
+                                                          ['noOfisolationBeds'],
                                                       address: hospitals[2]
                                                           ['address'],
                                                       contactNos: hospitals[2]
@@ -1425,6 +1427,7 @@ class _HomeMapState extends State<HomeMap> {
                                                   width: 300.0,
                                                   child: Text(
                                                     translation.getTranslatedText(
+                                                        context,
                                                         'Jawaharlal Institute of Postgraduate Medical Education and Research,Government of India'),
                                                     maxLines: 10,
                                                     style: GoogleFonts.poppins(
@@ -1460,7 +1463,7 @@ class _HomeMapState extends State<HomeMap> {
                                             ),
                                             child: Text(
                                               translation.getTranslatedText(
-                                                  'Bed Availiblity'),
+                                                  context, 'Bed Availiblity'),
                                               maxLines: 1,
                                               // textAlign: ,
                                               textAlign: TextAlign.start,
@@ -1488,7 +1491,7 @@ class _HomeMapState extends State<HomeMap> {
                                             child: OutlineButton(
                                               child: Text(
                                                 translation.getTranslatedText(
-                                                    "More Details"),
+                                                    context, "More Details"),
                                                 style: GoogleFonts.poppins(
                                                   fontSize: 20.0,
                                                   color: darkBlue,
@@ -1519,9 +1522,9 @@ class _HomeMapState extends State<HomeMap> {
                                                       ventilatorBeds: hospitals[
                                                               2][
                                                           'noOfVentilatorBeds'],
-                                                      oxygenCylinders: hospitals[
-                                                              2][
-                                                          'noOfOxygenCylinders'],
+                                                      isolationBeds: hospitals[
+                                                              2]
+                                                          ['noOfisolationBeds'],
                                                       address: hospitals[2]
                                                           ['address'],
                                                       contactNos: hospitals[2]
@@ -1591,6 +1594,7 @@ class _HomeMapState extends State<HomeMap> {
                                                   child: Text(
                                                     translation
                                                         .getTranslatedText(
+                                                            context,
                                                             'Dental College'),
                                                     maxLines: 10,
                                                     style: GoogleFonts.poppins(
@@ -1626,7 +1630,7 @@ class _HomeMapState extends State<HomeMap> {
                                             ),
                                             child: Text(
                                               translation.getTranslatedText(
-                                                  'Bed Availiblity'),
+                                                  context, 'Bed Availiblity'),
                                               maxLines: 1,
                                               // textAlign: ,
                                               textAlign: TextAlign.start,
@@ -1654,7 +1658,7 @@ class _HomeMapState extends State<HomeMap> {
                                             child: OutlineButton(
                                               child: Text(
                                                 translation.getTranslatedText(
-                                                    "More Details"),
+                                                    context, "More Details"),
                                                 style: GoogleFonts.poppins(
                                                   fontSize: 20.0,
                                                   color: darkBlue,
@@ -1685,9 +1689,9 @@ class _HomeMapState extends State<HomeMap> {
                                                       ventilatorBeds: hospitals[
                                                               2][
                                                           'noOfVentilatorBeds'],
-                                                      oxygenCylinders: hospitals[
-                                                              2][
-                                                          'noOfOxygenCylinders'],
+                                                      isolationBeds: hospitals[
+                                                              2]
+                                                          ['noOfisolationBeds'],
                                                       address: hospitals[2]
                                                           ['address'],
                                                       contactNos: hospitals[2]
@@ -1761,6 +1765,7 @@ class _HomeMapState extends State<HomeMap> {
                                                   child: Text(
                                                     translation
                                                         .getTranslatedText(
+                                                            context,
                                                             'Be Well Hospital'),
                                                     maxLines: 10,
                                                     style: GoogleFonts.poppins(
@@ -1796,7 +1801,7 @@ class _HomeMapState extends State<HomeMap> {
                                             ),
                                             child: Text(
                                               translation.getTranslatedText(
-                                                  'Bed Availiblity'),
+                                                  context, 'Bed Availiblity'),
                                               maxLines: 1,
                                               // textAlign: ,
                                               textAlign: TextAlign.start,
@@ -1824,7 +1829,7 @@ class _HomeMapState extends State<HomeMap> {
                                             child: OutlineButton(
                                               child: Text(
                                                 translation.getTranslatedText(
-                                                    "More Details"),
+                                                    context, "More Details"),
                                                 style: GoogleFonts.poppins(
                                                   fontSize: 20.0,
                                                   color: darkBlue,
@@ -1855,9 +1860,9 @@ class _HomeMapState extends State<HomeMap> {
                                                       ventilatorBeds: hospitals[
                                                               2][
                                                           'noOfVentilatorBeds'],
-                                                      oxygenCylinders: hospitals[
-                                                              2][
-                                                          'noOfOxygenCylinders'],
+                                                      isolationBeds: hospitals[
+                                                              2]
+                                                          ['noOfisolationBeds'],
                                                       address: hospitals[2]
                                                           ['address'],
                                                       contactNos: hospitals[2]
@@ -1927,6 +1932,7 @@ class _HomeMapState extends State<HomeMap> {
                                                   child: Text(
                                                     translation
                                                         .getTranslatedText(
+                                                            context,
                                                             'Rani Hospital'),
                                                     maxLines: 10,
                                                     style: GoogleFonts.poppins(
@@ -1962,7 +1968,7 @@ class _HomeMapState extends State<HomeMap> {
                                             ),
                                             child: Text(
                                               translation.getTranslatedText(
-                                                  'Bed Availiblity'),
+                                                  context, 'Bed Availiblity'),
                                               maxLines: 1,
                                               // textAlign: ,
                                               textAlign: TextAlign.start,
@@ -1990,7 +1996,7 @@ class _HomeMapState extends State<HomeMap> {
                                             child: OutlineButton(
                                               child: Text(
                                                 translation.getTranslatedText(
-                                                    "More Details"),
+                                                    context, "More Details"),
                                                 style: GoogleFonts.poppins(
                                                   fontSize: 20.0,
                                                   color: darkBlue,
@@ -2021,9 +2027,9 @@ class _HomeMapState extends State<HomeMap> {
                                                       ventilatorBeds: hospitals[
                                                               2][
                                                           'noOfVentilatorBeds'],
-                                                      oxygenCylinders: hospitals[
-                                                              2][
-                                                          'noOfOxygenCylinders'],
+                                                      isolationBeds: hospitals[
+                                                              2]
+                                                          ['noOfisolationBeds'],
                                                       address: hospitals[2]
                                                           ['address'],
                                                       contactNos: hospitals[2]
@@ -2092,6 +2098,7 @@ class _HomeMapState extends State<HomeMap> {
                                                   width: 300.0,
                                                   child: Text(
                                                     translation.getTranslatedText(
+                                                        context,
                                                         'New Medical Center'),
                                                     maxLines: 10,
                                                     style: GoogleFonts.poppins(
@@ -2127,7 +2134,7 @@ class _HomeMapState extends State<HomeMap> {
                                             ),
                                             child: Text(
                                               translation.getTranslatedText(
-                                                  'Bed Availiblity'),
+                                                  context, 'Bed Availiblity'),
                                               maxLines: 1,
                                               // textAlign: ,
                                               textAlign: TextAlign.start,
@@ -2155,7 +2162,7 @@ class _HomeMapState extends State<HomeMap> {
                                             child: OutlineButton(
                                               child: Text(
                                                 translation.getTranslatedText(
-                                                    "More Details"),
+                                                    context, "More Details"),
                                                 style: GoogleFonts.poppins(
                                                   fontSize: 20.0,
                                                   color: darkBlue,
@@ -2186,9 +2193,9 @@ class _HomeMapState extends State<HomeMap> {
                                                       ventilatorBeds: hospitals[
                                                               2][
                                                           'noOfVentilatorBeds'],
-                                                      oxygenCylinders: hospitals[
-                                                              2][
-                                                          'noOfOxygenCylinders'],
+                                                      isolationBeds: hospitals[
+                                                              2]
+                                                          ['noOfisolationBeds'],
                                                       address: hospitals[2]
                                                           ['address'],
                                                       contactNos: hospitals[2]
@@ -2257,6 +2264,7 @@ class _HomeMapState extends State<HomeMap> {
                                                   width: 300.0,
                                                   child: Text(
                                                     translation.getTranslatedText(
+                                                        context,
                                                         'MVR Medical Center'),
                                                     maxLines: 10,
                                                     style: GoogleFonts.poppins(
@@ -2292,7 +2300,7 @@ class _HomeMapState extends State<HomeMap> {
                                             ),
                                             child: Text(
                                               translation.getTranslatedText(
-                                                  'Bed Availiblity'),
+                                                  context, 'Bed Availiblity'),
                                               maxLines: 1,
                                               // textAlign: ,
                                               textAlign: TextAlign.start,
@@ -2320,7 +2328,7 @@ class _HomeMapState extends State<HomeMap> {
                                             child: OutlineButton(
                                               child: Text(
                                                 translation.getTranslatedText(
-                                                    "More Details"),
+                                                    context, "More Details"),
                                                 style: GoogleFonts.poppins(
                                                   fontSize: 20.0,
                                                   color: darkBlue,
@@ -2351,9 +2359,9 @@ class _HomeMapState extends State<HomeMap> {
                                                       ventilatorBeds: hospitals[
                                                               2][
                                                           'noOfVentilatorBeds'],
-                                                      oxygenCylinders: hospitals[
-                                                              2][
-                                                          'noOfOxygenCylinders'],
+                                                      isolationBeds: hospitals[
+                                                              2]
+                                                          ['noOfisolationBeds'],
                                                       address: hospitals[2]
                                                           ['address'],
                                                       contactNos: hospitals[2]
@@ -2423,6 +2431,7 @@ class _HomeMapState extends State<HomeMap> {
                                                   child: Text(
                                                     translation
                                                         .getTranslatedText(
+                                                            context,
                                                             'IGGGH & PGI'),
                                                     maxLines: 10,
                                                     style: GoogleFonts.poppins(
@@ -2458,7 +2467,7 @@ class _HomeMapState extends State<HomeMap> {
                                             ),
                                             child: Text(
                                               translation.getTranslatedText(
-                                                  'Bed Availiblity'),
+                                                  context, 'Bed Availiblity'),
                                               maxLines: 1,
                                               // textAlign: ,
                                               textAlign: TextAlign.start,
@@ -2486,7 +2495,7 @@ class _HomeMapState extends State<HomeMap> {
                                             child: OutlineButton(
                                               child: Text(
                                                 translation.getTranslatedText(
-                                                    "More Details"),
+                                                    context, "More Details"),
                                                 style: GoogleFonts.poppins(
                                                   fontSize: 20.0,
                                                   color: darkBlue,
@@ -2517,9 +2526,9 @@ class _HomeMapState extends State<HomeMap> {
                                                       ventilatorBeds: hospitals[
                                                               2][
                                                           'noOfVentilatorBeds'],
-                                                      oxygenCylinders: hospitals[
-                                                              2][
-                                                          'noOfOxygenCylinders'],
+                                                      isolationBeds: hospitals[
+                                                              2]
+                                                          ['noOfisolationBeds'],
                                                       address: hospitals[2]
                                                           ['address'],
                                                       contactNos: hospitals[2]
@@ -2588,6 +2597,7 @@ class _HomeMapState extends State<HomeMap> {
                                                   width: 300.0,
                                                   child: Text(
                                                     translation.getTranslatedText(
+                                                        context,
                                                         'Common Health Center Karikalampakkam'),
                                                     maxLines: 10,
                                                     style: GoogleFonts.poppins(
@@ -2623,7 +2633,7 @@ class _HomeMapState extends State<HomeMap> {
                                             ),
                                             child: Text(
                                               translation.getTranslatedText(
-                                                  'Bed Availiblity'),
+                                                  context, 'Bed Availiblity'),
                                               maxLines: 1,
                                               // textAlign: ,
                                               textAlign: TextAlign.start,
@@ -2651,7 +2661,7 @@ class _HomeMapState extends State<HomeMap> {
                                             child: OutlineButton(
                                               child: Text(
                                                 translation.getTranslatedText(
-                                                    "More Details"),
+                                                    context, "More Details"),
                                                 style: GoogleFonts.poppins(
                                                   fontSize: 20.0,
                                                   color: darkBlue,
@@ -2682,9 +2692,9 @@ class _HomeMapState extends State<HomeMap> {
                                                       ventilatorBeds: hospitals[
                                                               2][
                                                           'noOfVentilatorBeds'],
-                                                      oxygenCylinders: hospitals[
-                                                              2][
-                                                          'noOfOxygenCylinders'],
+                                                      isolationBeds: hospitals[
+                                                              2]
+                                                          ['noOfisolationBeds'],
                                                       address: hospitals[2]
                                                           ['address'],
                                                       contactNos: hospitals[2]
