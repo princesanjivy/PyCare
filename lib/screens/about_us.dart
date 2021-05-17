@@ -140,7 +140,8 @@ class AboutUs extends StatelessWidget {
             ),
             Center(
               child: Text(
-                "An Outcome of Google DSC PTU,Puducherry",
+                translation.getTranslatedText(
+                    "An Outcome of Google DSC PTU,Puducherry"),
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
                     fontSize: 15,
