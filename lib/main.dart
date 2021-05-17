@@ -32,6 +32,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        textTheme: TextTheme(
+          bodyText1: TextStyle(
+            fontSize: 8,
+          ),
+        ),
+      ),
       home: Bar(),
     );
   }
@@ -54,106 +61,113 @@ class _BarState extends State<Bar> {
   ];
   @override
   Widget build(BuildContext context) {
-    return Consumer<FetchData>(builder: (context, api, child) {
-      return api.loading
-          ? Scaffold(
-              body: Center(
-                child: CircularProgressIndicator(),
-              ),
-            )
-          : Scaffold(
-              body: _screens[_currentIndex],
-              bottomNavigationBar: ClipRRect(
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(15.0),
-                  topRight: Radius.circular(15.0),
+    return Consumer2<FetchData, TranslationText>(
+      builder: (context, api, translation, child) {
+        return api.loading
+            ? Scaffold(
+                body: Center(
+                  child: CircularProgressIndicator(),
                 ),
-                child: BottomNavyBar(
-                  curve: Curves.elasticInOut,
-                  backgroundColor: appBarCol,
-                  selectedIndex: _currentIndex,
-                  onItemSelected: (index) {
-                    setState(
-                      () {
-                        _currentIndex = index;
-                      },
-                    );
-                  },
-                  items: <BottomNavyBarItem>[
-                    BottomNavyBarItem(
-                      icon: FaIcon(
-                        FontAwesomeIcons.home,
-                        color: Colors.white,
-                      ),
-                      title: Text(
-                        " HOME",
-                        style: TextStyle(
+              )
+            : Scaffold(
+                body: _screens[_currentIndex],
+                bottomNavigationBar: ClipRRect(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(15.0),
+                    topRight: Radius.circular(15.0),
+                  ),
+                  child: BottomNavyBar(
+                    curve: Curves.elasticInOut,
+                    backgroundColor: appBarCol,
+                    selectedIndex: _currentIndex,
+                    onItemSelected: (index) {
+                      setState(
+                        () {
+                          _currentIndex = index;
+                        },
+                      );
+                    },
+                    items: <BottomNavyBarItem>[
+                      BottomNavyBarItem(
+                        icon: FaIcon(
+                          FontAwesomeIcons.home,
                           color: Colors.white,
                         ),
+                        title: Text(
+                          "HOME",
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                        activeColor: Colors.indigo.shade900,
+                        inactiveColor: Colors.white,
                       ),
-                      activeColor: Colors.indigo.shade900,
-                      inactiveColor: Colors.white,
-                    ),
-                    BottomNavyBarItem(
-                      icon: FaIcon(
-                        FontAwesomeIcons.hospital,
-                        color: Colors.white,
-                      ),
-                      title: Text(
-                        " HOSPITAL",
-                        style: TextStyle(
+                      BottomNavyBarItem(
+                        icon: FaIcon(
+                          FontAwesomeIcons.hospital,
                           color: Colors.white,
                         ),
+                        title: Text(
+                          "HOSPITAL",
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                        activeColor: Colors.indigo.shade900,
+                        inactiveColor: Colors.white,
                       ),
-                      activeColor: Colors.indigo.shade900,
-                      inactiveColor: Colors.white,
-                    ),
-                    BottomNavyBarItem(
-                      icon: FaIcon(
-                        FontAwesomeIcons.syringe,
-                        color: Colors.white,
-                      ),
-                      title: Text(
-                        " VACCINE",
-                        style: TextStyle(
+                      BottomNavyBarItem(
+                        icon: FaIcon(
+                          FontAwesomeIcons.syringe,
                           color: Colors.white,
                         ),
+                        title: Text(
+                          "VACCINE",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                        activeColor: Colors.indigo.shade900,
+                        inactiveColor: Colors.white,
                       ),
-                      activeColor: Colors.indigo.shade900,
-                      inactiveColor: Colors.white,
-                    ),
-                    BottomNavyBarItem(
-                      icon: FaIcon(
-                        FontAwesomeIcons.map,
-                        color: Colors.white,
-                      ),
-                      title: Text(
-                        "  MAP",
-                        style: TextStyle(
+                      BottomNavyBarItem(
+                        icon: FaIcon(
+                          FontAwesomeIcons.map,
                           color: Colors.white,
                         ),
+                        title: Text(
+                          "MAP",
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                        activeColor: Colors.indigo.shade900,
+                        inactiveColor: Colors.white,
                       ),
-                      activeColor: Colors.indigo.shade900,
-                      inactiveColor: Colors.white,
-                    ),
-                    BottomNavyBarItem(
-                      icon: FaIcon(
-                        FontAwesomeIcons.users,
-                        color: Colors.white,
-                      ),
-                      title: Text(
-                        " ABOUT US",
-                        style: TextStyle(
+                      BottomNavyBarItem(
+                        icon: FaIcon(
+                          FontAwesomeIcons.users,
                           color: Colors.white,
                         ),
+                        title: Text(
+                          "ABOUT US",
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                        activeColor: Colors.indigo.shade900,
+                        inactiveColor: Colors.white,
                       ),
-                      activeColor: Colors.indigo.shade900,
-                      inactiveColor: Colors.white,
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-            );
-    });
+              );
+      },
+    );
   }
 }

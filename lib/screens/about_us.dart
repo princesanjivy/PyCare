@@ -7,6 +7,7 @@ import 'package:pycare/components/info_card.dart';
 import 'package:pycare/components/my_appbar.dart';
 import 'package:pycare/components/my_colors.dart';
 import 'package:pycare/providers/translation.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class AboutUs extends StatelessWidget {
   final List<InfoCard> details = [
@@ -118,7 +119,7 @@ class AboutUs extends StatelessWidget {
       return Scaffold(
         backgroundColor: bgColor,
         appBar: MyAppBar(
-          title: translation.getTranslatedText(context,"About Us"),
+          title: translation.getTranslatedText(context, "About Us"),
         ),
         body: ListView(
           children: [
@@ -140,8 +141,8 @@ class AboutUs extends StatelessWidget {
             ),
             Center(
               child: Text(
-                translation.getTranslatedText(context,
-                    "An Outcome of Google DSC PTU,Puducherry"),
+                translation.getTranslatedText(
+                    context, "An Outcome of Google DSC PTU,Puducherry"),
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
                     fontSize: 15,
@@ -159,17 +160,14 @@ class AboutUs extends StatelessWidget {
                     icon: Icon(FontAwesomeIcons.envelope),
                     iconSize: 25,
                     onPressed: () {
-                      translation.setCurrentLanguage("tamil");
-                      // launch("mailto:google.dsc@pec.edu");
+                      launch("mailto:google.dsc@pec.edu");
                     },
                   ),
                   IconButton(
                     icon: Icon(FontAwesomeIcons.instagram),
                     iconSize: 25,
                     onPressed: () {
-                      translation.setCurrentLanguage("hindi");
-
-                      // launch('https://www.instagram.com/dsc_pec/');
+                      launch('https://www.instagram.com/dsc_pec/');
                     },
                   ),
                 ],

@@ -21,9 +21,10 @@ class FetchData with ChangeNotifier {
     status = jsonDecode(response.body)[0];
 
     http.Response response1 =
-        await http.get(Uri.parse(uri + "/hospitalDetails"));
+        await http.get(Uri.parse(uri + "/hospitalDetails?sort=hospitalName"));
     hospitalDetails = jsonDecode(response1.body);
 
+    hospitalDetails = hospitalDetails.reversed.toList();
     print(hospitalDetails.length);
 
     // http.Response response2 =
