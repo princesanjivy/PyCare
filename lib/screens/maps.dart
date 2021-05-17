@@ -17,16 +17,24 @@ class _HomeMapState extends State<HomeMap> {
   Widget build(BuildContext context) {
     return Consumer2<FetchData, TranslationText>(
         builder: (context, api, translation, child) {
-      List<Marker> markers = api.hospitalDetails.map((data) {
-        return PlaceMarker(
-          hospitalName: data["hospitalName"],
-          isolationBeds: data["isolationBeds"]["vacant"],
-          lat: data["lat"],
-          long: data["long"],
-          oxygenBeds: data["oxygenBeds"]["vacant"],
-          ventilatorBeds: data["ventilatorBeds"]["vacant"],
-        ).build(context);
-      }).toList();
+      List<Marker> markers = api.hospitalDetails
+          .asMap()
+          .map(
+            (i, data) => MapEntry(
+              i,
+              PlaceMarker(
+                hospitalName: data["hospitalName"],
+                isolationBeds: data["isolationBeds"]["vacant"],
+                lat: data["lat"],
+                index: i,
+                long: data["long"],
+                oxygenBeds: data["oxygenBeds"]["vacant"],
+                ventilatorBeds: data["ventilatorBeds"]["vacant"],
+              ).build(context),
+            ),
+          )
+          .values
+          .toList();
 
       return Scaffold(
         appBar: MyAppBar(

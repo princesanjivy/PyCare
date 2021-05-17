@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:pycare/components/my_colors.dart';
+import 'package:pycare/components/my_text.dart';
 import 'package:pycare/providers/fetch_data.dart';
 import 'package:pycare/providers/translation.dart';
 import 'package:pycare/screens/about_us.dart';
@@ -65,8 +66,41 @@ class _BarState extends State<Bar> {
       builder: (context, api, translation, child) {
         return api.loading
             ? Scaffold(
-                body: Center(
-                  child: CircularProgressIndicator(),
+                body: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(100),
+                      child: Image.asset(
+                        "assets/images/logo.png",
+                        fit: BoxFit.cover,
+                        width: 150,
+                        height: 150,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 16,
+                    ),
+                    MyText(
+                      text: "Py-Care",
+                    ),
+                    MyText(
+                      text: "An outcome of DSC PEC",
+                    ),
+                    SizedBox(
+                      height: 16,
+                    ),
+                    Center(
+                      child: CircularProgressIndicator(),
+                    ),
+                    SizedBox(
+                      height: 16,
+                    ),
+                    MyText(
+                      text: "Please wait...",
+                    ),
+                  ],
                 ),
               )
             : Scaffold(

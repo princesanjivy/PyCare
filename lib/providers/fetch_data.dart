@@ -9,6 +9,9 @@ class FetchData with ChangeNotifier {
 
   Map status;
   List hospitalDetails;
+  List hospitalDetailsSortO;
+  List hospitalDetailsSortV;
+  List hospitalDetailsSortI;
 
   FetchData() {
     getAllData();
@@ -25,18 +28,35 @@ class FetchData with ChangeNotifier {
     hospitalDetails = jsonDecode(response1.body);
 
     hospitalDetails = hospitalDetails.reversed.toList();
-    print(hospitalDetails.length);
 
-    // http.Response response2 =
-    //     await http.get(Uri.parse(uri + "/translation"), headers: {
-    //   "Content-Type": "application/json",
-    //   "Accept-Charset": "utf-8",
-    // });
-    // print(utf8.decode(utf8.encode(response2.body)));
-    //
-    // translation = jsonDecode(response2.body);
+    http.Response response2 =
+        await http.get(Uri.parse(uri + "/hospitalDetails?sort=oxygenBeds"));
+    hospitalDetailsSortO = jsonDecode(response2.body);
+
+    http.Response response3 =
+        await http.get(Uri.parse(uri + "/hospitalDetails?sort=ventilatorBeds"));
+    hospitalDetailsSortV = jsonDecode(response3.body);
+
+    http.Response response4 =
+        await http.get(Uri.parse(uri + "/hospitalDetails?sort=isolationBeds"));
+    hospitalDetailsSortI = jsonDecode(response4.body);
 
     loading = false;
+    notifyListeners();
+  }
+
+  void sortThing(int sortItem) {
+    switch (sortItem) {
+      case 0:
+        hospitalDetails = hospitalDetailsSortO;
+        break;
+      case 1:
+        hospitalDetails = hospitalDetailsSortV;
+        break;
+      case 2:
+        hospitalDetails = hospitalDetailsSortI;
+        break;
+    }
     notifyListeners();
   }
 

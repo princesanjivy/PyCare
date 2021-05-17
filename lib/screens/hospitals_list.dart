@@ -25,7 +25,6 @@ class _HospitalsState extends State<Hospitals> {
     var width = MediaQuery.of(context).size.width;
     return Consumer2<FetchData, TranslationText>(
         builder: (context, api, translation, child) {
-      List data = api.hospitalDetails;
       return Scaffold(
         backgroundColor: bgColor,
         appBar: MyAppBar(
@@ -203,6 +202,8 @@ class _HospitalsState extends State<Hospitals> {
                         PopupMenuItem(
                           child: ListTile(
                             onTap: () {
+                              api.sortThing(0);
+
                               Navigator.pop(context);
                             }, //Sort Logic (Ascending)
                             title: Text(
@@ -218,6 +219,7 @@ class _HospitalsState extends State<Hospitals> {
                         PopupMenuItem(
                           child: ListTile(
                             onTap: () {
+                              api.sortThing(1);
                               Navigator.pop(context);
                             }, //Sort Logic (Descending)
                             title: Text(
@@ -234,6 +236,7 @@ class _HospitalsState extends State<Hospitals> {
                         PopupMenuItem(
                           child: ListTile(
                             onTap: () {
+                              api.sortThing(2);
                               Navigator.pop(context);
                             }, //Sort Logic (Vacant Beds)
                             title: MyText(
