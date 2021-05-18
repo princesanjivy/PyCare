@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pie_chart/pie_chart.dart';
 import 'package:provider/provider.dart';
+import 'package:pycare/Components/popup.dart';
 import 'package:pycare/components/hcard.dart';
 import 'package:pycare/components/my_appbar.dart';
 import 'package:pycare/components/my_colors.dart';
-import 'package:pycare/components/popup.dart';
 import 'package:pycare/components/precautions_scroll.dart';
 import 'package:pycare/providers/fetch_data.dart';
 import 'package:pycare/providers/translation.dart';
@@ -48,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
           centerTitle: true,
           backgroundColor: appBarCol,
           actions: [
-            popup(),
+            PopUp(),
           ],
         ),
         body: SingleChildScrollView(

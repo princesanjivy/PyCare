@@ -118,7 +118,7 @@ class AboutUs extends StatelessWidget {
       return Scaffold(
         backgroundColor: bgColor,
         appBar: MyAppBar(
-          title: translation.getTranslatedText(context,"About Us"),
+          title: translation.getTranslatedText(context, "About Us"),
         ),
         body: ListView(
           children: [
@@ -140,8 +140,8 @@ class AboutUs extends StatelessWidget {
             ),
             Center(
               child: Text(
-                translation.getTranslatedText(context,
-                    "An Outcome of Google DSC PTU,Puducherry"),
+                translation.getTranslatedText(
+                    context, "An Outcome of Google DSC PTU,Puducherry"),
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
                     fontSize: 15,

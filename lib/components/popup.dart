@@ -4,36 +4,42 @@ import 'my_text.dart';
 
 enum MenuOption { English, Tamil, Hindi }
 
-class popup extends StatelessWidget {
+class PopUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PopupMenuButton<MenuOption>(
       itemBuilder: (BuildContext context) {
         return <PopupMenuEntry<MenuOption>>[
           PopupMenuItem(
-            child: InkWell(
-              child: MyText(
+            child: ListTile(
+              title: MyText(
                 text: "English",
               ),
-              onTap: () {},
+              onTap: () {
+                print('English');
+              },
             ),
             value: MenuOption.English,
           ),
           PopupMenuItem(
-            child: InkWell(
-              child: MyText(
+            child: ListTile(
+              title: MyText(
                 text: "Tamil",
               ),
-              onTap: () {},
+              onTap: () {
+                print('tamil');
+              },
             ),
             value: MenuOption.Tamil,
           ),
           PopupMenuItem(
-            child: InkWell(
-              child: MyText(
+            child: ListTile(
+              title: MyText(
                 text: "Hindi",
               ),
-              onTap: () {},
+              onTap: () {
+                print('Hindi');
+              },
             ),
             value: MenuOption.Hindi,
           ),
