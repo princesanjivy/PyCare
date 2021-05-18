@@ -60,7 +60,8 @@ class Deck extends StatelessWidget {
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15.0),
             color: Colors.lightBlueAccent),
-        height: 400.0,
+        height: 400,
+        width: 250,
         child: Column(
           children: [
             Expanded(

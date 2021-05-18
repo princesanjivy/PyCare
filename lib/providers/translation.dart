@@ -11,20 +11,16 @@ class TranslationText with ChangeNotifier {
     "active": ["செயலில்", "सक्रिय"],
     "cured": ["குணப்படுத்த", "ठीक हो"],
     "death": ["இறப்பு", "मौत"],
-    "covid tracker ": ["கோவிட் டிராக்கர்", "कोविड ट्रैकर"],
+    "covid-19 tracker": ["கோவிட்-19 டிராக்கர்", "कोविड-19 ट्रैकर"],
     "developers": ["டெவலப்பர்கள்", "डेवलपर्स"],
     "home": ["வீடு", "घर"],
     "total reported": ["பதிவாகியுள்ளன", "कुल सूचना दी"],
     "precautions": ["தற்காப்பு நடவடிக்கைகள்", "एहतियात"],
-    "prevention is better than cure": [
-      "வரும் முன் காப்பதே சிறந்தது",
-      "इलाज से बेहतर रोकथाम है"
-    ],
-    "dont forget to wear your mask": [
+    "don't forget to wear your mask": [
       "உங்கள் முகமூடி அணிய மறக்க தெரியவில்லை",
       "न अपने मुखौटा पहनने के लिए भूल जाते हैं"
     ],
-    "ensure you sanitize your hand regularly": [
+    "ensure you sanitize your hands regularly": [
       "நீங்கள் ஒழுங்காக உங்கள் கையில் துப்புரவாக்குங்கள் உறுதி",
       "आप अपने हाथ नियमित रूप से स्वच्छ सुनिश्चित"
     ],
@@ -33,11 +29,11 @@ class TranslationText with ChangeNotifier {
     "list of hospitals": ["மருத்துவமனைகளில் பட்டியலில்", "अस्पतालों की सूची"],
     "filter ": ["வடிகட்டி", "फिल्टर"],
     "sort": ["வகைபடுத்து", "तरह"],
-    "wash your hands regularly ": [
+    "wash your hands regularly": [
       "வழக்கமாக உங்கள் கைகளை சுத்தம்",
       "अपने हाथों को नियमित रूप से धोने"
     ],
-    "use gloves when needed": [
+    "use gloves when required": [
       "தேவைப்படும் போது கையுறைகள் பயன்படுத்த",
       "जब जरूरत दस्ताने का उपयोग"
     ],
@@ -108,7 +104,7 @@ class TranslationText with ChangeNotifier {
       "An outcome of DSC PEC Puducherry",
       "An outcome of DSC PEC Puducherry"
     ],
-    "dr  selvaradjou ka": ["டாக்டர். செல்வரத்ஜோ கா", "सेल्वरज"],
+    "dr. selvaradjou ka": ["டாக்டர். செல்வரத்ஜோ கா", "सेल्वरज"],
     "head": ["தலைமை", "सिर"],
     "durga prasad": ["துர்கா பிரசாத்", "दुर्गा प्रस्साद "],
     "lead": ["வழி நடத்து", "लीड"],
@@ -159,11 +155,11 @@ class TranslationText with ChangeNotifier {
     ],
     "kathirkamam, puducherry, 605009": [
       "கதிர்காமம், புதுச்சேரி, 605009",
-      "\nकटिरकमम, पुडुचेरी, 605009"
+      "कटिरकमम, पुडुचेरी, 605009"
     ],
     "jipmer campus rd, jipmer campus, puducherry, 605006": [
       "ஜிப்மர் வளாகம் St, ஜிப்மர் வளாகம், புதுச்சேரி, 605006",
-      "\nजिपमेर कैंपस रोड, जिपमेर कैंपस, पुडुचेरी, 605006"
+      "जिपमेर कैंपस रोड, जिपमेर कैंपस, पुडुचेरी, 605006"
     ],
     "4 indira nagar, pondicherry 605006": [
       "#ERROR!",
@@ -199,26 +195,14 @@ class TranslationText with ChangeNotifier {
     ],
     "valavanur, main road, madukarai, puducherry 605105": [
       "வளவனூர், முக்கிய சாலை, மதுகரை, புதுச்சேரி 605105",
-      "\nवलवनूर, मेन रोड, मदुकराई, पुडुचेरी 605105"
+      "वलवनूर, मेन रोड, मदुकराई, पुडुचेरी 605105"
     ],
     "website": ["இணையதளம்", "वेबसाइट"],
-    "phone numbers": ["தொலைபேசி எண்கள்", "दूरभाष संख्या"],
+    "phone number": ["தொலைபேசி எண்கள்", "दूरभाष संख्या"],
     "availability of": ["கிடைப்பது", "उपलब्धता"],
-    "igmc": ["igmc", ""],
-    "igggh & ppgi": ["igggh & ppgi", ""],
-    "chc": ["CHC", ""],
-    "pims": ["pims", "pims"],
-    "phc": ["PHC", ""],
-    "svmc": ["svmc", ""],
-    "mgmc": ["mgmc", ""],
-    "slims": ["slims", ""],
-    "smvmc": ["smvmc", ""],
-    "avmc": ["avmc", ""],
-    "vmmc": ["vmmc", ""],
-    "icu beds": ["தீவிர சிகிச்சை பிரிவில் படுக்கைகள்", ""],
-    "oxygen beds": ["ஆக்சிஜன் படுக்கைகள்", ""],
-    "ventilator beds": ["மறுபடியும் படுக்கைகள்", ""],
-    "oxygen cylinder": ["ஆக்சிஜன் சிலிண்டர்", ""],
+    "oxygen beds": ["ஆக்சிஜன் படுக்கைகள்", "ऑक्सीजन बेड"],
+    "ventilator beds": ["மறுபடியும் படுக்கைகள்", "वेंटिलेटर बेड"],
+    "isolation beds": ["தனிமை படுக்கைகள்", "अलगाव बिस्तर"],
   };
 
   void setCurrentLanguage(String lang) {
@@ -227,17 +211,19 @@ class TranslationText with ChangeNotifier {
   }
 
   String getTranslatedText(BuildContext context, String text) {
-    // print(text);
+    String t = text;
 
     if (currentLanguage == "english") {
       return text;
     } else {
-      text = text.toLowerCase();
-
       if (currentLanguage == "tamil") {
-        return translation[text] == null ? text : translation[text][0];
+        return translation[text.toLowerCase()] == null
+            ? t
+            : translation[text.toLowerCase()][0];
       } else {
-        return translation[text] == null ? text : translation[text][1];
+        return translation[text.toLowerCase()] == null
+            ? t
+            : translation[text.toLowerCase()][1];
       }
     }
   }

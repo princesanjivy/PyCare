@@ -4,7 +4,6 @@ import 'package:pie_chart/pie_chart.dart';
 import 'package:provider/provider.dart';
 import 'package:pycare/Components/popup.dart';
 import 'package:pycare/components/hcard.dart';
-import 'package:pycare/components/my_appbar.dart';
 import 'package:pycare/components/my_colors.dart';
 import 'package:pycare/components/precautions_scroll.dart';
 import 'package:pycare/providers/fetch_data.dart';
@@ -89,7 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: PieChart(
                     dataMap: dataMap,
                     colorList: [green, yellow, red],
-                    centerText: "AS ON 16/4/2021",
+                    centerText: "AS ON 17/4/2021",
                     ringStrokeWidth: 32,
                     chartValuesOptions: ChartValuesOptions(
                       showChartValues: false,
@@ -185,7 +184,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Text(
                     translation.getTranslatedText(context, 'PRECAUTIONS'),
                     style: GoogleFonts.poppins(
-                      fontSize: 28,
+                      fontSize:
+                          translation.currentLanguage == "tamil" ? 22 : 28,
                       color: Colors.black,
                       fontWeight: FontWeight.w600,
                     ),

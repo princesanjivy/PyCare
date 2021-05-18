@@ -1,7 +1,5 @@
 name: pycare
-description: A new Flutter project.
-
-publish_to: "none"
+description: An outcome of DSC puducherry
 
 version: 1.0.0+1
 
@@ -33,7 +31,7 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-  # To add assets to your application, add an assets section, like this:
+
   assets:
     - images/illustration.svg
     - images/dsc_logo.png
@@ -48,3 +46,4 @@ flutter:
     - images/wash_hand.png
     - images/vaccinated.png
     - images/prec.png
+    - assets/images/logo.png

@@ -98,25 +98,25 @@ class _HospitalDetailsState extends State<HospitalDetails> {
                             ),
                           ],
                         ),
-                        Divider(
-                          thickness: 1.0,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Text(
-                              translation.getTranslatedText(
-                                      context, 'INSTITUTE TYPE') +
-                                  ": ",
-                              style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                            MyText(
-                              text: widget.instituteType,
-                            ),
-                          ],
-                        ),
+                        // Divider(
+                        //   thickness: 1.0,
+                        // ),
+                        // Row(
+                        //   mainAxisAlignment: MainAxisAlignment.start,
+                        //   children: [
+                        //     Text(
+                        //       translation.getTranslatedText(
+                        //               context, 'INSTITUTE TYPE') +
+                        //           ": ",
+                        //       style: GoogleFonts.poppins(
+                        //         fontWeight: FontWeight.w600,
+                        //       ),
+                        //     ),
+                        //     MyText(
+                        //       text: widget.instituteType,
+                        //     ),
+                        //   ],
+                        // ),
                         Divider(
                           thickness: 1.0,
                         ),
@@ -234,7 +234,7 @@ class _HospitalDetailsState extends State<HospitalDetails> {
                                           ),
                                           Text(
                                             translation.getTranslatedText(
-                                                context, 'Oxygen Cylinders'),
+                                                context, 'Isolation Beds'),
                                             textAlign: TextAlign.center,
                                             style: GoogleFonts.poppins(
                                                 fontWeight: FontWeight.bold,
@@ -289,7 +289,7 @@ class _HospitalDetailsState extends State<HospitalDetails> {
                                         splashColor: Colors.white,
                                         radius: 900,
                                         onTap: () {
-                                          _launchURL(
+                                          launch(
                                               'https://www.google.com/maps/search/?api=1&query=' +
                                                   widget.latitude +
                                                   ',' +
@@ -346,8 +346,7 @@ class _HospitalDetailsState extends State<HospitalDetails> {
                                 InkWell(
                                   borderRadius: BorderRadius.circular(9),
                                   onTap: () {
-                                    _launchURL(
-                                        'tel:' + widget.contactNos[index]);
+                                    launch('tel:' + widget.contactNos[index]);
                                   }, //Redirect to Dialer
 
                                   radius: 300,
