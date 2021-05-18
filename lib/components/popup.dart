@@ -1,44 +1,57 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:pycare/providers/translation.dart';
 
 import 'my_text.dart';
 
 enum MenuOption { English, Tamil, Hindi }
 
-class popup extends StatelessWidget {
+class PopUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return PopupMenuButton<MenuOption>(
-      itemBuilder: (BuildContext context) {
-        return <PopupMenuEntry<MenuOption>>[
-          PopupMenuItem(
-            child: InkWell(
-              child: MyText(
-                text: "English",
+    return Consumer<TranslationText>(builder: (context, translation, child) {
+      return PopupMenuButton<MenuOption>(
+        itemBuilder: (BuildContext context) {
+          return <PopupMenuEntry<MenuOption>>[
+            PopupMenuItem(
+              child: InkWell(
+                child: MyText(
+                  text: "English",
+                ),
+                onTap: () {
+                  translation.setCurrentLanguage("english");
+                  Navigator.pop(context);
+                },
               ),
-              onTap: () {},
+              value: MenuOption.English,
             ),
-            value: MenuOption.English,
-          ),
-          PopupMenuItem(
-            child: InkWell(
-              child: MyText(
-                text: "Tamil",
+            PopupMenuItem(
+              child: InkWell(
+                child: MyText(
+                  text: "தமிழ்",
+                ),
+                onTap: () {
+                  translation.setCurrentLanguage("tamil");
+                  Navigator.pop(context);
+                },
               ),
-              onTap: () {},
+              value: MenuOption.Tamil,
             ),
-            value: MenuOption.Tamil,
-          ),
-          PopupMenuItem(
-            child: InkWell(
-              child: MyText(
-                text: "Hindi",
+            PopupMenuItem(
+              child: InkWell(
+                child: MyText(
+                  text: "हिंदी",
+                ),
+                onTap: () {
+                  translation.setCurrentLanguage("hindi");
+                  Navigator.pop(context);
+                },
               ),
-              onTap: () {},
+              value: MenuOption.Hindi,
             ),
-            value: MenuOption.Hindi,
-          ),
-        ];
-      },
-    );
+          ];
+        },
+      );
+    });
   }
 }
