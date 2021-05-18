@@ -85,7 +85,7 @@ class TranslationText with ChangeNotifier {
       "Aarupadai विदु मेडिकल कॉलेज"
     ],
     "be well hospital": [
-      "நன்கு மருத்துவமனையில் இருங்கள்",
+      "பி வெள்ு மருத்துவமனை",
       "अच्छी तरह से अस्पताल बनें"
     ],
     "rani hospital": ["ராணி மருத்துவமனையில்", "रानी अस्पताल"],
