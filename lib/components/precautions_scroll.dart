@@ -1,50 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
-import 'package:pycare/providers/translation.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class PrecautionScroll extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Consumer<TranslationText>(builder: (context, translation, child) {
-      return Container(
-        height: 300.0,
-        child: ListView(
-          scrollDirection: Axis.horizontal,
-          children: [
-            Deck(
-              imageLocation: 'images/mask.png',
-              imageCaption: translation.getTranslatedText(
-                  context, 'Don\'t forget to wear your Mask'),
-            ),
-            Deck(
-                imageLocation: 'images/sanitize_hand.png',
-                imageCaption: translation.getTranslatedText(
-                  context,
-                  'Ensure you sanitize your hands regularly',
-                )),
-            Deck(
-                imageLocation: 'images/wash_hand.png',
-                imageCaption: translation.getTranslatedText(
-                  context,
-                  'Wash your hands regularly',
-                )),
-            Deck(
-                imageLocation: 'images/hand.png',
-                imageCaption: translation.getTranslatedText(
-                  context,
-                  'Use Gloves when required',
-                )),
-            Deck(
-                imageLocation: 'images/vaccinated.png',
-                imageCaption: translation.getTranslatedText(
-                  context,
-                  'Get Vaccinated',
-                )),
-          ],
+    return CarouselSlider(
+      options: CarouselOptions(
+        height: 300,
+        autoPlay: true,
+        enableInfiniteScroll: true,
+        autoPlayCurve: Curves.fastOutSlowIn,
+      ),
+      items: [
+        Deck(
+          imageLocation: 'images/mask.png',
+          imageCaption: 'Don\'t forget to wear \nyour Mask',
         ),
-      );
-    });
+        Deck(
+          imageLocation: 'images/sanitize_hand.png',
+          imageCaption: 'Ensure you sanitize \nyour hands regularly',
+        ),
+        Deck(
+          imageLocation: 'images/wash_hand.png',
+          imageCaption: 'Wash your hands \nregularly',
+        ),
+        Deck(
+          imageLocation: 'images/hand.png',
+          imageCaption: 'Use Gloves when \nrequired',
+        ),
+        Deck(
+          imageLocation: 'images/vaccinated.png',
+          imageCaption: 'Get \nVaccinated',
+        )
+      ],
+    );
   }
 }
 
@@ -71,7 +61,7 @@ class Deck extends StatelessWidget {
             borderRadius: BorderRadius.circular(15.0),
             color: Colors.lightBlueAccent),
         height: 400,
-        width: 200,
+        width: 250,
         child: Column(
           children: [
             Expanded(
@@ -95,6 +85,7 @@ class Deck extends StatelessWidget {
                   imageCaption,
                   style:
                       GoogleFonts.poppins(fontSize: 16.0, color: Colors.black),
+                  textAlign: TextAlign.center,
                 ),
               ),
             ),

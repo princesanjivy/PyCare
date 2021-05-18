@@ -14,8 +14,8 @@ class PopUp extends StatelessWidget {
         itemBuilder: (BuildContext context) {
           return <PopupMenuEntry<MenuOption>>[
             PopupMenuItem(
-              child: InkWell(
-                child: MyText(
+              child: ListTile(
+                title: MyText(
                   text: "English",
                 ),
                 onTap: () {
@@ -26,8 +26,8 @@ class PopUp extends StatelessWidget {
               value: MenuOption.English,
             ),
             PopupMenuItem(
-              child: InkWell(
-                child: MyText(
+              child: ListTile(
+                title: MyText(
                   text: "தமிழ்",
                 ),
                 onTap: () {
@@ -38,8 +38,8 @@ class PopUp extends StatelessWidget {
               value: MenuOption.Tamil,
             ),
             PopupMenuItem(
-              child: InkWell(
-                child: MyText(
+              child: ListTile(
+                title: MyText(
                   text: "हिंदी",
                 ),
                 onTap: () {
