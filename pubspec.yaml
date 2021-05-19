@@ -24,6 +24,7 @@ dependencies:
   webview_flutter: ^2.0.4
   provider: ^5.0.0
   http: ^0.13.0
+  giffy_dialog: ^1.8.0
 
 dev_dependencies:
   flutter_test:
@@ -47,3 +48,4 @@ flutter:
     - images/vaccinated.png
     - images/prec.png
     - assets/images/logo.png
+    - assets/space_demo.flr
