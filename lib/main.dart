@@ -86,7 +86,7 @@ class _BarState extends State<Bar> {
                       text: "Py-Care",
                     ),
                     MyText(
-                      text: "An outcome of DSC PEC",
+                      text: "An outcome of Google DSC-PEC",
                     ),
                     SizedBox(
                       height: 16,
@@ -197,6 +197,21 @@ class _BarState extends State<Bar> {
                         activeColor: Colors.indigo.shade900,
                         inactiveColor: Colors.white,
                       ),
+                      // BottomNavyBarItem(
+                      //   icon: FaIcon(
+                      //     FontAwesomeIcons.users,
+                      //     color: Colors.white,
+                      //   ),
+                      //   title: Text(
+                      //     "DISCLAIMER",
+                      //     style: TextStyle(
+                      //       color: Colors.white,
+                      //     ),
+                      //     textAlign: TextAlign.center,
+                      //   ),
+                      //   activeColor: Colors.indigo.shade900,
+                      //   inactiveColor: Colors.white,
+                      // ),
                     ],
                   ),
                 ),

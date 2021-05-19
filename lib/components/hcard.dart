@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:pycare/components/my_text.dart';
+import 'package:pycare/providers/translation.dart';
 
 class HCard extends StatelessWidget {
   final int count;
@@ -16,48 +18,51 @@ class HCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: MediaQuery.of(context).size.width / 2.3,
-      height: MediaQuery.of(context).size.width / 3,
-      padding: EdgeInsets.only(left: 8, right: 8),
-      decoration: BoxDecoration(
-          color: this.color,
-          borderRadius: BorderRadius.circular(10),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey,
-              offset: Offset(0, 4),
-              blurRadius: 4,
+    return Consumer<TranslationText>(builder: (context, translation, _) {
+      return Container(
+        width: MediaQuery.of(context).size.width / 2.3,
+        height: MediaQuery.of(context).size.width / 3,
+        padding: EdgeInsets.only(left: 8, right: 8),
+        decoration: BoxDecoration(
+            color: this.color,
+            borderRadius: BorderRadius.circular(10),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey,
+                offset: Offset(0, 4),
+                blurRadius: 4,
+              ),
+            ]),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            MyText(
+              text: this.count.toString(),
+              size: 32,
+              color: Colors.white,
+              fontWeight: "BOLD",
             ),
-          ]),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          MyText(
-            text: this.count.toString(),
-            size: 32,
-            color: Colors.white,
-            fontWeight: "BOLD",
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              MyText(
-                text: title,
-                size: 16,
-                color: Colors.white,
-              ),
-              MyText(
-                text: percentage == null ? "" : percentage.toString() + "%",
-                size: 16,
-                color: Colors.white,
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                MyText(
+                  text: title,
+                  size: 16,
+                  color: Colors.white,
+                ),
+                MyText(
+                  text: percentage == null ? "" : percentage.toString() + "%",
+                  size: 16,
+                  color: Colors.white,
+                ),
+              ],
+            ),
+          ],
+        ),
+      );
+    });
     // return LayoutBuilder(
     //   builder: (context, constraints) {
     //     return Container(

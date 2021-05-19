@@ -4,8 +4,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:pycare/components/my_colors.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:pycare/providers/translation.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class InfoCard extends StatelessWidget {
   final String name;
@@ -71,7 +71,7 @@ class InfoCard extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  translation.getTranslatedText("$name"),
+                  translation.getTranslatedText(context, "$name"),
                   style: GoogleFonts.poppins(
                     textStyle: TextStyle(
                       fontSize: 16,
@@ -80,9 +80,10 @@ class InfoCard extends StatelessWidget {
                       color: Colors.white,
                     ),
                   ),
+                  textAlign: TextAlign.center,
                 ),
                 Text(
-                  translation.getTranslatedText("$role"),
+                  translation.getTranslatedText(context, "$role"),
                   style: GoogleFonts.poppins(
                     textStyle: TextStyle(
                       fontSize: 12,
@@ -91,6 +92,7 @@ class InfoCard extends StatelessWidget {
                       color: Colors.white,
                     ),
                   ),
+                  textAlign: TextAlign.center,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -100,7 +102,7 @@ class InfoCard extends StatelessWidget {
                         icon: Icon(FontAwesomeIcons.envelope),
                         iconSize: 20,
                         onPressed: () {
-                          _openMail(mailLink);
+                          launch("mailto:$mailLink");
                         },
                       ),
                     //if (mailLink != null) SizedBox(width: 1),
