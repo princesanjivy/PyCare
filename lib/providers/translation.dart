@@ -4,12 +4,12 @@ class TranslationText with ChangeNotifier {
   String currentLanguage = "english";
 
   Map translation = {
-    "pycare": ["பைக்கேர்", "पाइकेयर"],
+    "pudhuvai care": ["புதுவை கேர்", "पुढुवाई केयर "],
     "address": ["முகவரி", "पता"],
     "puducherry": ["புதுச்சேரி", "पुदुचेरी"],
     "hospital": ["மருத்துவமனை", "अस्पताल"],
-    "active": ["செயலில்", "सक्रिय"],
-    "cured": ["குணப்படுத்த", "ठीक हो"],
+    "active": ["சிகிச்சையில்", "सक्रिय"],
+    "cured": ["குணமானோர்\nவிகிதம்", "ठीक हो"],
     "death": ["இறப்பு", "मौत"],
     "covid-19 tracker": ["கோவிட்-19 டிராக்கர்", "कोविड-19 ट्रैकर"],
     "developers": ["டெவலப்பர்கள்", "डेवलपर्स"],
@@ -24,9 +24,9 @@ class TranslationText with ChangeNotifier {
       "நீங்கள் ஒழுங்காக உங்கள் கையில் துப்புரவாக்குங்கள் உறுதி",
       "आप अपने हाथ नियमित रूप से स्वच्छ सुनिश्चित"
     ],
-    "map": ["வரைபடம்", "नक्शा"],
+    "map": ["சிகிச்சை மையங்கள்", "नक्शा"],
     "about us": ["எங்களை பற்றி", "हमारे बारे में"],
-    "list of hospitals": ["மருத்துவமனைகளில் பட்டியலில்", "अस्पतालों की सूची"],
+    "list of hospitals": ["சிகிச்சை மையங்கள்", "अस्पतालों की सूची"],
     "filter ": ["வடிகட்டி", "फिल्टर"],
     "sort": ["வகைபடுத்து", "तरह"],
     "wash your hands regularly": [
@@ -37,21 +37,22 @@ class TranslationText with ChangeNotifier {
       "தேவைப்படும் போது கையுறைகள் பயன்படுத்த",
       "जब जरूरत दस्ताने का उपयोग"
     ],
+    "vaccine drive": ["தடுப்பூசி விபரங்கள்", "वैक्सीन ड्राइव"],
     "get vaccinated": ["கிடைக்கும் தடுப்பூசி", "प्राप्त टीका"],
-    "indira gandhi government general hospital and post graduate institue  ": [
+    "indira gandhi government general hospital and post graduate institue": [
       "இந்திரா காந்தி அரசு பொது மருத்துவமனை மற்றும் பட்ட மேற்படிப்பு இன்ஸ்டிடியூட் ஆப்",
       "इंदिरा गांधी सरकार जनरल अस्पताल और स्नातकोत्तर ऑफ"
     ],
-    "indira gandhi medical college & hospital  ": [
+    "indira gandhi medical college & hospital": [
       "இந்திரா காந்தி மருத்துவ கல்லூரி மற்றும் மருத்துவமனையில்",
       "इंदिरा गांधी मेडिकल कॉलेज एंड हॉस्पिटल"
     ],
     "dental college": ["பல் மருத்துவ கல்லூரி", "डेंटल कॉलेज"],
-    "community health centre karikalampakkam ": [
+    "community health centre karikalampakkam": [
       "சமூக சுகாதார மையம் கரிகலம்பாக்கம்",
       "सामुदायिक स्वास्थ्य केंद्र Karikalampakkam"
     ],
-    "pondicherry institute of medical sciences ": [
+    "pondicherry institute of medical sciences": [
       "மருத்துவ அறிவியல் பாண்டிச்சேரி இன்ஸ்டிடியூட்",
       "आयुर्विज्ञान संस्थान पांडिचेरी"
     ],
@@ -60,15 +61,15 @@ class TranslationText with ChangeNotifier {
       "முதுகலை மருத்துவ கல்வி மற்றும் ஆராய்ச்சி ஜிப்மர் ஜவகர்லால் இன்ஸ்டிடியூட் ஆப்",
       "स्नातकोत्तर चिकित्सा शिक्षा एवं अनुसंधान जेआईपीएमईआर की जवाहरलाल इंस्टीट्यूट"
     ],
-    "primary health centre nettapakkam ": [
+    "primary health centre nettapakkam": [
       "ஆரம்ப சுகாதார மையம் நெட்டப்பாக்கம்",
       "प्राथमिक स्वास्थ्य केन्द्र Nettapakkam"
     ],
-    "sri venkateshwaraa medical college  ": [
+    "sri venkateshwaraa medical college": [
       "ஸ்ரீ வெங்கடேஸ்வரா மருத்துவக் கல்லூரி",
       "श्री Venkateshwaraa मेडिकल कॉलेज"
     ],
-    "mahatma gandhi medical college ": [
+    "mahatma gandhi medical college": [
       "மகாத்மா காந்தி மருத்துவ கல்லூரி",
       "महात्मा गांधी मेडिकल कॉलेज"
     ],
@@ -76,23 +77,35 @@ class TranslationText with ChangeNotifier {
       "மெடிக்கல் சயின்ஸ் ஸ்ரீ லட்சுமி நாராயண நிறுவனம்",
       "श्री लक्ष्मी नारायण चिकित्सा विज्ञान संस्थान"
     ],
-    "sri manakula vinayagar medical college ": [
+    "sri manakula vinayagar medical college": [
       "ஸ்ரீ மனகுல விநாயகர் மருத்துவக் கல்லூரி",
       "श्री मनाकुला विनेगर मेडिकल कॉलेज"
     ],
-    "aarupadai veedu medical college ": [
+    "aarupadai veedu medical college": [
       "ஆருபடை வீது மருத்துவக் கல்லூரி",
       "Aarupadai विदु मेडिकल कॉलेज"
     ],
-    "be well hospital": [
-      "பி வெள்ு மருத்துவமனை",
-      "अच्छी तरह से अस्पताल बनें"
+    "avmc": ["எ.வி.எம்.சி", "ए वी एम सी"],
+    "chc karikalampakkam": [
+      "சி.எச்.சி கரிக்கலாம்பாக்கம்",
+      "सी एच सी करिकलमपक्कम"
     ],
-    "rani hospital": ["ராணி மருத்துவமனையில்", "रानी अस्पताल"],
+    "igggh & pgi": ["ஐஜிஜிஜிஎச் & பிஜிஐ", "आई जी जी जी एच एंड पी जी आई"],
+    "igmc": ["ஐ.ஜி.எம்.சி", "आई जी एम सी"],
+    "jipmer": ["ஜேஐபிஎம்இஆர்", "जिपमेर"],
+    "mgmc": ["எம்.ஜி.எம்.சி", "एम जी एम सी"],
+    "mvr": ["எம்.வி.ஆர்", "एम वी आर"],
+    "phc nettapakkam": ["பிஎச்சி நெட்டபாக்கம்", "न्यू मेडिकल सेंटर"],
+    "pims": ["பி.ஐ.எம்.எஸ்", "पी आई एम एस"],
+    "slims": ["எஸ்.எல்.ஐ.எம்.எஸ்", "स्लिम्स"],
+    "smvmc": ["எஸ்.எம்.வி.எம்.சி", "एसएमवीएमसी"],
+    "svmc": ["எஸ்.வி.எம்.சி", "एस वी एम सी"],
+    "be well hospital": ["பி வெள் மருத்துவமனை", "बी वेल हॉस्पिटल"],
+    "rani hospital": ["ராணி மருத்துவமனை", "रानी अस्पताल"],
     "new medical centre": ["புதிய மருத்துவ மையம்", "न्यू मेडिकल सेंटर"],
     "kumaran hospital": ["குமரன் மருத்துவமனையில்", "कुमारन अस्पताल"],
     "karaikal": ["காரைக்கால்", "कराईकल"],
-    "vinayaka missions medical college karaikal ": [
+    "vinayaka missions medical college karaikal": [
       "விநாயகா மிஷன்ஸ் மருத்துவக் கல்லூரி காரைக்கால்",
       "विनायक मिशन मेडिकल कॉलेज कराईकल"
     ],
@@ -100,15 +113,15 @@ class TranslationText with ChangeNotifier {
       "டிஎஸ்சிக்கு பற்றி விளக்கம்",
       "विवरण डीएससी बारे में"
     ],
-    "an outcome of dsc pec puducherry": [
-      "An outcome of DSC PEC Puducherry",
-      "An outcome of DSC PEC Puducherry"
-    ],
-    "dr. selvaradjou ka": ["டாக்டர். செல்வரத்ஜோ கா", "सेल्वरज"],
-    "head": ["தலைமை", "सिर"],
+    // "an outcome of dsc pec puducherry": [
+    //   "An outcome of DSC PEC Puducherry",
+    //   "An outcome of DSC PEC Puducherry"
+    // ],
+    "dr. selvaradjou ka": ["பேராசிரியர் க. செல்வராஜூ", "सेल्वरज"],
+    "mentor": ["எண்ணம்", "सिर"],
     "durga prasad": ["துர்கா பிரசாத்", "दुर्गा प्रस्साद "],
-    "lead": ["வழி நடத்து", "लीड"],
-    "monica emmanuel ": ["மோனிகா இம்மானுவல்", "मोनिका इमैनुएल"],
+    "dsc lead": ["குழு தலைமை", "लीड"],
+    "monica emmanuel": ["மோனிகா இம்மானுவல்", "मोनिका इमैनुएल"],
     "ui designer": ["பயனர் இடைமுகம் வடிவமைப்புகள்", "यूआई डिजाइनर"],
     "logaprasanna": ["லோகப்பிரசன்னா", "लोगाप्रसन्ना"],
     "vignesh hendrix": ["விக்னேஷ் ஹெண்ட்ரிக்ஸ்", "विग्नेश हेंड्रिक्स"],
@@ -124,14 +137,14 @@ class TranslationText with ChangeNotifier {
     "private": ["தனியார்", "निजी"],
     "government": ["அரசாங்கம்", "सरकारी"],
     "nursing homes": ["மருத்துவ இல்லம்", "नर्सिंग होम"],
-    "location": ["இடம்", "स्थान"],
+    "location": ["சிகிச்சை மையங்கள்", "स्थान"],
     "more details": ["கூடுதல் தகவல்கள்", "अधिक जानकारी"],
     "kalathumettupathai, ganapathichettikulam village no 20, kalapet, puducherry 605014":
         [
       "கலாத்துமேட்டுபதி, கணபதிச்செட்டிகுளம் கிராம எண் 20, கலப்பேட்டை, புதுச்சேரி 605014",
       "कलाथुमेट्टुपथाई, गणपतिचेट्टीकुलम ग्राम संख्या २०, कलापेट, पुडुचेरी ६०५०१४"
     ],
-    "13-a, pondy-villupuram main road, ariyur, puducherry-605 102 ": [
+    "13-a, pondy-villupuram main road, ariyur, puducherry-605 102": [
       "13-ஏ, Pondy-விழுப்புரம் மெயின் ரோடு, Ariyur, புதுச்சேரி-605 102.",
       "13-ए, पोंडी-विल्लुपुरम मेन रोड, अरियुर, पुडुचेरी-605 102"
     ],

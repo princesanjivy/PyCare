@@ -38,7 +38,7 @@ class _HomeMapState extends State<HomeMap> {
 
       return Scaffold(
         appBar: MyAppBar(
-          title: translation.getTranslatedText(context, 'LOCATION'),
+          title: translation.getTranslatedText(context, 'Location'),
         ),
         body: FlutterMap(
           options: MapOptions(

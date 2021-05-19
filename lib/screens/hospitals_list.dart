@@ -28,12 +28,13 @@ class _HospitalsState extends State<Hospitals> {
       return Scaffold(
         backgroundColor: bgColor,
         appBar: MyAppBar(
-          title: translation.getTranslatedText(context, 'LIST OF HOSPITALS'),
+          title: translation.getTranslatedText(context, 'List of Hospitals'),
         ),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(16),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -256,6 +257,25 @@ class _HospitalsState extends State<Hospitals> {
                 SizedBox(
                   height: 16,
                 ),
+                Text(
+                  translation.getTranslatedText(context, "data source") +
+                      ": https://covid19dashboard.py.gov.in/",
+                  style: GoogleFonts.poppins(
+                    fontSize: 12,
+                    fontWeight: FontWeight.normal,
+                  ),
+                ),
+                Text(
+                  translation.getTranslatedText(context, "as on") +
+                      ": 19/5/2021",
+                  style: GoogleFonts.poppins(
+                    fontSize: 12,
+                    fontWeight: FontWeight.normal,
+                  ),
+                ),
+                SizedBox(
+                  height: 16,
+                ),
                 ListView.builder(
                   physics: ScrollPhysics(),
                   shrinkWrap: true,
@@ -279,6 +299,8 @@ class _HospitalsState extends State<Hospitals> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => HospitalDetails(
+                                    hospitalFullName: api.hospitalDetails[index]
+                                        ["Full form"],
                                     latitude: api.hospitalDetails[index]['lat'],
                                     longitude: api.hospitalDetails[index]
                                         ['long'],

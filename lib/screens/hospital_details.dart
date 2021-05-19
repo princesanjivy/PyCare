@@ -20,18 +20,21 @@ class HospitalDetails extends StatefulWidget {
   final String latitude;
   final String longitude;
   final List contactNos;
+  final String hospitalFullName;
 
-  HospitalDetails(
-      {this.latitude,
-      this.longitude,
-      this.imgLink,
-      this.hospitalName,
-      this.instituteType,
-      this.oxygenBeds,
-      this.ventilatorBeds,
-      this.isolationBeds,
-      this.address,
-      this.contactNos});
+  HospitalDetails({
+    this.latitude,
+    this.longitude,
+    this.imgLink,
+    this.hospitalName,
+    this.instituteType,
+    this.oxygenBeds,
+    this.ventilatorBeds,
+    this.isolationBeds,
+    this.address,
+    this.contactNos,
+    this.hospitalFullName,
+  });
 
   @override
   _HospitalDetailsState createState() => _HospitalDetailsState();
@@ -92,7 +95,7 @@ class _HospitalDetailsState extends State<HospitalDetails> {
                           children: [
                             MyText(
                               text: translation.getTranslatedText(
-                                  context, widget.hospitalName),
+                                  context, widget.hospitalFullName),
                               color: Colors.black,
                               size: 15,
                             ),

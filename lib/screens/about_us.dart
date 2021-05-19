@@ -7,12 +7,13 @@ import 'package:pycare/components/info_card.dart';
 import 'package:pycare/components/my_appbar.dart';
 import 'package:pycare/components/my_colors.dart';
 import 'package:pycare/providers/translation.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class AboutUs extends StatelessWidget {
   final List<InfoCard> details = [
     InfoCard(
         "Dr. Selvaradjou Ka",
-        "Head",
+        "Mentor",
         "https://github.com/DSC-PEC-Puducherry/PyCare/blob/master/assets/images/selvaraj.jpg?raw=true",
         "selvaraj@pec.edu",
         null,
@@ -22,7 +23,7 @@ class AboutUs extends StatelessWidget {
         "https://www.facebook.com/selvaraj.kandasamy.106/"),
     InfoCard(
         "Durga Prasad",
-        "Lead",
+        "DSC Lead",
         "https://github.com/DSC-PEC-Puducherry/PyCare/blob/master/assets/images/durga.jpg?raw=true",
         "durgaprasadpalla96@pec.edu",
         "https://www.instagram.com/durga_prasad_palla/",
@@ -118,7 +119,7 @@ class AboutUs extends StatelessWidget {
       return Scaffold(
         backgroundColor: bgColor,
         appBar: MyAppBar(
-          title: translation.getTranslatedText("About Us"),
+          title: translation.getTranslatedText(context, "About Us"),
         ),
         body: ListView(
           children: [
@@ -133,7 +134,7 @@ class AboutUs extends StatelessWidget {
                     image: CachedNetworkImageProvider(
                       "https://github.com/DSC-PEC-Puducherry/PyCare/blob/master/images/dsc_logo.png?raw=true",
                     ),
-                    fit: BoxFit.cover,
+                    fit: BoxFit.fitWidth,
                   ),
                 ),
               ),
@@ -141,7 +142,7 @@ class AboutUs extends StatelessWidget {
             Center(
               child: Text(
                 translation.getTranslatedText(
-                    "An Outcome of Google DSC PTU,Puducherry"),
+                    context, "An outcome of Google DSC-PEC, Puducherry"),
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
                     fontSize: 15,
@@ -159,17 +160,14 @@ class AboutUs extends StatelessWidget {
                     icon: Icon(FontAwesomeIcons.envelope),
                     iconSize: 25,
                     onPressed: () {
-                      translation.setCurrentLanguage("tamil");
-                      // launch("mailto:google.dsc@pec.edu");
+                      launch("mailto:google.dsc@pec.edu");
                     },
                   ),
                   IconButton(
                     icon: Icon(FontAwesomeIcons.instagram),
                     iconSize: 25,
                     onPressed: () {
-                      translation.setCurrentLanguage("hindi");
-
-                      // launch('https://www.instagram.com/dsc_pec/');
+                      launch('https://www.instagram.com/dsc_pec/');
                     },
                   ),
                 ],

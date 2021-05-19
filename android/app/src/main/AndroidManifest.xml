@@ -1,7 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dmlvaasaa.dscpycare">
+    <uses-permission android:name="android.permission.INTERNET" />
    <application
-        android:label="Py Care"
+        android:label="Pudhuvai Care"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
