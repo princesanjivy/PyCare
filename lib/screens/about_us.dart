@@ -7,7 +7,6 @@ import 'package:pycare/components/info_card.dart';
 import 'package:pycare/components/my_appbar.dart';
 import 'package:pycare/components/my_colors.dart';
 import 'package:pycare/providers/translation.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class AboutUs extends StatelessWidget {
   final List<InfoCard> details = [
@@ -17,10 +16,10 @@ class AboutUs extends StatelessWidget {
         "https://github.com/DSC-PEC-Puducherry/PyCare/blob/master/assets/images/selvaraj.jpg?raw=true",
         "selvaraj@pec.edu",
         null,
+        "https://www.linkedin.com/in/selvaradjou-kandasamy-6a083748/",
         null,
         null,
-        null,
-        null),
+        "https://www.facebook.com/selvaraj.kandasamy.106/"),
     InfoCard(
         "Durga Prasad",
         "Lead",
@@ -119,7 +118,7 @@ class AboutUs extends StatelessWidget {
       return Scaffold(
         backgroundColor: bgColor,
         appBar: MyAppBar(
-          title: translation.getTranslatedText(context, "About Us"),
+          title: translation.getTranslatedText("About Us"),
         ),
         body: ListView(
           children: [
@@ -127,9 +126,9 @@ class AboutUs extends StatelessWidget {
               padding: const EdgeInsets.all(10.0),
               child: Container(
                 width: double.infinity,
-                height: 140,
+                height: 150,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(18),
+                  //borderRadius: BorderRadius.circular(18),
                   image: DecorationImage(
                     image: CachedNetworkImageProvider(
                       "https://github.com/DSC-PEC-Puducherry/PyCare/blob/master/images/dsc_logo.png?raw=true",
@@ -142,7 +141,7 @@ class AboutUs extends StatelessWidget {
             Center(
               child: Text(
                 translation.getTranslatedText(
-                    context, "An Outcome of Google DSC PTU,Puducherry"),
+                    "An Outcome of Google DSC PTU,Puducherry"),
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
                     fontSize: 15,
@@ -160,14 +159,17 @@ class AboutUs extends StatelessWidget {
                     icon: Icon(FontAwesomeIcons.envelope),
                     iconSize: 25,
                     onPressed: () {
-                      launch("mailto:google.dsc@pec.edu");
+                      translation.setCurrentLanguage("tamil");
+                      // launch("mailto:google.dsc@pec.edu");
                     },
                   ),
                   IconButton(
                     icon: Icon(FontAwesomeIcons.instagram),
                     iconSize: 25,
                     onPressed: () {
-                      launch('https://www.instagram.com/dsc_pec/');
+                      translation.setCurrentLanguage("hindi");
+
+                      // launch('https://www.instagram.com/dsc_pec/');
                     },
                   ),
                 ],
@@ -178,15 +180,40 @@ class AboutUs extends StatelessWidget {
               thickness: 2,
               color: darkBlue,
             ),
-            GridView.count(
-              padding: EdgeInsets.all(8),
+            // GridView.count(
+            //   padding: EdgeInsets.all(8),
+            //   shrinkWrap: true,
+            //   childAspectRatio: (1 / 1),
+            //   physics: ScrollPhysics(),
+            //   crossAxisCount: 2,
+            //   children: List.generate(details.length, (index) {
+            //     return details[index];
+            //   }),
+            // ),
+            // ignore: missing_return
+            ListView.builder(
+              itemCount: 5,
               shrinkWrap: true,
-              childAspectRatio: (1 / 1),
               physics: ScrollPhysics(),
-              crossAxisCount: 2,
-              children: List.generate(details.length, (index) {
-                return details[index];
-              }),
+              itemBuilder: (context, index) {
+                return Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        details[index * 2],
+                        SizedBox(
+                          width: 5.0,
+                        ),
+                        details[(index * 2) + 1],
+                      ],
+                    ),
+                    SizedBox(
+                      height: 10.0,
+                    )
+                  ],
+                );
+              },
             ),
           ],
         ),
