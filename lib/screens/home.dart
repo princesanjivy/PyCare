@@ -79,24 +79,35 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.only(left: 16, bottom: 16, top: 4),
-                child: Container(
-                  height: 250.0,
-                  child: PieChart(
-                    dataMap: dataMap,
-                    colorList: [green, yellow, red],
-                    // centerText: "AS ON 19/5/2021",
-                    ringStrokeWidth: 32,
-                    chartValuesOptions: ChartValuesOptions(
-                      showChartValues: false,
-                    ),
-                    chartType: ChartType.ring,
-                    legendOptions: LegendOptions(
-                      showLegends: false,
+              Stack(
+                alignment: Alignment.center,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: 16, bottom: 16, top: 4),
+                    child: Container(
+                      height: 250.0,
+                      child: PieChart(
+                        dataMap: dataMap,
+                        colorList: [green, yellow, red],
+                        // centerText: "AS ON 19/5/2021",
+                        ringStrokeWidth: 32,
+                        chartValuesOptions: ChartValuesOptions(
+                          showChartValues: false,
+                        ),
+                        chartType: ChartType.ring,
+                        legendOptions: LegendOptions(
+                          showLegends: false,
+                        ),
+                      ),
                     ),
                   ),
-                ),
+                  Text(
+                    "As on 19/5/2021",
+                    style: GoogleFonts.poppins(
+                      fontSize: 20,
+                    ),
+                  ),
+                ],
               ),
               Padding(
                 padding: EdgeInsets.only(left: 16, bottom: 4, top: 4),
@@ -128,7 +139,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       title: translation.getTranslatedText(context, "Cured"),
                       percentage:
                           (int.parse(api.status["cured"]) / totalReported * 100)
-                              .toInt(),
+                              .toDouble()
+                              .toStringAsPrecision(3),
                     ),
                   ],
                 ),
@@ -147,7 +159,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         percentage: (int.parse(api.status["active"]) /
                                 totalReported *
                                 100)
-                            .toInt()),
+                            .toDouble()
+                            .toStringAsPrecision(3)),
                     HCard(
                         count: int.parse(api.status["death"]),
                         color: red,
@@ -155,7 +168,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         percentage: (int.parse(api.status["death"]) /
                                 totalReported *
                                 100)
-                            .toInt()),
+                            .toDouble()
+                            .toStringAsPrecision(3)),
                   ],
                 ),
               ),

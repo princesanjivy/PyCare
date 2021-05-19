@@ -317,6 +317,18 @@ class _HospitalsState extends State<Hospitals> {
                                     isolationBeds: api.hospitalDetails[index]
                                             ['isolationBeds']["vacant"]
                                         .toString(),
+                                    allotedOxygenBeds: api
+                                        .hospitalDetails[index]['oxygenBeds']
+                                            ["alloted"]
+                                        .toString(),
+                                    allotedVentilatorBeds: api
+                                        .hospitalDetails[index]
+                                            ['ventilatorBeds']["alloted"]
+                                        .toString(),
+                                    alltoedIsolationBeds: api
+                                        .hospitalDetails[index]['isolationBeds']
+                                            ["alloted"]
+                                        .toString(),
                                     address: api.hospitalDetails[index]
                                         ['address'],
                                     contactNos: api.hospitalDetails[index]

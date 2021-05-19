@@ -7,7 +7,7 @@ class HCard extends StatelessWidget {
   final int count;
   final Color color;
   final String title;
-  final int percentage;
+  final String percentage;
 
   HCard({
     this.title,

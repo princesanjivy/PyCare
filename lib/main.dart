@@ -83,7 +83,7 @@ class _BarState extends State<Bar> {
                       height: 16,
                     ),
                     MyText(
-                      text: "Py-Care",
+                      text: "Pudhuvai Care",
                     ),
                     MyText(
                       text: "An outcome of Google DSC-PEC",

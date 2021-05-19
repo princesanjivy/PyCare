@@ -138,6 +138,9 @@ class PlaceMarker {
                                             MaterialPageRoute(
                                               builder: (context) =>
                                                   HospitalDetails(
+                                                hospitalFullName:
+                                                    api.hospitalDetails[index]
+                                                        ["Full form"],
                                                 latitude:
                                                     api.hospitalDetails[index]
                                                         ['lat'],
