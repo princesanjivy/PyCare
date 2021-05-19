@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:giffy_dialog/giffy_dialog.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pie_chart/pie_chart.dart';
 import 'package:provider/provider.dart';
@@ -10,6 +11,10 @@ import 'package:pycare/providers/fetch_data.dart';
 import 'package:pycare/providers/translation.dart';
 
 import '../components/my_colors.dart';
+import '../components/my_colors.dart';
+import '../components/my_colors.dart';
+import '../components/my_text.dart';
+import '../components/my_text.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -88,7 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: PieChart(
                     dataMap: dataMap,
                     colorList: [green, yellow, red],
-                    centerText: "AS ON 17/4/2021",
+                    centerText: "AS ON 19/5/2021",
                     ringStrokeWidth: 32,
                     chartValuesOptions: ChartValuesOptions(
                       showChartValues: false,
@@ -220,6 +225,105 @@ class _HomeScreenState extends State<HomeScreen> {
                   width: MediaQuery.of(context).size.width,
                   child: PrecautionScroll(),
                 ),
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              Divider(
+                thickness: 0.8,
+                color: Colors.indigo,
+              ),
+              Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      left: 8.0,
+                      bottom: 8.0,
+                    ),
+                    child: Container(
+                      alignment: Alignment.topLeft,
+                      color: Color(0xf4f9f9),
+                      child: Text(
+                        translation.getTranslatedText(context, 'CREDITS'),
+                        style: GoogleFonts.poppins(
+                          fontSize:
+                              translation.currentLanguage == "tamil" ? 22 : 28,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 3.0,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      left: 8.0,
+                      right: 8.0,
+                    ),
+                    child: Text(
+                      translation.getTranslatedText(context,
+                          'All the data are being fetched from the website mentioned below:'),
+                      style: GoogleFonts.poppins(
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      left: 8.0,
+                      right: 8.0,
+                      top: 7.0,
+                    ),
+                    child: Text(
+                      'https://covid19dashboard.py.gov.in/',
+                      style: GoogleFonts.poppins(
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 8.0,
+                  ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      textStyle: GoogleFonts.poppins(
+                        fontSize: 16.0,
+                        //backgroundColor: appBarCol,
+                      ),
+                      primary: appBarCol,
+                    ),
+                    onPressed: () {
+                      showDialog(
+                        context: context,
+                        builder: (_) => FlareGiffyDialog(
+                          flarePath: 'assets/space_demo.flr',
+                          flareAnimation: 'loading',
+                          title: Text(
+                            'DISCLAIMER',
+                            style: GoogleFonts.poppins(
+                                fontSize: 22.0, fontWeight: FontWeight.w600),
+                          ),
+                          description: Text(
+                              'Neither PTU nor the Google DSC is responsible for inadvertent mistakes in the data provided by the app in the absence of good internet connectivity. The data available at the GoP portal should be considered official.'),
+                          entryAnimation: EntryAnimation.DEFAULT,
+                          onOkButtonPressed: () {
+                            Navigator.pop(context);
+                          },
+                        ),
+                      );
+                    },
+                    child: Text(
+                      translation.getTranslatedText(context, 'DISCLAIMER'),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 8.0,
+                  ),
+                ],
               ),
             ],
           ),
