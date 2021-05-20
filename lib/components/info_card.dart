@@ -39,7 +39,7 @@ class InfoCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
         ),
         child: Container(
-          // height: 180,
+          height: 215,
           width: 180,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
