@@ -150,6 +150,18 @@ class PlaceMarker {
                                                 imgLink:
                                                     api.hospitalDetails[index]
                                                         ["URL"],
+                                                    allotedOxygenBeds: api
+                                                        .hospitalDetails[index]['oxygenBeds']
+                                                    ["alloted"]
+                                                        .toString(),
+                                                    allotedVentilatorBeds: api
+                                                        .hospitalDetails[index]
+                                                    ['ventilatorBeds']["alloted"]
+                                                        .toString(),
+                                                    alltoedIsolationBeds: api
+                                                        .hospitalDetails[index]['isolationBeds']
+                                                    ["alloted"]
+                                                        .toString(),
                                                 hospitalName:
                                                     api.hospitalDetails[index]
                                                         ['hospitalName'],

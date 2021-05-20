@@ -1,7 +1,7 @@
 name: pycare
-description: An outcome of DSC puducherry
+description: An outcome of Google DSC-PEC Puducherry
 
-version: 1.0.2+3
+version: 1.0.2+4
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
@@ -13,7 +13,6 @@ dependencies:
   bottom_navy_bar: ^6.0.0
   carousel_slider: ^3.0.0
   cached_network_image: ^3.0.0
-  cupertino_icons: ^1.0.2
   font_awesome_flutter: ^9.0.0
   google_fonts: ^2.0.0
   image: ^3.0.2
@@ -24,7 +23,7 @@ dependencies:
   webview_flutter: ^2.0.4
   provider: ^5.0.0
   http: ^0.13.0
-  giffy_dialog: ^1.8.0
+  shared_preferences: ^2.0.5
 
 dev_dependencies:
   flutter_test:
