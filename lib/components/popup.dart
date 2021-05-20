@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:pycare/components/my_colors.dart';
 import 'package:pycare/providers/translation.dart';
 
 import 'my_text.dart';
@@ -22,6 +23,18 @@ class PopUp extends StatelessWidget {
                   translation.setCurrentLanguage("english");
                   Navigator.pop(context);
                 },
+                trailing: translation.currentLanguage == "english"
+                    ? Icon(
+                        Icons.check,
+                        color: green,
+                      )
+                    : Opacity(
+                        opacity: 0,
+                        child: Icon(
+                          Icons.check,
+                          color: green,
+                        ),
+                      ),
               ),
               value: MenuOption.English,
             ),
@@ -34,6 +47,18 @@ class PopUp extends StatelessWidget {
                   translation.setCurrentLanguage("tamil");
                   Navigator.pop(context);
                 },
+                trailing: translation.currentLanguage == "tamil"
+                    ? Icon(
+                        Icons.check,
+                        color: green,
+                      )
+                    : Opacity(
+                        opacity: 0,
+                        child: Icon(
+                          Icons.check,
+                          color: green,
+                        ),
+                      ),
               ),
               value: MenuOption.Tamil,
             ),
@@ -46,6 +71,18 @@ class PopUp extends StatelessWidget {
                   translation.setCurrentLanguage("hindi");
                   Navigator.pop(context);
                 },
+                trailing: translation.currentLanguage == "hindi"
+                    ? Icon(
+                        Icons.check,
+                        color: green,
+                      )
+                    : Opacity(
+                        opacity: 0,
+                        child: Icon(
+                          Icons.check,
+                          color: green,
+                        ),
+                      ),
               ),
               value: MenuOption.Hindi,
             ),

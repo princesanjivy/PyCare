@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class TranslationText with ChangeNotifier {
   String currentLanguage = "english";
@@ -218,7 +219,10 @@ class TranslationText with ChangeNotifier {
     "isolation beds": ["தனிமை படுக்கைகள்", "अलगाव बिस्तर"],
   };
 
-  void setCurrentLanguage(String lang) {
+  void setCurrentLanguage(String lang) async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    await sharedPreferences.setString("currentLanguage", lang);
+
     this.currentLanguage = lang;
     notifyListeners();
   }

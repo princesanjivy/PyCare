@@ -24,11 +24,16 @@ class _HomeScreenState extends State<HomeScreen> {
       int totalReported = int.parse(api.status["total"]);
 
       Map<String, double> dataMap = api.status.map((key, value) {
-        return MapEntry(
-            key.toString()[0].toUpperCase() + key.toString().substring(1),
-            double.parse(value));
+        try {
+          return MapEntry(
+              key.toString()[0].toUpperCase() + key.toString().substring(1),
+              double.parse(value));
+        } catch (e) {
+          return MapEntry("nothing", 0);
+        }
       });
       dataMap.remove("Total");
+      dataMap.remove("nothing");
 
       return Scaffold(
         backgroundColor: bgColor,
@@ -102,10 +107,15 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   Text(
-                    "As on 19/5/2021",
+                    "As on\n" +
+                        api.status["lastUpdatedOn"]
+                            .toString()
+                            .replaceFirst(" ", "\n"),
+                    // "As on 19/5/2021",
                     style: GoogleFonts.poppins(
-                      fontSize: 20,
+                      fontSize: 18,
                     ),
+                    textAlign: TextAlign.center,
                   ),
                 ],
               ),

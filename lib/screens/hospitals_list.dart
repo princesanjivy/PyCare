@@ -212,6 +212,18 @@ class _HospitalsState extends State<Hospitals> {
                                   translation.getTranslatedText(
                                       context, 'Oxygen Beds'),
                             ),
+                            trailing: api.sortItem == 0
+                                ? Icon(
+                                    Icons.check,
+                                    color: green,
+                                  )
+                                : Opacity(
+                                    opacity: 0,
+                                    child: Icon(
+                                      Icons.check,
+                                      color: green,
+                                    ),
+                                  ),
                           ),
                         ),
                         PopupMenuDivider(
@@ -229,6 +241,18 @@ class _HospitalsState extends State<Hospitals> {
                                       context, 'Ventilator Beds'),
                               style: GoogleFonts.poppins(),
                             ),
+                            trailing: api.sortItem == 1
+                                ? Icon(
+                                    Icons.check,
+                                    color: green,
+                                  )
+                                : Opacity(
+                                    opacity: 0,
+                                    child: Icon(
+                                      Icons.check,
+                                      color: green,
+                                    ),
+                                  ),
                           ),
                         ),
                         PopupMenuDivider(
@@ -245,6 +269,18 @@ class _HospitalsState extends State<Hospitals> {
                                   translation.getTranslatedText(
                                       context, 'Isolation Beds'),
                             ),
+                            trailing: api.sortItem == 2
+                                ? Icon(
+                                    Icons.check,
+                                    color: green,
+                                  )
+                                : Opacity(
+                                    opacity: 0,
+                                    child: Icon(
+                                      Icons.check,
+                                      color: green,
+                                    ),
+                                  ),
                           ),
                         )
                       ],
@@ -266,8 +302,8 @@ class _HospitalsState extends State<Hospitals> {
                   ),
                 ),
                 Text(
-                  translation.getTranslatedText(context, "as on") +
-                      ": 19/5/2021",
+                  translation.getTranslatedText(context, "as on: ") +
+                      api.status["lastUpdatedOn"].toString().split(" ")[0],
                   style: GoogleFonts.poppins(
                     fontSize: 12,
                     fontWeight: FontWeight.normal,
@@ -386,17 +422,11 @@ class _HospitalsState extends State<Hospitals> {
                                                       MyText(
                                                         text: translation.getTranslatedText(
                                                             context,
-                                                            (api.hospitalDetails[index]['oxygenBeds']["vacant"] +
-                                                                    api.hospitalDetails[index]
-                                                                            [
-                                                                            'ventilatorBeds']
-                                                                        [
-                                                                        "vacant"] +
-                                                                    api.hospitalDetails[index]
-                                                                            [
-                                                                            'isolationBeds']
-                                                                        [
-                                                                        "vacant"])
+                                                            api.hospitalDetails[index][api.sortItem == 0
+                                                                    ? 'oxygenBeds'
+                                                                    : api.sortItem == 1
+                                                                        ? 'ventilatorBeds'
+                                                                        : "isolationBeds"]["vacant"]
                                                                 .toString()),
                                                         color: numberRed,
                                                         fontWeight: 'BOLD',
