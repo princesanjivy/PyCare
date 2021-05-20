@@ -215,8 +215,13 @@ class TranslationText with ChangeNotifier {
     "phone number": ["தொலைபேசி எண்கள்", "दूरभाष संख्या"],
     "availability of": ["கிடைப்பது", "उपलब्धता"],
     "oxygen beds": ["ஆக்சிஜன் படுக்கைகள்", "ऑक्सीजन बेड"],
-    "ventilator beds": ["மறுபடியும் படுக்கைகள்", "वेंटिलेटर बेड"],
+    "ventilator beds": ["வென்டிலேட்டர் படுக்கைகள்", "वेंटिलेटर बेड"],
     "isolation beds": ["தனிமை படுக்கைகள்", "अलगाव बिस्तर"],
+    "bed type": ["படுக்கை வகை", "बिस्तर प्रकार"],
+    "selected bed type: ": [
+      "தேர்ந்தெடுக்கப்பட்ட படுக்கை வகை: ",
+      "चयनित बिस्तर प्रकार: "
+    ],
   };
 
   void setCurrentLanguage(String lang) async {

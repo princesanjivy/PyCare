@@ -1,7 +1,7 @@
 name: pycare
 description: An outcome of Google DSC-PEC Puducherry
 
-version: 1.1.0+6
+version: 1.1.1+7
 
 environment:
   sdk: ">=2.7.0 <3.0.0"

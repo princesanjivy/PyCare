@@ -34,20 +34,20 @@ class FetchData with ChangeNotifier {
         await http.get(Uri.parse(uri + "/updateData"));
 
         getAllData();
-        sortThing(0);
+        sortThing(2);
         await sharedPreferences.setString(
             "updateData", DateTime.now().toString());
       } else {
         print("READING FROM LOCAL");
 
         getAllDataFromSP();
-        sortThing(0);
+        sortThing(2);
       }
     } else {
       print("NULL, UPDATING DATA");
 
       getAllData();
-      sortThing(0);
+      sortThing(2);
       await sharedPreferences.setString(
           "updateData", DateTime.now().toString());
     }

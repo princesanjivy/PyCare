@@ -176,12 +176,13 @@ class _HospitalsState extends State<Hospitals> {
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               Text(
-                                translation.getTranslatedText(context, 'Sort'),
+                                translation.getTranslatedText(
+                                    context, 'Bed type'),
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize:
                                       translation.currentLanguage == "tamil"
-                                          ? 14
+                                          ? 12
                                           : 18,
                                 ),
                               ),
@@ -312,6 +313,25 @@ class _HospitalsState extends State<Hospitals> {
                 SizedBox(
                   height: 16,
                 ),
+                Text(
+                  translation.getTranslatedText(
+                          context, "Selected bed type: ") +
+                      translation.getTranslatedText(
+                        context,
+                        api.sortItem == 0
+                            ? "Oxygen Beds"
+                            : api.sortItem == 1
+                                ? "Ventilator Beds"
+                                : "Isolation Beds",
+                      ),
+                  style: GoogleFonts.poppins(
+                    fontSize: 12,
+                    fontWeight: FontWeight.normal,
+                  ),
+                ),
+                SizedBox(
+                  height: 16,
+                ),
                 ListView.builder(
                   physics: ScrollPhysics(),
                   shrinkWrap: true,
@@ -414,7 +434,7 @@ class _HospitalsState extends State<Hospitals> {
                                                         text: translation
                                                                 .getTranslatedText(
                                                                     context,
-                                                                    'Vacancy Of Beds') +
+                                                                    'Vacant') +
                                                             ": ",
                                                         color: darkBlue,
                                                         fontWeight: 'BOLD',
