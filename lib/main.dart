@@ -86,6 +86,8 @@ class _BarState extends State<Bar> {
   Widget build(BuildContext context) {
     return Consumer2<FetchData, TranslationText>(
       builder: (context, api, translation, child) {
+        print("LOADING STATUS :" + api.loading.toString());
+
         return api.loading
             ? Scaffold(
                 body: Column(

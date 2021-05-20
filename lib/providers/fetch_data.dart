@@ -52,8 +52,8 @@ class FetchData with ChangeNotifier {
           "updateData", DateTime.now().toString());
     }
 
-    loading = false;
-    notifyListeners();
+    // loading = false;
+    // notifyListeners();
   }
 
   getAllDataFromSP() async {
@@ -76,7 +76,7 @@ class FetchData with ChangeNotifier {
   }
 
   getAllData() async {
-    loading = true;
+    // loading = true;
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
 
     http.Response response = await http.get(Uri.parse(uri + "/status"));
