@@ -11,6 +11,7 @@ import 'package:pycare/screens/home.dart';
 import 'package:pycare/screens/hospitals_list.dart';
 import 'package:pycare/screens/maps.dart';
 import 'package:pycare/screens/vaccination.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(
@@ -60,10 +61,33 @@ class _BarState extends State<Bar> {
     HomeMap(),
     AboutUs(),
   ];
+
+  @override
+  void initState() {
+    super.initState();
+
+    getLang();
+  }
+
+  void getLang() async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+
+    String lang = sharedPreferences.get("currentLanguage");
+    if (lang != null) {
+      Provider.of<TranslationText>(context, listen: false)
+          .setCurrentLanguage(lang);
+    } else {
+      await sharedPreferences.setString("currentLanguage", "english");
+      // Provider.of<TranslationText>(context, listen: false).setCurrentLanguage(lang);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Consumer2<FetchData, TranslationText>(
       builder: (context, api, translation, child) {
+        print("LOADING STATUS :" + api.loading.toString());
+
         return api.loading
             ? Scaffold(
                 body: Column(
@@ -83,7 +107,7 @@ class _BarState extends State<Bar> {
                       height: 16,
                     ),
                     MyText(
-                      text: "Py-Care",
+                      text: "Pudhuvai Care",
                     ),
                     MyText(
                       text: "An outcome of Google DSC-PEC",

@@ -16,6 +16,9 @@ class HospitalDetails extends StatefulWidget {
   final String oxygenBeds;
   final String ventilatorBeds;
   final String isolationBeds;
+  final String allotedOxygenBeds;
+  final String allotedVentilatorBeds;
+  final String alltoedIsolationBeds;
   final String address;
   final String latitude;
   final String longitude;
@@ -34,6 +37,9 @@ class HospitalDetails extends StatefulWidget {
     this.address,
     this.contactNos,
     this.hospitalFullName,
+    this.allotedOxygenBeds,
+    this.allotedVentilatorBeds,
+    this.alltoedIsolationBeds,
   });
 
   @override
@@ -158,13 +164,12 @@ class _HospitalDetailsState extends State<HospitalDetails> {
                                               MainAxisAlignment.center,
                                           children: [
                                             MyText(
-                                              text:
-                                                  translation.getTranslatedText(
-                                                      context,
-                                                      widget.oxygenBeds),
+                                              text: widget.oxygenBeds +
+                                                  "/" +
+                                                  widget.allotedOxygenBeds,
                                               fontWeight: 'BOLD',
                                               color: Colors.black,
-                                              size: 25,
+                                              size: 22,
                                             ),
                                             Text(
                                               translation.getTranslatedText(
@@ -195,11 +200,12 @@ class _HospitalDetailsState extends State<HospitalDetails> {
                                             MainAxisAlignment.center,
                                         children: [
                                           MyText(
-                                            text: translation.getTranslatedText(
-                                                context, widget.ventilatorBeds),
+                                            text: widget.ventilatorBeds +
+                                                "/" +
+                                                widget.allotedVentilatorBeds,
                                             fontWeight: 'BOLD',
                                             color: Colors.black,
-                                            size: 25,
+                                            size: 22,
                                           ),
                                           Text(
                                             translation.getTranslatedText(
@@ -229,11 +235,12 @@ class _HospitalDetailsState extends State<HospitalDetails> {
                                             MainAxisAlignment.center,
                                         children: [
                                           MyText(
-                                            text: translation.getTranslatedText(
-                                                context, widget.isolationBeds),
+                                            text: widget.isolationBeds +
+                                                "/" +
+                                                widget.alltoedIsolationBeds,
                                             fontWeight: 'BOLD',
                                             color: Colors.black,
-                                            size: 25,
+                                            size: 22,
                                           ),
                                           Text(
                                             translation.getTranslatedText(
