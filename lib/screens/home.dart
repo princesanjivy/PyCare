@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pie_chart/pie_chart.dart';
 import 'package:provider/provider.dart';
@@ -8,6 +9,12 @@ import 'package:pycare/components/popup.dart';
 import 'package:pycare/components/precautions_scroll.dart';
 import 'package:pycare/providers/fetch_data.dart';
 import 'package:pycare/providers/translation.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'dart:math';
+
+import '../components/my_colors.dart';
+import '../components/my_colors.dart';
+import '../components/my_colors.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -16,6 +23,21 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final String assetName = 'images/illustration.svg';
+  // Random phn = new Random();
+  // var nums = ['112', '1031'];
+  T getRandomElement<T>(List<T> listnum) {
+    final phn = new Random();
+    var i = phn.nextInt(listnum.length);
+    return listnum[i];
+  }
+
+  void custLaunch(cmd) async {
+    if (await canLaunch(cmd)) {
+      launch(cmd);
+    } else {
+      print("cannot launch $cmd");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +56,54 @@ class _HomeScreenState extends State<HomeScreen> {
       });
       dataMap.remove("Total");
       dataMap.remove("nothing");
+      // var phno = nums[phn.nextInt(nums.length)];
+      var listnum = ['121', '1031'];
+      var phno = getRandomElement(listnum);
+
+      Random con = new Random();
+      var nos = [
+        '9894144204',
+        '7639427670',
+        '9894048320',
+        '9944627463',
+        '7904396602',
+        '9994191223',
+        '9894781267',
+        '9443658085',
+        '8681944528',
+        '9965188023',
+        '8220540694',
+        '9655588693',
+        '8870290200',
+        '9003816203',
+        '9361641386',
+        '8300427017',
+        '9840943058',
+        '9600317149',
+        '9894998570',
+        '9244533515',
+        '9944185760',
+        '9488172392',
+        '9345401331',
+        '9944411462',
+        '9442708102',
+        '9514791979',
+        '9952535499',
+        '9751420510',
+        '9443283252',
+        '9789593886',
+        '9487670972',
+        '8940736544',
+        '9171765345',
+        '9789424575',
+        '9787381306',
+        '9894995347',
+        '9447359622',
+        '9092128810'
+      ];
+
+      var cphn = nos[con.nextInt(nos.length)];
+      print(cphn);
 
       return Scaffold(
         backgroundColor: bgColor,
@@ -58,16 +128,20 @@ class _HomeScreenState extends State<HomeScreen> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: EdgeInsets.only(top: 16, left: 16),
-                child: Text(
-                  translation.getTranslatedText(context, "PUDUCHERRY"),
-                  style: GoogleFonts.poppins(
-                    fontSize: 28,
-                    color: Colors.black,
-                    fontWeight: FontWeight.w600,
+              Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(top: 16, left: 16),
+                    child: Text(
+                      translation.getTranslatedText(context, "PUDUCHERRY"),
+                      style: GoogleFonts.poppins(
+                        fontSize: 28,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
                   ),
-                ),
+                ],
               ),
               Divider(
                 thickness: 0.7,
@@ -254,6 +328,155 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: PrecautionScroll(),
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  left: 8.0,
+                  bottom: 8.0,
+                ),
+                child: Container(
+                  alignment: Alignment.topLeft,
+                  color: Color(0xf4f9f9),
+                  child: Text(
+                    translation.getTranslatedText(context, 'COUNSELORS'),
+                    style: GoogleFonts.poppins(
+                      fontSize:
+                          translation.currentLanguage == "tamil" ? 22 : 24,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 8,
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 16, bottom: 4, top: 4),
+                child: Column(
+                  children: [
+                    Text(
+                      "Press the button below to connect with a counselor regarding COVID help 👇",
+                      style: GoogleFonts.poppins(
+                        color: Colors.indigo,
+                        fontSize: 16,
+                        fontWeight: FontWeight.normal,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        top: 8.0,
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          FloatingActionButton.extended(
+                            backgroundColor: darkBlue,
+                            icon: FaIcon(
+                              FontAwesomeIcons.phoneAlt,
+                              color: Colors.white,
+                            ),
+                            label: Text(
+                              'Connect',
+                              style: GoogleFonts.poppins(
+                                fontSize: 22.0,
+                              ),
+                            ),
+                            onPressed: () {
+                              custLaunch('tel: $cphn');
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              Divider(
+                thickness: 0.8,
+                color: Colors.indigo,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  left: 8.0,
+                  bottom: 8.0,
+                ),
+                child: Container(
+                  alignment: Alignment.topLeft,
+                  color: Color(0xf4f9f9),
+                  child: Text(
+                    translation.getTranslatedText(context, 'COVID VIOLATIONS'),
+                    style: GoogleFonts.poppins(
+                      fontSize:
+                          translation.currentLanguage == "tamil" ? 22 : 24,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 8,
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 16, bottom: 4, top: 4),
+                child: Column(
+                  children: [
+                    Text(
+                      translation.getTranslatedText(context,
+                          'Help us out in stopping the violations of COVID-19 protocols in your city.\nHow to help?\nBelow are provided a contact numbers for Control Room and WhatsApp with area detail or location. If you find anyone violating the COVID-19 protocols contact us using the number or send a small clip-on WhatsApp.'),
+                      style: GoogleFonts.poppins(
+                        fontSize:
+                            translation.currentLanguage == "tamil" ? 14 : 16,
+                        color: Colors.indigo,
+                        // fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 4.0,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 10.0,
+                            right: 5.0,
+                          ),
+                          child: FloatingActionButton(
+                            backgroundColor: darkBlue,
+                            child: FaIcon(
+                              FontAwesomeIcons.phoneAlt,
+                              color: Colors.white,
+                            ),
+                            onPressed: () {
+                              custLaunch('tel: $phno');
+                            },
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            right: 16.0,
+                            left: 10.0,
+                          ),
+                          child: FloatingActionButton(
+                            backgroundColor: green,
+                            child: FaIcon(
+                              FontAwesomeIcons.whatsapp,
+                              color: Colors.white,
+                            ),
+                            onPressed: () {
+                              custLaunch('https://wa.link/1iurjl');
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
               SizedBox(
                 height: 10.0,
               ),
@@ -296,6 +519,10 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               SizedBox(
                 height: 4,
+              ),
+              Divider(
+                thickness: 0.8,
+                color: Colors.indigo,
               ),
               Padding(
                 padding: const EdgeInsets.only(
