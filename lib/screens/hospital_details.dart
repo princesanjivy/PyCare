@@ -169,7 +169,7 @@ class _HospitalDetailsState extends State<HospitalDetails> {
                                                   widget.allotedOxygenBeds,
                                               fontWeight: 'BOLD',
                                               color: Colors.black,
-                                              size: 22,
+                                              size: 20,
                                             ),
                                             Text(
                                               translation.getTranslatedText(
@@ -205,7 +205,7 @@ class _HospitalDetailsState extends State<HospitalDetails> {
                                                 widget.allotedVentilatorBeds,
                                             fontWeight: 'BOLD',
                                             color: Colors.black,
-                                            size: 22,
+                                            size: 20,
                                           ),
                                           Text(
                                             translation.getTranslatedText(
@@ -240,7 +240,7 @@ class _HospitalDetailsState extends State<HospitalDetails> {
                                                 widget.alltoedIsolationBeds,
                                             fontWeight: 'BOLD',
                                             color: Colors.black,
-                                            size: 22,
+                                            size: 20,
                                           ),
                                           Text(
                                             translation.getTranslatedText(

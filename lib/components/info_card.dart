@@ -53,21 +53,30 @@ class InfoCard extends StatelessWidget {
             padding: const EdgeInsets.all(10.0),
             child: Column(
               children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: CachedNetworkImage(
-                    imageUrl: '$imgLink',
-                    imageBuilder: (context, imageProvider) => Container(
-                      width: 74,
-                      height: 74,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                            image: imageProvider, fit: BoxFit.fill),
+                GestureDetector(
+                  /// easter egg :LOL
+                  onDoubleTap: () {
+                    if (name == "Prince Sanjivy")
+                      launch(
+                          "https://play.google.com/store/apps/dev?id=6439925551269057866");
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: CachedNetworkImage(
+                      imageUrl: '$imgLink',
+                      imageBuilder: (context, imageProvider) => Container(
+                        width: 74,
+                        height: 74,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                              image: imageProvider, fit: BoxFit.fill),
+                        ),
                       ),
+                      placeholder: (context, url) =>
+                          CircularProgressIndicator(),
+                      errorWidget: (context, url, error) => Icon(Icons.error),
                     ),
-                    placeholder: (context, url) => CircularProgressIndicator(),
-                    errorWidget: (context, url, error) => Icon(Icons.error),
                   ),
                 ),
                 Text(

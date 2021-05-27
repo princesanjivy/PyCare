@@ -29,14 +29,23 @@ class FetchData with ChangeNotifier {
 
     if (value != null) {
       DateTime dateTime = DateTime.parse(value);
-      if (DateTime.now().difference(dateTime) <= Duration(days: 1)) {
+      if (DateTime.now().difference(dateTime) >= Duration(hours: 15)) {
         print("UPDATING DATA");
-        await http.get(Uri.parse(uri + "/updateData"));
+        try {
+          await http.get(Uri.parse(uri + "/updateData"));
 
-        getAllData();
-        sortThing(2);
-        await sharedPreferences.setString(
-            "updateData", DateTime.now().toString());
+          getAllData();
+          sortThing(2);
+          await sharedPreferences.setString(
+              "updateData", DateTime.now().toString());
+        } catch (e) {
+          print(e);
+
+          print("READING FROM LOCAL");
+
+          getAllDataFromSP();
+          sortThing(2);
+        }
       } else {
         print("READING FROM LOCAL");
 
