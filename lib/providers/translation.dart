@@ -17,6 +17,10 @@ class TranslationText with ChangeNotifier {
     "home": ["வீடு", "घर"],
     "total reported": ["பதிவாகியுள்ளன", "कुल सूचना दी"],
     "precautions": ["தற்காப்பு நடவடிக்கைகள்", "एहतियात"],
+    "disclaimer": ["மறுப்பு", "अस्वीकरण"],
+    "counselors": ["ஆலோசகர்கள்", "काउंसलर"],
+    "credits": ["வரவு", "क्रेडिट"],
+    "covid violations": ["கோவிட் மீறல்கள்", "कोविड उल्लंघन"],
     "don't forget to wear your mask": [
       "உங்கள் முகமூடி அணிய மறக்க தெரியவில்லை",
       "न अपने मुखौटा पहनने के लिए भूल जाते हैं"
@@ -221,6 +225,11 @@ class TranslationText with ChangeNotifier {
     "selected bed type: ": [
       "தேர்ந்தெடுக்கப்பட்ட படுக்கை வகை: ",
       "चयनित बिस्तर प्रकार: "
+    ],
+    "Help us out in stopping the violations of COVID-19 protocols in your city.\nHow to help?\nBelow are provided a contact numbers for Control Room and WhatsApp with area detail or location. If you find anyone violating the COVID-19 protocols contact us using the number or send a small clip-on WhatsApp.":
+        [
+      "உங்கள் நகரத்தில் COVID-19 நெறிமுறைகளின் மீறல்களைத் தடுக்க எங்களுக்கு உதவுங்கள். Hello n எப்படி உதவுவது? Control n கட்டுப்பாட்டு அறை மற்றும் வாட்ஸ்அப்பிற்கான தொடர்பு எண்களை கீழே பகுதி விவரம் அல்லது இருப்பிடத்துடன் வழங்கப்படுகிறது. COVID-19 நெறிமுறைகளை யாராவது மீறுவதை நீங்கள் கண்டால், எண்ணைப் பயன்படுத்தி எங்களைத் தொடர்பு கொள்ளுங்கள் அல்லது ஒரு சிறிய கிளிப்-வாட்ஸ்அப்பை அனுப்பவும்.",
+      "अपने शहर में COVID-19 प्रोटोकॉल के उल्लंघन को रोकने में हमारी मदद करें। यदि आप पाते हैं कि कोई व्यक्ति COVID-19 प्रोटोकॉल का उल्लंघन कर रहा है तो नंबर का उपयोग करके हमसे संपर्क करें या व्हाट्सएप पर एक छोटी क्लिप भेजें।"
     ],
   };
 

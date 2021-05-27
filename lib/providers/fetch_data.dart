@@ -29,7 +29,7 @@ class FetchData with ChangeNotifier {
 
     if (value != null) {
       DateTime dateTime = DateTime.parse(value);
-      if (DateTime.now().difference(dateTime) == Duration(days: 1)) {
+      if (DateTime.now().difference(dateTime) <= Duration(days: 1)) {
         print("UPDATING DATA");
         await http.get(Uri.parse(uri + "/updateData"));
 
