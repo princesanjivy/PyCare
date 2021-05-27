@@ -209,9 +209,8 @@ class _HospitalsState extends State<Hospitals> {
                               Navigator.pop(context);
                             }, //Sort Logic (Ascending)
                             title: Text(
-                              "No. of " +
-                                  translation.getTranslatedText(
-                                      context, 'Oxygen Beds'),
+                              translation.getTranslatedText(
+                                  context, 'Oxygen Beds'),
                             ),
                             trailing: api.sortItem == 0
                                 ? Icon(
@@ -237,9 +236,8 @@ class _HospitalsState extends State<Hospitals> {
                               Navigator.pop(context);
                             }, //Sort Logic (Descending)
                             title: Text(
-                              "No. of " +
-                                  translation.getTranslatedText(
-                                      context, 'Ventilator Beds'),
+                              translation.getTranslatedText(
+                                  context, 'Ventilator Beds'),
                               style: GoogleFonts.poppins(),
                             ),
                             trailing: api.sortItem == 1
@@ -266,9 +264,8 @@ class _HospitalsState extends State<Hospitals> {
                               Navigator.pop(context);
                             }, //Sort Logic (Vacant Beds)
                             title: MyText(
-                              text: "No. of " +
-                                  translation.getTranslatedText(
-                                      context, 'Isolation Beds'),
+                              text: translation.getTranslatedText(
+                                  context, 'Isolation Beds'),
                             ),
                             trailing: api.sortItem == 2
                                 ? Icon(

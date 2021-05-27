@@ -49,7 +49,7 @@ class HCard extends StatelessWidget {
               children: [
                 MyText(
                   text: title,
-                  size: 16,
+                  size: 14,
                   color: Colors.white,
                 ),
                 MyText(

@@ -15,18 +15,26 @@ class TranslationText with ChangeNotifier {
     "covid-19 tracker": ["கோவிட்-19 டிராக்கர்", "कोविड-19 ट्रैकर"],
     "developers": ["டெவலப்பர்கள்", "डेवलपर्स"],
     "home": ["வீடு", "घर"],
-    "total reported": ["பதிவாகியுள்ளன", "कुल सूचना दी"],
+    "total reported": ["மொத்தம் பதிவாகியுள்ளவை", "कुल सूचना दी"],
     "precautions": ["தற்காப்பு நடவடிக்கைகள்", "एहतियात"],
-    "disclaimer": ["மறுப்பு", "अस्वीकरण"],
-    "counselors": ["ஆலோசகர்கள்", "काउंसलर"],
-    "credits": ["வரவு", "क्रेडिट"],
-    "covid violations": ["கோவிட் மீறல்கள்", "कोविड उल्लंघन"],
+    "disclaimer notice": ["பொறுப்பு துறப்பு", "अस्वीकरण"],
+    "psychology counselors": ["உளவியல் ஆலோசனை", "काउंसलर"],
+    "credits": ["குறிப்பு", "क्रेडिट"],
+    "all the data are being fetched from the website https://covid19dashboard.py.gov.in/":
+        [
+      "இந்த ஆப்பில் தரப்படும் தகவல்கள் https://covid19dashboard.py.gov.in என்ற புதுச்சேரி அரசின் அதிகாரபூர்வ தளத்தில் இருந்து பெறப்படுகின்றன.",
+      "सभी डेटा वेबसाइट https://covid19dashboard.py.gov.in/ से प्राप्त किया जा रहे हैं।"
+    ],
+    "complain against covid violations": [
+      "கோவிட் விதிமீறல்கள் புகார்",
+      "कोविड उल्लंघन"
+    ],
     "don't forget to wear your mask": [
-      "உங்கள் முகமூடி அணிய மறக்க தெரியவில்லை",
+      "வெளியே செல்லும்போது ஒன்று அல்லது இரண்டு முகமூடி அணியுங்கள்",
       "न अपने मुखौटा पहनने के लिए भूल जाते हैं"
     ],
     "ensure you sanitize your hands regularly": [
-      "நீங்கள் ஒழுங்காக உங்கள் கையில் துப்புரவாக்குங்கள் உறுதி",
+      "சேனிடரை பயன்படுத்தவும்",
       "आप अपने हाथ नियमित रूप से स्वच्छ सुनिश्चित"
     ],
     "map": ["சிகிச்சை மையங்கள்", "नक्शा"],
@@ -35,15 +43,20 @@ class TranslationText with ChangeNotifier {
     "filter ": ["வடிகட்டி", "फिल्टर"],
     "sort": ["வகைபடுத்து", "तरह"],
     "wash your hands regularly": [
-      "வழக்கமாக உங்கள் கைகளை சுத்தம்",
+      "அடிக்கடி கைகளை சுத்தப்படுத்தவும்",
       "अपने हाथों को नियमित रूप से धोने"
     ],
     "use gloves when required": [
-      "தேவைப்படும் போது கையுறைகள் பயன்படுத்த",
+      "தேவைப்படும்பொழுது கையுறைகளை அணியுங்கள்",
       "जब जरूरत दस्ताने का उपयोग"
     ],
+    "neither ptu nor the google dsc is responsible for inadvertent mistakes in the data provided by the app in the absence of good internet connectivity. the data available at the gop portal should be considered official.":
+        [
+      "இந்த ஆப் மூலம் பெறப்படும் தகவல்களில் எதிர்பாராத தவறுகள் ஏற்படின் புதுவை பொறியியற் கல்லூரியோ அல்லது கல்லூரியின் கூகுள் DSC பொறுப்பேற்காது. அரசின் அதிகாரபூர்வ தளத்தில் இருந்து பெறப்படும் தகவல்களே உண்மைத்தன்மை வாய்ந்தது.",
+      ""
+    ],
     "vaccine drive": ["தடுப்பூசி விபரங்கள்", "वैक्सीन ड्राइव"],
-    "get vaccinated": ["கிடைக்கும் தடுப்பூசி", "प्राप्त टीका"],
+    "get vaccinated": ["தடுப்பூசி போட்டுக்கொள்ளவும்", "प्राप्त टीका"],
     "indira gandhi government general hospital and post graduate institue": [
       "இந்திரா காந்தி அரசு பொது மருத்துவமனை மற்றும் பட்ட மேற்படிப்பு இன்ஸ்டிடியூட் ஆப்",
       "इंदिरा गांधी सरकार जनरल अस्पताल और स्नातकोत्तर ऑफ"
@@ -95,20 +108,20 @@ class TranslationText with ChangeNotifier {
       "சி.எச்.சி கரிக்கலாம்பாக்கம்",
       "सी एच सी करिकलमपक्कम"
     ],
-    "igggh & pgi": ["ஐஜிஜிஜிஎச் & பிஜிஐ", "आई जी जी जी एच एंड पी जी आई"],
+    "igggh & pgi": ["அரசு பொது மருத்துவமனை", "आई जी जी जी एच एंड पी जी आई"],
     "igmc": ["ஐ.ஜி.எம்.சி", "आई जी एम सी"],
-    "jipmer": ["ஜேஐபிஎம்இஆர்", "जिपमेर"],
+    "jipmer": ["ஜிப்மர்", "जिपमेर"],
     "mgmc": ["எம்.ஜி.எம்.சி", "एम जी एम सी"],
     "mvr": ["எம்.வி.ஆர்", "एम वी आर"],
-    "phc nettapakkam": ["பிஎச்சி நெட்டபாக்கம்", "न्यू मेडिकल सेंटर"],
-    "pims": ["பி.ஐ.எம்.எஸ்", "पी आई एम एस"],
-    "slims": ["எஸ்.எல்.ஐ.எம்.எஸ்", "स्लिम्स"],
-    "smvmc": ["எஸ்.எம்.வி.எம்.சி", "एसएमवीएमसी"],
-    "svmc": ["எஸ்.வி.எம்.சி", "एस वी एम सी"],
+    "phc nettapakkam": ["PHC நெட்டப்பாக்கம்", "न्यू मेडिकल सेंटर"],
+    "pims": ["பிம்ஸ் மருத்துவமனை", "पी आई एम एस"],
+    "slims": ["லட்சுமி நாராயணா மருத்துவமனை", "स्लिम्स"],
+    "smvmc": ["மணக்குள விநாயகர் மருத்துவமனை", "एसएमवीएमसी"],
+    "svmc": ["ஸ்ரீவெங்கடேஸ்வரா மருத்துவமனை", "एस वी एम सी"],
     "be well hospital": ["பி வெள் மருத்துவமனை", "बी वेल हॉस्पिटल"],
     "rani hospital": ["ராணி மருத்துவமனை", "रानी अस्पताल"],
-    "new medical centre": ["புதிய மருத்துவ மையம்", "न्यू मेडिकल सेंटर"],
-    "kumaran hospital": ["குமரன் மருத்துவமனையில்", "कुमारन अस्पताल"],
+    "new medical centre": ["நியூ மெடிக்கல் சென்டர்", "न्यू मेडिकल सेंटर"],
+    "kumaran hospital": ["குமரன் மருத்துவமனை", "कुमारन अस्पताल"],
     "karaikal": ["காரைக்கால்", "कराईकल"],
     "vinayaka missions medical college karaikal": [
       "விநாயகா மிஷன்ஸ் மருத்துவக் கல்லூரி காரைக்கால்",
@@ -117,6 +130,10 @@ class TranslationText with ChangeNotifier {
     "description about dsc": [
       "டிஎஸ்சிக்கு பற்றி விளக்கம்",
       "विवरण डीएससी बारे में"
+    ],
+    "press the button below to connect with a counselor regarding covid help": [
+      "தங்களுக்கு கோவிட் சம்பந்தமாக உளவியல் ஆலோசனை பெற விரும்பினால் கீழுள்ள பொத்தானை அழுத்தினால் அரசு நியமித்துள்ள ஆலோசகர்களில்  ஒருவரை தொடர்புகொண்டு பேசலாம்.",
+      "कोविड सहायता के संबंध में काउंसलर से जुड़ने के लिए नीचे दिया गया बटन दबाएं"
     ],
     // "an outcome of dsc pec puducherry": [
     //   "An outcome of DSC PEC Puducherry",
@@ -226,10 +243,10 @@ class TranslationText with ChangeNotifier {
       "தேர்ந்தெடுக்கப்பட்ட படுக்கை வகை: ",
       "चयनित बिस्तर प्रकार: "
     ],
-    "Help us out in stopping the violations of COVID-19 protocols in your city.\nHow to help?\nBelow are provided a contact numbers for Control Room and WhatsApp with area detail or location. If you find anyone violating the COVID-19 protocols contact us using the number or send a small clip-on WhatsApp.":
+    "help the government in stopping the violations of covid-19 protocols in our union territory. if you happen to see any such violations, you may give complaints to the puducherry police through mobile/toll free call/whatsapp.":
         [
-      "உங்கள் நகரத்தில் COVID-19 நெறிமுறைகளின் மீறல்களைத் தடுக்க எங்களுக்கு உதவுங்கள். Hello n எப்படி உதவுவது? Control n கட்டுப்பாட்டு அறை மற்றும் வாட்ஸ்அப்பிற்கான தொடர்பு எண்களை கீழே பகுதி விவரம் அல்லது இருப்பிடத்துடன் வழங்கப்படுகிறது. COVID-19 நெறிமுறைகளை யாராவது மீறுவதை நீங்கள் கண்டால், எண்ணைப் பயன்படுத்தி எங்களைத் தொடர்பு கொள்ளுங்கள் அல்லது ஒரு சிறிய கிளிப்-வாட்ஸ்அப்பை அனுப்பவும்.",
-      "अपने शहर में COVID-19 प्रोटोकॉल के उल्लंघन को रोकने में हमारी मदद करें। यदि आप पाते हैं कि कोई व्यक्ति COVID-19 प्रोटोकॉल का उल्लंघन कर रहा है तो नंबर का उपयोग करके हमसे संपर्क करें या व्हाट्सएप पर एक छोटी क्लिप भेजें।"
+      "தங்கள் அருகில் அரசின் கோவிட் தடுப்பு நடவடிக்கைகளுக்கு முரணாக ஏதேனும் நிகழ்வுகளை சந்தித்தால் தாங்கள் காவல்துறைக்கு தொலைபேசி அல்லது வாட்ஸ் அப் மூலம் புகார் அளிக்கலாம்.",
+      "हमारे केंद्र शासित प्रदेश में कोविड-19 प्रोटोकॉल के उल्लंघन को रोकने में सरकार की मदद करें। यदि आपको ऐसा कोई उल्लंघन दिखाई देता है, तो आप मोबाइल/टोल फ्री कॉल/व्हाट्सएप के माध्यम से पुडुचेरी पुलिस को शिकायत दे सकते हैं।"
     ],
   };
 

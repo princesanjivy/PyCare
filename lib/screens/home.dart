@@ -336,7 +336,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   alignment: Alignment.topLeft,
                   color: Color(0xf4f9f9),
                   child: Text(
-                    translation.getTranslatedText(context, 'COUNSELORS'),
+                    translation.getTranslatedText(
+                        context, 'PSYCHOLOGY COUNSELORS'),
                     style: GoogleFonts.poppins(
                       fontSize:
                           translation.currentLanguage == "tamil" ? 22 : 24,
@@ -354,7 +355,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Column(
                   children: [
                     Text(
-                      "Press the button below to connect with a counselor regarding COVID help 👇",
+                      translation.getTranslatedText(context,
+                          "Press the button below to connect with a counselor regarding covid help"),
                       style: GoogleFonts.poppins(
                         color: Colors.indigo,
                         fontSize: 16,
@@ -406,7 +408,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   alignment: Alignment.topLeft,
                   color: Color(0xf4f9f9),
                   child: Text(
-                    translation.getTranslatedText(context, 'COVID VIOLATIONS'),
+                    translation.getTranslatedText(
+                        context, 'COMPLAIN AGAINST COVID VIOLATIONS'),
                     style: GoogleFonts.poppins(
                       fontSize:
                           translation.currentLanguage == "tamil" ? 22 : 24,
@@ -425,10 +428,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     Text(
                       translation.getTranslatedText(context,
-                          'Help us out in stopping the violations of COVID-19 protocols in your city.\nHow to help?\nBelow are provided a contact numbers for Control Room and WhatsApp with area detail or location. If you find anyone violating the COVID-19 protocols contact us using the number or send a small clip-on WhatsApp.'),
+                          'Help the Government in stopping the violations of COVID-19 protocols in our union territory. If you happen to see any such violations, you may give complaints to the Puducherry Police through mobile/toll free call/WhatsApp.'),
                       style: GoogleFonts.poppins(
-                        fontSize:
-                            translation.currentLanguage == "tamil" ? 14 : 16,
+                        fontSize: 16,
                         color: Colors.indigo,
                         // fontWeight: FontWeight.w600,
                       ),
@@ -508,7 +510,8 @@ class _HomeScreenState extends State<HomeScreen> {
               Padding(
                 padding: EdgeInsets.only(left: 16, bottom: 4, top: 4),
                 child: Text(
-                  "Neither PTU nor the Google DSC is responsible for inadvertent mistakes in the data provided by the app in the absence of good internet connectivity. The data available at the GoP portal should be considered official.",
+                  translation.getTranslatedText(context,
+                      "Neither PTU nor the Google DSC is responsible for inadvertent mistakes in the data provided by the app in the absence of good internet connectivity. The data available at the GoP portal should be considered official."),
                   style: GoogleFonts.poppins(
                     color: Colors.indigo,
                     fontSize: 16,
@@ -548,10 +551,11 @@ class _HomeScreenState extends State<HomeScreen> {
               Padding(
                 padding: EdgeInsets.only(left: 16, bottom: 4, top: 4),
                 child: Text(
-                  "All the data are being fetched from the website https://covid19dashboard.py.gov.in/",
+                  translation.getTranslatedText(context,
+                      "All the data are being fetched from the website https://covid19dashboard.py.gov.in/"),
                   style: GoogleFonts.poppins(
                     color: Colors.indigo,
-                    fontSize: 14,
+                    fontSize: 12,
                     fontWeight: FontWeight.normal,
                   ),
                 ),
