@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -10,10 +12,7 @@ import 'package:pycare/components/precautions_scroll.dart';
 import 'package:pycare/providers/fetch_data.dart';
 import 'package:pycare/providers/translation.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'dart:math';
 
-import '../components/my_colors.dart';
-import '../components/my_colors.dart';
 import '../components/my_colors.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -382,7 +381,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                             onPressed: () {
-                              custLaunch('tel: $cphn');
+                              launch('tel:$cphn');
                             },
                           ),
                         ],
@@ -452,7 +451,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               color: Colors.white,
                             ),
                             onPressed: () {
-                              custLaunch('tel: $phno');
+                              launch('tel:$phno');
                             },
                           ),
                         ),
@@ -468,7 +467,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               color: Colors.white,
                             ),
                             onPressed: () {
-                              custLaunch('https://wa.link/1iurjl');
+                              launch('https://wa.link/1iurjl');
                             },
                           ),
                         ),
