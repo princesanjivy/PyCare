@@ -14,6 +14,8 @@ import 'package:pycare/providers/translation.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../components/my_colors.dart';
+import '../components/my_colors.dart';
+import '../components/my_colors.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -383,7 +385,23 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                             onPressed: () {
-                              launch('tel:$cphn');
+                              // launch('tel:$cphn');
+                              var dt = DateTime.now();
+                              if (dt.hour >= 9 && dt.hour <= 16) {
+                                launch('tel:$cphn');
+                              } else {
+                                final snackBar = SnackBar(
+                                  content: Text(
+                                    'Sorry! You can connect to them only between 09:00 AM to 04:00 PM',
+                                  ),
+                                  action: SnackBarAction(
+                                    label: 'Okay',
+                                    onPressed: () {},
+                                  ),
+                                );
+                                ScaffoldMessenger.of(context)
+                                    .showSnackBar(snackBar);
+                              }
                             },
                           ),
                         ],
@@ -441,6 +459,37 @@ class _HomeScreenState extends State<HomeScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 10.0,
+                            right: 5.0,
+                          ),
+                          child: FloatingActionButton(
+                            backgroundColor: appBarCol,
+                            child: FaIcon(
+                              FontAwesomeIcons.mobileAlt,
+                              color: Colors.white,
+                            ),
+                            onPressed: () {
+                              var ct = DateTime.now();
+                              if (ct.hour >= 9 && ct.hour <= 16) {
+                                launch('tel:+91 9489205032');
+                              } else {
+                                final snackBar = SnackBar(
+                                  content: Text(
+                                    'Sorry! You can connect to them only between 09:00 AM to 04:00 PM',
+                                  ),
+                                  action: SnackBarAction(
+                                    label: 'Okay',
+                                    onPressed: () {},
+                                  ),
+                                );
+                                ScaffoldMessenger.of(context)
+                                    .showSnackBar(snackBar);
+                              }
+                            },
+                          ),
+                        ),
                         Padding(
                           padding: const EdgeInsets.only(
                             left: 10.0,
