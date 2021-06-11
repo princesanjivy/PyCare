@@ -14,8 +14,6 @@ import 'package:pycare/providers/translation.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../components/my_colors.dart';
-import '../components/my_colors.dart';
-import '../components/my_colors.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -518,7 +516,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               color: Colors.white,
                             ),
                             onPressed: () {
-                              launch('https://wa.link/1iurjl');
+                              launch(
+                                  'https://api.whatsapp.com/send/?phone=917598844833&text=Hi');
                             },
                           ),
                         ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:pycare/components/my_colors.dart';
 import 'package:pycare/providers/translation.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'my_text.dart';
 
@@ -85,6 +86,18 @@ class PopUp extends StatelessWidget {
                       ),
               ),
               value: MenuOption.Hindi,
+            ),
+            PopupMenuItem(
+              child: ListTile(
+                title: MyText(
+                  text: "Chat with Chitti",
+                ),
+                onTap: () {
+                  launch(
+                      'https://api.whatsapp.com/send/?phone=917598844833&text=Hi');
+                  Navigator.pop(context);
+                },
+              ),
             ),
           ];
         },
